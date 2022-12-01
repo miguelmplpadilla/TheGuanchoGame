@@ -5,14 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - PuntoAnclaje
+  - Suelo
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Pared
   - 
   - 
   - 
