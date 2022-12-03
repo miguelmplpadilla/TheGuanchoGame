@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerGanchoController : MonoBehaviour
@@ -8,9 +9,11 @@ public class PlayerGanchoController : MonoBehaviour
     
     public float ganchoSpeed = 1;
     private float ganchoSpeedInicio = 1;
+    public float ganchoFuerza = 2;
 
     private GameObject puntoAnclaje;
     private GameObject indicadorLanzarGancho;
+    private PlayerMovement playerMovement;
     
     private bool ganchoDisparado = false;
     private bool puedeDisparar = true;
@@ -28,6 +31,7 @@ public class PlayerGanchoController : MonoBehaviour
         ganchoSpeedInicio = ganchoSpeed;
         rigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<CapsuleCollider2D>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Start()
@@ -83,7 +87,7 @@ public class PlayerGanchoController : MonoBehaviour
             if (puedeDisparar)
             {
                 boxCollider.enabled = false;
-                Vector2 direccionDisparargancho = new Vector2(puntoAnclaje.transform.position.x - transform.position.x,
+                direccionDisparargancho = new Vector2(puntoAnclaje.transform.position.x - transform.position.x,
                     puntoAnclaje.transform.position.y - transform.position.y);
 
                 RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direccionDisparargancho);
@@ -107,16 +111,12 @@ public class PlayerGanchoController : MonoBehaviour
             {
                 if (Input.GetButtonDown("Fire1"))
                 {
+                    playerMovement.mov = false;
                     ganchoDisparado = true;
                 }
             }
         }
-
         
-    }
-
-    private void LateUpdate()
-    {
         if (ganchoDisparado)
         {
             float distancia = Vector3.Distance(transform.position, puntoAnclaje.transform.position);
@@ -127,14 +127,38 @@ public class PlayerGanchoController : MonoBehaviour
             else
             {
                 rigidbody.gravityScale = 1;
+                
+                /*Vector2 dir = puntoAnclaje.transform.position - transform.position;
+                dir = dir.normalized;
+
+                Debug.Log(dir);
+                
+                //rigidbody.AddRelativeForce(dir * 10, ForceMode2D.Impulse);
+                
+                float Angle = 45;   // left hand rule!
+ 
+                Quaternion rotation = Quaternion.Euler( 0, 0, Angle);   // make the rotation around the Z axis (going into the screen)
+                
+                rigidbody.AddForce(rotation * dir * 10, ForceMode2D.Impulse);*/
+                
+                //rigidbody.AddForce(Vector2.up * ganchoFuerza, ForceMode2D.Impulse);
+                rigidbody.AddForce(new Vector3(30, 30, 0) * ganchoFuerza, ForceMode2D.Impulse);
+                
+                playerMovement.mov = true;
                 ganchoDisparado = false;
             }
         }
     }
 
+    private void LateUpdate()
+    {
+        
+    }
+
     public void lanzarGanchoAnclaje()
     {
         rigidbody.gravityScale = 0;
+        Debug.Log(rigidbody.velocity);
         transform.position = Vector3.MoveTowards(transform.position, puntoAnclaje.transform.position, ganchoSpeed);
     }
 }

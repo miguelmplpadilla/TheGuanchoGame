@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     private GroundController groundController;
 
+    public bool mov = true;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
