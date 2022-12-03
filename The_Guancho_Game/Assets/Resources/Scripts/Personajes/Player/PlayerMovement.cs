@@ -24,21 +24,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        movement = new Vector2(horizontalInput, 0f);
-
-        // Flip character
-        if (horizontalInput > 0f) {
-            gameObject.transform.localScale = new Vector3(1, 1, 1);
-        } else if (horizontalInput < 0f) {
-            gameObject.transform.localScale = new Vector3(-1, 1, 1);
-        }
-
-        if (groundController.isGrounded)
+        if (mov)
         {
-            if (Input.GetButtonDown("Jump"))
+            float horizontalInput = Input.GetAxisRaw("Horizontal");
+            movement = new Vector2(horizontalInput, 0f);
+
+            // Flip character
+            if (horizontalInput > 0f) {
+                gameObject.transform.localScale = new Vector3(1, 1, 1);
+            } else if (horizontalInput < 0f) {
+                gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            }
+
+            if (groundController.isGrounded)
             {
-                saltar();
+                if (Input.GetButtonDown("Jump"))
+                {
+                    saltar();
+                }
             }
         }
     }
@@ -50,7 +53,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        float horizontalVelocity = movement.normalized.x * speed;
-        rigidbody.velocity = new Vector2(horizontalVelocity, rigidbody.velocity.y);
+        if (mov)
+        {
+            float horizontalVelocity = movement.normalized.x * speed;
+            rigidbody.velocity = new Vector2(horizontalVelocity, rigidbody.velocity.y);
+        }
     }
 }

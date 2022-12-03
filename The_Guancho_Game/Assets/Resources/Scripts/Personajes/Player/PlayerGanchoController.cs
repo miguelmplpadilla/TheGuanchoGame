@@ -12,6 +12,7 @@ public class PlayerGanchoController : MonoBehaviour
     public float ganchoFuerza = 2;
 
     private GameObject puntoAnclaje;
+    private Vector3 posicionEnganche;
     private GameObject indicadorLanzarGancho;
     private PlayerMovement playerMovement;
     
@@ -20,7 +21,7 @@ public class PlayerGanchoController : MonoBehaviour
     
     private Rigidbody2D rigidbody;
 
-    private CapsuleCollider2D boxCollider;
+    private BoxCollider2D boxCollider;
 
     private GameObject[] puntosAnclaje;
 
@@ -30,7 +31,7 @@ public class PlayerGanchoController : MonoBehaviour
     {
         ganchoSpeedInicio = ganchoSpeed;
         rigidbody = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<CapsuleCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
         playerMovement = GetComponent<PlayerMovement>();
     }
 
@@ -119,46 +120,34 @@ public class PlayerGanchoController : MonoBehaviour
         
         if (ganchoDisparado)
         {
-            float distancia = Vector3.Distance(transform.position, puntoAnclaje.transform.position);
-            if (distancia > 2)
+            float distancia = Vector3.Distance(transform.position, posicionEnganche);
+            if (distancia > 0)
             {
                 lanzarGanchoAnclaje();
             }
             else
             {
-                rigidbody.gravityScale = 1;
-                
-                /*Vector2 dir = puntoAnclaje.transform.position - transform.position;
-                dir = dir.normalized;
-
-                Debug.Log(dir);
-                
-                //rigidbody.AddRelativeForce(dir * 10, ForceMode2D.Impulse);
-                
-                float Angle = 45;   // left hand rule!
- 
-                Quaternion rotation = Quaternion.Euler( 0, 0, Angle);   // make the rotation around the Z axis (going into the screen)
-                
-                rigidbody.AddForce(rotation * dir * 10, ForceMode2D.Impulse);*/
-                
-                //rigidbody.AddForce(Vector2.up * ganchoFuerza, ForceMode2D.Impulse);
-                rigidbody.AddForce(new Vector3(30, 30, 0) * ganchoFuerza, ForceMode2D.Impulse);
-                
-                playerMovement.mov = true;
-                ganchoDisparado = false;
+                StartCoroutine("putMovFalse");
             }
         }
     }
 
-    private void LateUpdate()
+    private IEnumerator putMovFalse()
     {
-        
+        yield return new WaitForSeconds(0.2f);
+        rigidbody.gravityScale = 1;
+        playerMovement.mov = true;
+        ganchoDisparado = false;
     }
 
     public void lanzarGanchoAnclaje()
     {
         rigidbody.gravityScale = 0;
-        Debug.Log(rigidbody.velocity);
-        transform.position = Vector3.MoveTowards(transform.position, puntoAnclaje.transform.position, ganchoSpeed);
+        rigidbody.velocity = Vector2.zero;
+
+        posicionEnganche = new Vector3(puntoAnclaje.transform.position.x, puntoAnclaje.transform.position.y - 1,
+            puntoAnclaje.transform.position.z);
+        
+        transform.position = Vector3.MoveTowards(transform.position, posicionEnganche, ganchoSpeed);
     }
 }
