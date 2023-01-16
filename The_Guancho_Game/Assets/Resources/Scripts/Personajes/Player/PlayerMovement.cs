@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         if (mov)
         {
             float horizontalInput = Input.GetAxisRaw("Horizontal");
-            movement = new Vector2(horizontalInput, 0f);
+            movement = new Vector2(horizontalInput, 0f) * Time.deltaTime;
 
             // Flip character
             if (horizontalInput > 0f) {
@@ -56,7 +56,9 @@ public class PlayerMovement : MonoBehaviour
         if (mov)
         {
             float horizontalVelocity = movement.normalized.x * speed;
-            rigidbody.velocity = new Vector2(horizontalVelocity, rigidbody.velocity.y);
+            //rigidbody.velocity = new Vector2(horizontalVelocity, rigidbody.velocity.y);
+            
+            transform.Translate(movement * speed);
         }
     }
 }

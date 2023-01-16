@@ -121,13 +121,17 @@ public class PlayerGanchoController : MonoBehaviour
         if (ganchoDisparado)
         {
             float distancia = Vector3.Distance(transform.position, posicionEnganche);
-            if (distancia > 0)
+            if (distancia > 0.1f)
             {
                 lanzarGanchoAnclaje();
             }
             else
             {
-                StartCoroutine("putMovFalse");
+                rigidbody.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
+                //StartCoroutine("putMovFalse");
+                rigidbody.gravityScale = 1;
+                playerMovement.mov = true;
+                ganchoDisparado = false;
             }
         }
     }
