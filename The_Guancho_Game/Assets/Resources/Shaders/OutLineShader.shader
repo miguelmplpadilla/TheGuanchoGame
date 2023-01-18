@@ -12,7 +12,7 @@ Shader "Custom/CelColoredOutline"
 	SubShader
 	{
 		// Regular color & lighting pass
-		Pass
+		/*Pass
 		{
             Tags
 			{ 
@@ -125,7 +125,7 @@ Shader "Custom/CelColoredOutline"
                 SHADOW_CASTER_FRAGMENT(i)
             }
             ENDCG
-    	}
+    	}*/
 
 		// Outline pass
 		Pass
@@ -187,7 +187,7 @@ Shader "Custom/CelColoredOutline"
 
 			float4 frag(vertexOutput input) : COLOR
 			{
-				//float4 color = input.color * _OutlineColor;
+				float4 color = input.color * _OutlineColor;
 				return input.color;
 			}
 

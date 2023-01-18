@@ -27,6 +27,9 @@ public class PlayerGanchoController : MonoBehaviour
 
     private Vector2 direccionDisparargancho;
 
+    public float distanciaGanchoInicio = 0;
+    public float velocidadGancho = 0;
+
     private void Awake()
     {
         ganchoSpeedInicio = ganchoSpeed;
@@ -112,6 +115,7 @@ public class PlayerGanchoController : MonoBehaviour
             {
                 if (Input.GetButtonDown("Fire1"))
                 {
+                    distanciaGanchoInicio = Vector2.Distance(transform.position, puntoAnclaje.transform.position);
                     playerMovement.mov = false;
                     ganchoDisparado = true;
                 }
@@ -149,9 +153,13 @@ public class PlayerGanchoController : MonoBehaviour
         rigidbody.gravityScale = 0;
         rigidbody.velocity = Vector2.zero;
 
-        posicionEnganche = new Vector3(puntoAnclaje.transform.position.x, puntoAnclaje.transform.position.y - 1,
+        posicionEnganche = new Vector3(puntoAnclaje.transform.position.x, puntoAnclaje.transform.position.y - 2,
             puntoAnclaje.transform.position.z);
+
+        float distanciaGancho = Vector2.Distance(puntoAnclaje.transform.position, transform.position);
+
+        velocidadGancho = (ganchoSpeed * distanciaGancho) / distanciaGanchoInicio;
         
-        transform.position = Vector3.MoveTowards(transform.position, posicionEnganche, ganchoSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, posicionEnganche, velocidadGancho);
     }
 }
