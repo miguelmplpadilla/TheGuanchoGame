@@ -13,6 +13,14 @@ public class GroundController : MonoBehaviour
         rigidbody = GetComponentInParent<Rigidbody2D>();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Suelo"))
+        {
+            rigidbody.velocity = Vector2.zero;
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Suelo"))

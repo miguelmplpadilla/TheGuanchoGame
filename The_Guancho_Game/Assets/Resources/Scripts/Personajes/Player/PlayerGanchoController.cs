@@ -22,6 +22,7 @@ public class PlayerGanchoController : MonoBehaviour
     private Rigidbody2D rigidbody;
 
     private BoxCollider2D boxCollider;
+    public DistanceJoint2D distanceJoint;
 
     private GameObject[] puntosAnclaje;
 
@@ -29,6 +30,8 @@ public class PlayerGanchoController : MonoBehaviour
 
     public float distanciaGanchoInicio = 0;
     public float velocidadGancho = 0;
+
+    public float fuerzaSalidaGancho = 0;
 
     private void Awake()
     {
@@ -113,10 +116,13 @@ public class PlayerGanchoController : MonoBehaviour
 
             if (puedeDisparar)
             {
-                if (Input.GetButtonDown("Fire1"))
+                if (Input.GetButtonDown("Fire2"))
                 {
                     distanciaGanchoInicio = Vector2.Distance(transform.position, puntoAnclaje.transform.position);
-                    playerMovement.mov = false;
+                    if (!puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("balanceo"))
+                    {
+                        playerMovement.mov = false;
+                    }
                     ganchoDisparado = true;
                 }
             }
@@ -131,7 +137,15 @@ public class PlayerGanchoController : MonoBehaviour
             }
             else
             {
-                rigidbody.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
+                if (transform.position.x < puntoAnclaje.transform.position.x)
+                {
+                    rigidbody.AddForce(Vector2.left * 5, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    rigidbody.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
+                }
+                
                 //StartCoroutine("putMovFalse");
                 rigidbody.gravityScale = 1;
                 playerMovement.mov = true;
@@ -150,16 +164,44 @@ public class PlayerGanchoController : MonoBehaviour
 
     public void lanzarGanchoAnclaje()
     {
-        rigidbody.gravityScale = 0;
-        rigidbody.velocity = Vector2.zero;
+        if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enganche"))
+        {
+            rigidbody.gravityScale = 0;
+            rigidbody.velocity = Vector2.zero;
 
-        posicionEnganche = new Vector3(puntoAnclaje.transform.position.x, puntoAnclaje.transform.position.y - 2,
-            puntoAnclaje.transform.position.z);
+            posicionEnganche = new Vector3(puntoAnclaje.transform.position.x, puntoAnclaje.transform.position.y - 2,
+                puntoAnclaje.transform.position.z);
 
-        float distanciaGancho = Vector2.Distance(puntoAnclaje.transform.position, transform.position);
+            float distanciaGancho = Vector2.Distance(puntoAnclaje.transform.position, transform.position);
 
-        velocidadGancho = (ganchoSpeed * distanciaGancho) / distanciaGanchoInicio;
+            velocidadGancho = (ganchoSpeed * distanciaGancho) / distanciaGanchoInicio;
         
-        transform.position = Vector3.MoveTowards(transform.position, posicionEnganche, velocidadGancho);
+            transform.position = Vector3.MoveTowards(transform.position, posicionEnganche, velocidadGancho);
+        } else if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("balanceo"))
+        {
+            distanceJoint.enabled = true;
+            distanceJoint.connectedBody = puntoAnclaje.GetComponent<Rigidbody2D>();
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                distanceJoint.enabled = false;
+                rigidbody.velocity = rigidbody.velocity / 3;
+                rigidbody.AddForce(Vector2.up * fuerzaSalidaGancho, ForceMode2D.Impulse);
+                
+                /*if (transform.position.x < puntoAnclaje.transform.position.x)
+                {
+                    rigidbody.AddForce((Vector2.left + Vector2.up) * fuerzaSalidaGancho, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    rigidbody.AddForce((Vector2.right + Vector2.up) * fuerzaSalidaGancho, ForceMode2D.Impulse);
+                }*/
+                
+                rigidbody.gravityScale = 1;
+                playerMovement.mov = true;
+                ganchoDisparado = false;
+            }
+        }
+        
     }
 }

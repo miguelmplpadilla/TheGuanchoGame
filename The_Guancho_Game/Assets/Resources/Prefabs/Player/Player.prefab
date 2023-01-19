@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &596571264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596571265}
+  m_Layer: 3
+  m_Name: ShootPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &596571265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596571264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.51, y: 0.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6105667509878236676}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6105667509168614828
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,6 +114,7 @@ GameObject:
   - component: {fileID: 6105667509878236676}
   - component: {fileID: 6105667509878236679}
   - component: {fileID: 6105667509878236678}
+  - component: {fileID: 5809872060530874505}
   - component: {fileID: 6105667509878236677}
   - component: {fileID: 6105667509878236674}
   - component: {fileID: 6105667509878236921}
@@ -91,7 +123,7 @@ GameObject:
   - component: {fileID: 2836793977815757371}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,6 +141,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6105667509168614829}
+  - {fileID: 596571265}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -163,6 +196,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5809872060530874505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6105667509878236923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c6f0dffc5605f459873f2774b5e9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kunai: {fileID: 7011902203123846563, guid: f67ec7510ebfe1c4ba6e2b44670b466b, type: 3}
+  shootPoint: {fileID: 596571264}
+  speedKunai: 30
+  isKunaiLanzado: 0
 --- !u!114 &6105667509878236677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,8 +241,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ganchoSpeed: 0.5
   ganchoFuerza: 4
+  distanceJoint: {fileID: 2836793977815757371}
   distanciaGanchoInicio: 0
   velocidadGancho: 0
+  fuerzaSalidaGancho: 5
 --- !u!70 &6105667509878236921
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -264,7 +315,7 @@ DistanceJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6105667509878236923}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 0}
@@ -274,5 +325,5 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 0
-  m_Distance: 7.28506
-  m_MaxDistanceOnly: 1
+  m_Distance: 7
+  m_MaxDistanceOnly: 0
