@@ -10,6 +10,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../Farming_Tales/FarmingTales/Assets/Scripts/Personajes/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../MedievalBattle/MedievalBattle/Assets/Resources/Scripts/Personajes/MovementController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enganche/PuntoAnclajeScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/KunaiController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../gravity_long/Gravity_Long/Assets/Scripts/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -81,6 +82,8 @@
       <workItem from="1673951582410" duration="1697000" />
       <workItem from="1674030330284" duration="5410000" />
       <workItem from="1674113809927" duration="5934000" />
+      <workItem from="1674202428082" duration="3644000" />
+      <workItem from="1674206264891" duration="799000" />
     </task>
     <servers />
   </component>

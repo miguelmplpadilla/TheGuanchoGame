@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,7 +13,6 @@ public class PlayerGanchoController : MonoBehaviour
     public float ganchoFuerza = 2;
 
     private GameObject puntoAnclaje;
-    private Vector3 posicionEnganche;
     private GameObject indicadorLanzarGancho;
     private PlayerMovement playerMovement;
     
@@ -24,7 +24,7 @@ public class PlayerGanchoController : MonoBehaviour
     private BoxCollider2D boxCollider;
     public DistanceJoint2D distanceJoint;
 
-    private GameObject[] puntosAnclaje;
+    public List<GameObject> puntosAnclaje;
 
     private Vector2 direccionDisparargancho;
 
@@ -44,14 +44,23 @@ public class PlayerGanchoController : MonoBehaviour
     private void Start()
     {
         indicadorLanzarGancho = GameObject.Find("IndicadorLanzarGancho");
-        puntosAnclaje = GameObject.FindGameObjectsWithTag("PuntoAnclaje");
+        puntosAnclaje = GameObject.FindGameObjectsWithTag("PuntoAnclaje").ToList();
     }
 
     void Update()
     {
+        if (puntoAnclaje == null)
+        {
+            indicadorLanzarGancho.GetComponent<MeshRenderer>().enabled = false;
+        }
+        else
+        {
+            indicadorLanzarGancho.GetComponent<MeshRenderer>().enabled = true;
+        }
+        
         if (!ganchoDisparado)
         {
-            float anclajeCercano = 100;
+            float anclajeCercano = 1000;
             foreach (var anclaje in puntosAnclaje)
             {
                 float distancia = Vector2.Distance(transform.position, anclaje.transform.position);
@@ -76,7 +85,12 @@ public class PlayerGanchoController : MonoBehaviour
                 }
             }
 
-            float distanciaPuntoAnclaje = Vector2.Distance(transform.position, puntoAnclaje.transform.position);
+            float distanciaPuntoAnclaje = 0;
+            
+            if (puntoAnclaje != null)
+            {
+                distanciaPuntoAnclaje = Vector2.Distance(transform.position, puntoAnclaje.transform.position);
+            }
 
             if (distanciaPuntoAnclaje <= 15)
             {
@@ -127,17 +141,18 @@ public class PlayerGanchoController : MonoBehaviour
                 }
             }
         }
-        
+
         if (ganchoDisparado)
         {
-            float distancia = Vector3.Distance(transform.position, posicionEnganche);
-            if (distancia > 0.1f)
+            float distancia = Vector3.Distance(transform.position, puntoAnclaje.transform.position);
+            Debug.Log(distancia);
+            if (distancia > 2f)
             {
                 lanzarGanchoAnclaje();
             }
             else
             {
-                if (transform.position.x < puntoAnclaje.transform.position.x)
+                if (transform.position.x > puntoAnclaje.transform.position.x)
                 {
                     rigidbody.AddForce(Vector2.left * 5, ForceMode2D.Impulse);
                 }
@@ -145,8 +160,13 @@ public class PlayerGanchoController : MonoBehaviour
                 {
                     rigidbody.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
                 }
-                
-                //StartCoroutine("putMovFalse");
+
+                puntosAnclaje.Remove(puntoAnclaje);
+
+                if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
+                {
+                    puntoAnclaje.SendMessage("hit", 1);
+                }
                 rigidbody.gravityScale = 1;
                 playerMovement.mov = true;
                 ganchoDisparado = false;
@@ -164,20 +184,19 @@ public class PlayerGanchoController : MonoBehaviour
 
     public void lanzarGanchoAnclaje()
     {
-        if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enganche"))
+        PuntoAnclajeScript puntoAnclajeScript = puntoAnclaje.GetComponent<PuntoAnclajeScript>();
+        
+        if (puntoAnclajeScript.tipoEnganche.Equals("enganche") || puntoAnclajeScript.tipoEnganche.Equals("enemigo"))
         {
             rigidbody.gravityScale = 0;
             rigidbody.velocity = Vector2.zero;
-
-            posicionEnganche = new Vector3(puntoAnclaje.transform.position.x, puntoAnclaje.transform.position.y - 2,
-                puntoAnclaje.transform.position.z);
 
             float distanciaGancho = Vector2.Distance(puntoAnclaje.transform.position, transform.position);
 
             velocidadGancho = (ganchoSpeed * distanciaGancho) / distanciaGanchoInicio;
         
-            transform.position = Vector3.MoveTowards(transform.position, posicionEnganche, velocidadGancho);
-        } else if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("balanceo"))
+            transform.position = Vector3.MoveTowards(transform.position, puntoAnclaje.transform.position, velocidadGancho);
+        } else if (puntoAnclajeScript.tipoEnganche.Equals("balanceo"))
         {
             distanceJoint.enabled = true;
             distanceJoint.connectedBody = puntoAnclaje.GetComponent<Rigidbody2D>();
