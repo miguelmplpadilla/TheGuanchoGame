@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class PlayerGanchoController : MonoBehaviour
 {
-    
     public float ganchoSpeed = 1;
     private float ganchoSpeedInicio = 1;
     public float ganchoFuerza = 2;
@@ -33,6 +32,8 @@ public class PlayerGanchoController : MonoBehaviour
 
     public float fuerzaSalidaGancho = 0;
 
+    private CameraController cameraController;
+
     private void Awake()
     {
         ganchoSpeedInicio = ganchoSpeed;
@@ -45,6 +46,7 @@ public class PlayerGanchoController : MonoBehaviour
     {
         indicadorLanzarGancho = GameObject.Find("IndicadorLanzarGancho");
         puntosAnclaje = GameObject.FindGameObjectsWithTag("PuntoAnclaje").ToList();
+        cameraController = GameObject.Find("CM vcam1").GetComponent<CameraController>();
     }
 
     void Update()
@@ -90,54 +92,54 @@ public class PlayerGanchoController : MonoBehaviour
             if (puntoAnclaje != null)
             {
                 distanciaPuntoAnclaje = Vector2.Distance(transform.position, puntoAnclaje.transform.position);
-            }
-
-            if (distanciaPuntoAnclaje <= 15)
-            {
-                indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.green;
-                indicadorLanzarGancho.transform.position = new Vector3(puntoAnclaje.transform.position.x, puntoAnclaje.transform.position.y, 
-                    indicadorLanzarGancho.transform.position.z);
-                puedeDisparar = true;
-            }
-            else
-            {
-                indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.red;
-                puedeDisparar = false;
-            }
-
-            if (puedeDisparar)
-            {
-                boxCollider.enabled = false;
-                direccionDisparargancho = new Vector2(puntoAnclaje.transform.position.x - transform.position.x,
-                    puntoAnclaje.transform.position.y - transform.position.y);
-
-                RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direccionDisparargancho);
-
-                Debug.DrawRay(transform.position, direccionDisparargancho, Color.red);
-
-                if (hitInfo.collider.tag.Equals("PuntoAnclaje"))
+                
+                if (distanciaPuntoAnclaje <= 15)
                 {
+                    indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.green;
+                    indicadorLanzarGancho.transform.position = new Vector3(puntoAnclaje.transform.position.x, puntoAnclaje.transform.position.y, 
+                        indicadorLanzarGancho.transform.position.z);
                     puedeDisparar = true;
                 }
                 else
                 {
-                    puedeDisparar = false;
                     indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.red;
+                    puedeDisparar = false;
+                }
+                
+                if (puedeDisparar)
+                {
+                    boxCollider.enabled = false;
+                    direccionDisparargancho = new Vector2(puntoAnclaje.transform.position.x - transform.position.x,
+                        puntoAnclaje.transform.position.y - transform.position.y);
+
+                    RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direccionDisparargancho);
+
+                    Debug.DrawRay(transform.position, direccionDisparargancho, Color.red);
+
+                    if (hitInfo.collider.tag.Equals("PuntoAnclaje"))
+                    {
+                        puedeDisparar = true;
+                    }
+                    else
+                    {
+                        puedeDisparar = false;
+                        indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.red;
+                    }
+
+                    boxCollider.enabled = true;
                 }
 
-                boxCollider.enabled = true;
-            }
-
-            if (puedeDisparar)
-            {
-                if (Input.GetButtonDown("Fire2"))
+                if (puedeDisparar)
                 {
-                    distanciaGanchoInicio = Vector2.Distance(transform.position, puntoAnclaje.transform.position);
-                    if (!puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("balanceo"))
+                    if (Input.GetButtonDown("Fire2"))
                     {
-                        playerMovement.mov = false;
+                        distanciaGanchoInicio = Vector2.Distance(transform.position, puntoAnclaje.transform.position);
+                        if (!puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("balanceo"))
+                        {
+                            playerMovement.mov = false;
+                        }
+                        ganchoDisparado = true;
                     }
-                    ganchoDisparado = true;
                 }
             }
         }
@@ -166,7 +168,9 @@ public class PlayerGanchoController : MonoBehaviour
                 if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
                 {
                     puntoAnclaje.SendMessage("hit", 1);
+                    cameraController.shakeDuration = 1;
                 }
+
                 rigidbody.gravityScale = 1;
                 playerMovement.mov = true;
                 ganchoDisparado = false;

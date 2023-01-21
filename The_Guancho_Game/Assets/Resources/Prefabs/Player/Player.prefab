@@ -173,7 +173,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fddd8895cac05c345af692917aa21faf, type: 2}
+  - {fileID: 2100000, guid: 92aa9eb62adec9e4498de03edf4a09fc, type: 2}
   - {fileID: 2100000, guid: 8696bb2c4b1b332468ab5b3c12f5b61b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -212,6 +212,7 @@ MonoBehaviour:
   shootPoint: {fileID: 596571264}
   speedKunai: 30
   isKunaiLanzado: 0
+  numKunais: 5
 --- !u!114 &6105667509878236677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +243,7 @@ MonoBehaviour:
   ganchoSpeed: 0.5
   ganchoFuerza: 4
   distanceJoint: {fileID: 2836793977815757371}
+  puntosAnclaje: []
   distanciaGanchoInicio: 0
   velocidadGancho: 0
   fuerzaSalidaGancho: 5

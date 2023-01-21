@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/Player/PlayerCamara.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Farming_Tales/FarmingTales/Assets/Scripts/Personajes/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../MedievalBattle/MedievalBattle/Assets/Resources/Scripts/Personajes/MovementController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -84,6 +85,7 @@
       <workItem from="1674113809927" duration="5934000" />
       <workItem from="1674202428082" duration="3644000" />
       <workItem from="1674206264891" duration="799000" />
+      <workItem from="1674238738494" duration="1659000" />
     </task>
     <servers />
   </component>
