@@ -66,6 +66,7 @@ public class PlayerGanchoController : MonoBehaviour
             foreach (var anclaje in puntosAnclaje)
             {
                 float distancia = Vector2.Distance(transform.position, anclaje.transform.position);
+                
                 if (distancia < anclajeCercano)
                 {
                     if (transform.localScale.x > 0)
@@ -147,7 +148,6 @@ public class PlayerGanchoController : MonoBehaviour
         if (ganchoDisparado)
         {
             float distancia = Vector3.Distance(transform.position, puntoAnclaje.transform.position);
-            Debug.Log(distancia);
             if (distancia > 2f)
             {
                 lanzarGanchoAnclaje();
@@ -163,12 +163,11 @@ public class PlayerGanchoController : MonoBehaviour
                     rigidbody.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
                 }
 
-                puntosAnclaje.Remove(puntoAnclaje);
-
                 if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
                 {
+                    puntosAnclaje.Remove(puntoAnclaje);
                     puntoAnclaje.SendMessage("hit", 1);
-                    cameraController.shakeDuration = 1;
+                    cameraController.shakeCamera(0.2f,3);
                 }
 
                 rigidbody.gravityScale = 1;
@@ -195,10 +194,17 @@ public class PlayerGanchoController : MonoBehaviour
             rigidbody.gravityScale = 0;
             rigidbody.velocity = Vector2.zero;
 
-            float distanciaGancho = Vector2.Distance(puntoAnclaje.transform.position, transform.position);
+            if (!puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
+            {
+                float distanciaGancho = Vector2.Distance(puntoAnclaje.transform.position, transform.position);
 
-            velocidadGancho = (ganchoSpeed * distanciaGancho) / distanciaGanchoInicio;
-        
+                velocidadGancho = (ganchoSpeed * distanciaGancho) / distanciaGanchoInicio;
+            }
+            else
+            {
+                velocidadGancho = ganchoSpeed;
+            }
+
             transform.position = Vector3.MoveTowards(transform.position, puntoAnclaje.transform.position, velocidadGancho);
         } else if (puntoAnclajeScript.tipoEnganche.Equals("balanceo"))
         {

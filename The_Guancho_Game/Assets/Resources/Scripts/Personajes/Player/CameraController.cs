@@ -7,9 +7,6 @@ using Random = UnityEngine.Random;
 
 public class CameraController : MonoBehaviour
 {
-    public float shakeDuration = 0;
-    public float decreaseFactor = 2;
-
     private CinemachineVirtualCamera cinemachineVirtual;
     private CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin;
 
@@ -20,22 +17,18 @@ public class CameraController : MonoBehaviour
             cinemachineVirtual.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
-    private void Update()
+    public void shakeCamera(float tiempoShake, float amountShake)
     {
-        cameraShake();
+        StartCoroutine(cameraShake(tiempoShake, amountShake));
     }
 
-    public void cameraShake()
+    IEnumerator cameraShake(float tiempoShake, float amountShake)
     {
-        if (shakeDuration > 0)
-        {
-            shakeDuration -= Time.deltaTime * decreaseFactor;
-        }
-        else
-        {
-            shakeDuration = 0f;
-        }
         
-        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = shakeDuration;
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = amountShake;
+        
+        yield return new WaitForSeconds(tiempoShake);
+        
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
     }
 }

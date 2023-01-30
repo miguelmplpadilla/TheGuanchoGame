@@ -16,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
 
     public bool mov = true;
 
+    private float horizontalInput = 0;
+    private float verticalInput = 0;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -26,8 +29,26 @@ public class PlayerMovement : MonoBehaviour
     {
         if (mov)
         {
-            float horizontalInput = Input.GetAxisRaw("Horizontal");
-            movement = new Vector2(horizontalInput, 0f) * Time.deltaTime;
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+
+            if (!groundController.isGrounded)
+            {
+                if (Input.GetAxisRaw("Vertical") < 0)
+                {
+                    verticalInput = -1;
+                }
+                else
+                {
+                    verticalInput = 0;
+                }
+            }
+            else
+            {
+                verticalInput = 0;
+            }
+
+            movement = new Vector2(horizontalInput, verticalInput) * Time.deltaTime;
+            
 
             // Flip character
             if (horizontalInput > 0f) {
@@ -43,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
                     saltar();
                 }
             }
+            
         }
     }
     
