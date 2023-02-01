@@ -14,6 +14,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enganche/PuntoAnclajeScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/KunaiController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../gravity_long/Gravity_Long/Assets/Scripts/Player/GroundController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../gravity_long/Gravity_Long/Assets/Scripts/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://D:/Clase/Unity/Tema1-Ejercicios/Assets/Resources/Scripts/Ejercicio3/CuadradoControllerEjercicio3.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -87,6 +88,7 @@
       <workItem from="1674206264891" duration="799000" />
       <workItem from="1674238738494" duration="1659000" />
       <workItem from="1674546483203" duration="4359000" />
+      <workItem from="1675239473955" duration="2415000" />
     </task>
     <servers />
   </component>

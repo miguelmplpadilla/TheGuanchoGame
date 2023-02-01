@@ -73,6 +73,11 @@ public class PlayerMovement : MonoBehaviour
         rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
+
     private void LateUpdate()
     {
         if (mov)
