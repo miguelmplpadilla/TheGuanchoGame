@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class ItemKunaiController : MonoBehaviour
 {
+
+    public VariablesPlayer variablesPlayer;
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
             PlayerCombateController playerCombateController = col.GetComponent<PlayerCombateController>();
-            if (playerCombateController.numKunais < 5)
+            if (variablesPlayer.kunais < 5)
             {
-                playerCombateController.numKunais++;
+                variablesPlayer.sumarKunais(1);
                 Destroy(gameObject);
             }
         }
