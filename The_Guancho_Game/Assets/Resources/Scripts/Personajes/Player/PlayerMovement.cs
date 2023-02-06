@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     public float jumpForce;
     
-    private Vector2 movement;
+    public Vector2 movement;
 
     private Rigidbody2D rigidbody;
 

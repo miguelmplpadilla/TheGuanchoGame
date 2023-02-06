@@ -34,6 +34,11 @@ public class PlayerGanchoController : MonoBehaviour
 
     private CameraController cameraController;
 
+    public GameObject gancho;
+    public bool ganchoEnganchado = false;
+    public float speedDisparoGancho = 2;
+    public Vector3 posicionInicialGancho;
+
     private void Awake()
     {
         ganchoSpeedInicio = ganchoSpeed;
@@ -47,6 +52,8 @@ public class PlayerGanchoController : MonoBehaviour
         indicadorLanzarGancho = GameObject.Find("IndicadorLanzarGancho");
         puntosAnclaje = GameObject.FindGameObjectsWithTag("PuntoAnclaje").ToList();
         cameraController = GameObject.Find("CM vcam1").GetComponent<CameraController>();
+
+        posicionInicialGancho = gancho.transform.localPosition;
     }
 
     void Update()
@@ -139,13 +146,15 @@ public class PlayerGanchoController : MonoBehaviour
                         {
                             playerMovement.mov = false;
                         }
+
+                        StartCoroutine(moverGanchoAEnganche());
                         ganchoDisparado = true;
                     }
                 }
             }
         }
 
-        if (ganchoDisparado)
+        if (ganchoEnganchado)
         {
             float distancia = Vector3.Distance(transform.position, puntoAnclaje.transform.position);
             if (distancia > 2f)
@@ -154,11 +163,11 @@ public class PlayerGanchoController : MonoBehaviour
             }
             else
             {
-                if (transform.position.x > puntoAnclaje.transform.position.x)
+                if (playerMovement.movement.x < 0)
                 {
                     rigidbody.AddForce(Vector2.left * 5, ForceMode2D.Impulse);
                 }
-                else
+                else if (playerMovement.movement.x > 0) 
                 {
                     rigidbody.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
                 }
@@ -173,8 +182,33 @@ public class PlayerGanchoController : MonoBehaviour
                 rigidbody.gravityScale = 1;
                 playerMovement.mov = true;
                 ganchoDisparado = false;
+                ganchoEnganchado = false;
+                gancho.transform.parent = transform;
+                gancho.transform.localPosition = posicionInicialGancho;
             }
         }
+        
+        gancho.GetComponent<LineRenderer>().SetPosition(0, gancho.transform.position);
+        gancho.GetComponent<LineRenderer>().SetPosition(1, transform.position);
+    }
+
+    private IEnumerator moverGanchoAEnganche()
+    {
+        gancho.transform.parent = null;
+        while (true)
+        {
+            gancho.transform.position = Vector2.MoveTowards(gancho.transform.position, puntoAnclaje.transform.position, speedDisparoGancho);
+            float distancia = Vector2.Distance(gancho.transform.position, puntoAnclaje.transform.position);
+            if (distancia < 0.1f)
+            {
+                ganchoEnganchado = true;
+                break;
+            }
+            
+            yield return null;
+        }
+
+        yield return null;
     }
 
     private IEnumerator putMovFalse()
@@ -217,18 +251,12 @@ public class PlayerGanchoController : MonoBehaviour
                 rigidbody.velocity = rigidbody.velocity / 3;
                 rigidbody.AddForce(Vector2.up * fuerzaSalidaGancho, ForceMode2D.Impulse);
                 
-                /*if (transform.position.x < puntoAnclaje.transform.position.x)
-                {
-                    rigidbody.AddForce((Vector2.left + Vector2.up) * fuerzaSalidaGancho, ForceMode2D.Impulse);
-                }
-                else
-                {
-                    rigidbody.AddForce((Vector2.right + Vector2.up) * fuerzaSalidaGancho, ForceMode2D.Impulse);
-                }*/
-                
                 rigidbody.gravityScale = 1;
                 playerMovement.mov = true;
                 ganchoDisparado = false;
+                ganchoEnganchado = false;
+                gancho.transform.parent = transform;
+                gancho.transform.localPosition = posicionInicialGancho;
             }
         }
         
