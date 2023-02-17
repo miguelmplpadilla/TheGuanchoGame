@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput = 0;
     private float verticalInput = 0;
 
+    public GameObject textoPlayer;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -52,9 +54,11 @@ public class PlayerMovement : MonoBehaviour
 
             // Flip character
             if (horizontalInput > 0f) {
-                gameObject.transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(1, 1, 1);
+                textoPlayer.transform.localScale = new Vector3(1,1,1);
             } else if (horizontalInput < 0f) {
-                gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(-1, 1, 1);
+                textoPlayer.transform.localScale = new Vector3(-1,1,1);
             }
 
             if (groundController.isGrounded)

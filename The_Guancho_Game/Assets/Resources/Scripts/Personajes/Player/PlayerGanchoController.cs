@@ -51,7 +51,7 @@ public class PlayerGanchoController : MonoBehaviour
     {
         indicadorLanzarGancho = GameObject.Find("IndicadorLanzarGancho");
         puntosAnclaje = GameObject.FindGameObjectsWithTag("PuntoAnclaje").ToList();
-        cameraController = GameObject.Find("CM vcam1").GetComponent<CameraController>();
+        cameraController = GameObject.Find("CM").GetComponent<CameraController>();
 
         posicionInicialGancho = gancho.transform.localPosition;
     }
