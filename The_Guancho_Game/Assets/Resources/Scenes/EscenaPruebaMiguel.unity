@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_OverrideArea: 0
-  m_Area: 1
+  m_Area: 0
   m_IgnoreFromBuild: 1
   m_AffectedAgents: ffffffff
 --- !u!1001 &169396813
@@ -1743,10 +1743,38 @@ PrefabInstance:
     - target: {fileID: 2978476018649067172, guid: 482d235947b5be8419ab7e9a72ab5791, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 81554818}
+      objectReference: {fileID: 0}
     - target: {fileID: 2978476018713514467, guid: 482d235947b5be8419ab7e9a72ab5791, type: 3}
       propertyPath: m_YDamping
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978476018713514468, guid: 482d235947b5be8419ab7e9a72ab5791, type: 3}
+      propertyPath: m_BiasX
+      value: -0.00000007947286
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978476018713514468, guid: 482d235947b5be8419ab7e9a72ab5791, type: 3}
+      propertyPath: m_DeadZoneWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978476018713514468, guid: 482d235947b5be8419ab7e9a72ab5791, type: 3}
+      propertyPath: m_DeadZoneHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978476018713514468, guid: 482d235947b5be8419ab7e9a72ab5791, type: 3}
+      propertyPath: m_VerticalDamping
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978476018713514468, guid: 482d235947b5be8419ab7e9a72ab5791, type: 3}
+      propertyPath: m_LookaheadIgnoreY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978476018713514468, guid: 482d235947b5be8419ab7e9a72ab5791, type: 3}
+      propertyPath: m_HorizontalDamping
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2978476018713514468, guid: 482d235947b5be8419ab7e9a72ab5791, type: 3}
+      propertyPath: m_LookaheadSmoothing
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2978476020568976704, guid: 482d235947b5be8419ab7e9a72ab5791, type: 3}
       propertyPath: m_RootOrder
@@ -1874,6 +1902,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6105667509878236674, guid: 1d46a450f4fc5134f8ac300e53c1a2d1, type: 3}
+      propertyPath: ganchoSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105667509878236674, guid: 1d46a450f4fc5134f8ac300e53c1a2d1, type: 3}
+      propertyPath: speedDisparoGancho
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6105667509878236676, guid: 1d46a450f4fc5134f8ac300e53c1a2d1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1919,9 +1955,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6105667509878236677, guid: 1d46a450f4fc5134f8ac300e53c1a2d1, type: 3}
+      propertyPath: jumpForce
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105667509878236677, guid: 1d46a450f4fc5134f8ac300e53c1a2d1, type: 3}
       propertyPath: textoPlayer
       value: 
       objectReference: {fileID: 1299427291}
+    - target: {fileID: 6105667509878236920, guid: 1d46a450f4fc5134f8ac300e53c1a2d1, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105667509878236920, guid: 1d46a450f4fc5134f8ac300e53c1a2d1, type: 3}
+      propertyPath: m_LinearDrag
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105667509878236920, guid: 1d46a450f4fc5134f8ac300e53c1a2d1, type: 3}
+      propertyPath: m_GravityScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6105667509878236920, guid: 1d46a450f4fc5134f8ac300e53c1a2d1, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6105667509878236923, guid: 1d46a450f4fc5134f8ac300e53c1a2d1, type: 3}
       propertyPath: m_Name
       value: Player

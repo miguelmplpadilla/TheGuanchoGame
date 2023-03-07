@@ -39,6 +39,8 @@ public class PlayerGanchoController : MonoBehaviour
     public float speedDisparoGancho = 2;
     public Vector3 posicionInicialGancho;
 
+    private float grvityScaleInicio;
+
     private void Awake()
     {
         ganchoSpeedInicio = ganchoSpeed;
@@ -54,6 +56,8 @@ public class PlayerGanchoController : MonoBehaviour
         cameraController = GameObject.Find("CM").GetComponent<CameraController>();
 
         posicionInicialGancho = gancho.transform.localPosition;
+
+        grvityScaleInicio = rigidbody.gravityScale;
     }
 
     void Update()
@@ -156,7 +160,7 @@ public class PlayerGanchoController : MonoBehaviour
                     cameraController.shakeCamera(0.2f,3);
                 }
 
-                rigidbody.gravityScale = 1;
+                rigidbody.gravityScale = grvityScaleInicio;
                 playerMovement.mov = true;
                 ganchoDisparado = false;
                 ganchoEnganchado = false;
@@ -203,7 +207,7 @@ public class PlayerGanchoController : MonoBehaviour
         gancho.transform.parent = null;
         while (true)
         {
-            gancho.transform.position = Vector2.MoveTowards(gancho.transform.position, puntoAnclaje.transform.position, speedDisparoGancho);
+            gancho.transform.position = Vector2.MoveTowards(gancho.transform.position, puntoAnclaje.transform.position, speedDisparoGancho * Time.deltaTime);
             float distancia = Vector2.Distance(gancho.transform.position, puntoAnclaje.transform.position);
             if (distancia < 0.1f)
             {
@@ -220,7 +224,7 @@ public class PlayerGanchoController : MonoBehaviour
     private IEnumerator putMovFalse()
     {
         yield return new WaitForSeconds(0.2f);
-        rigidbody.gravityScale = 1;
+        rigidbody.gravityScale = grvityScaleInicio;
         playerMovement.mov = true;
         ganchoDisparado = false;
     }
@@ -245,7 +249,7 @@ public class PlayerGanchoController : MonoBehaviour
                 velocidadGancho = ganchoSpeed;
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, puntoAnclaje.transform.position, velocidadGancho);
+            transform.position = Vector3.MoveTowards(transform.position, puntoAnclaje.transform.position, velocidadGancho * Time.deltaTime);
         } else if (puntoAnclajeScript.tipoEnganche.Equals("balanceo"))
         {
             distanceJoint.enabled = true;
@@ -257,7 +261,7 @@ public class PlayerGanchoController : MonoBehaviour
                 rigidbody.velocity = rigidbody.velocity / 3;
                 rigidbody.AddForce(Vector2.up * fuerzaSalidaGancho, ForceMode2D.Impulse);
                 
-                rigidbody.gravityScale = 1;
+                rigidbody.gravityScale = grvityScaleInicio;
                 playerMovement.mov = true;
                 ganchoDisparado = false;
                 ganchoEnganchado = false;
