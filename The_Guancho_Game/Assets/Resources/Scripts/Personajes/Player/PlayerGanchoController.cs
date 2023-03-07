@@ -18,7 +18,7 @@ public class PlayerGanchoController : MonoBehaviour
     public bool ganchoDisparado = false;
     public bool puedeDisparar = true;
     
-    private Rigidbody rigidbody;
+    private Rigidbody2D rigidbody;
 
     private BoxCollider2D boxCollider;
     public DistanceJoint2D distanceJoint;
@@ -42,7 +42,7 @@ public class PlayerGanchoController : MonoBehaviour
     private void Awake()
     {
         ganchoSpeedInicio = ganchoSpeed;
-        rigidbody = GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         playerMovement = GetComponent<PlayerMovement>();
     }
@@ -142,11 +142,11 @@ public class PlayerGanchoController : MonoBehaviour
             {
                 if (playerMovement.movement.x < 0)
                 {
-                    rigidbody.AddForce(Vector2.left * 5, ForceMode.Impulse);
+                    rigidbody.AddForce(Vector2.left * 5, ForceMode2D.Impulse);
                 }
                 else if (playerMovement.movement.x > 0) 
                 {
-                    rigidbody.AddForce(Vector2.right * 5, ForceMode.Impulse);
+                    rigidbody.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
                 }
 
                 if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
@@ -156,7 +156,7 @@ public class PlayerGanchoController : MonoBehaviour
                     cameraController.shakeCamera(0.2f,3);
                 }
 
-                rigidbody.mass = 1;
+                rigidbody.gravityScale = 1;
                 playerMovement.mov = true;
                 ganchoDisparado = false;
                 ganchoEnganchado = false;
@@ -220,7 +220,7 @@ public class PlayerGanchoController : MonoBehaviour
     private IEnumerator putMovFalse()
     {
         yield return new WaitForSeconds(0.2f);
-        rigidbody.mass = 1;
+        rigidbody.gravityScale = 1;
         playerMovement.mov = true;
         ganchoDisparado = false;
     }
@@ -231,7 +231,7 @@ public class PlayerGanchoController : MonoBehaviour
         
         if (puntoAnclajeScript.tipoEnganche.Equals("enganche") || puntoAnclajeScript.tipoEnganche.Equals("enemigo"))
         {
-            rigidbody.mass = 0;
+            rigidbody.gravityScale = 0;
             rigidbody.velocity = Vector2.zero;
 
             if (!puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
@@ -255,9 +255,9 @@ public class PlayerGanchoController : MonoBehaviour
             {
                 distanceJoint.enabled = false;
                 rigidbody.velocity = rigidbody.velocity / 3;
-                rigidbody.AddForce(Vector2.up * fuerzaSalidaGancho, ForceMode.Impulse);
+                rigidbody.AddForce(Vector2.up * fuerzaSalidaGancho, ForceMode2D.Impulse);
                 
-                rigidbody.mass = 1;
+                rigidbody.gravityScale = 1;
                 playerMovement.mov = true;
                 ganchoDisparado = false;
                 ganchoEnganchado = false;
