@@ -9,6 +9,7 @@ TagManager:
   - PuntoAnclajeBalanceo
   - Kunai
   - Enemigo
+  - Inter
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Pared
   - NoPlayerInter
   - Ground
-  - 
+  - PuntoAnclaje
   - 
   - 
   - 

@@ -15,10 +15,10 @@ public class PlayerGanchoController : MonoBehaviour
     private GameObject indicadorLanzarGancho;
     private PlayerMovement playerMovement;
     
-    private bool ganchoDisparado = false;
-    private bool puedeDisparar = true;
+    public bool ganchoDisparado = false;
+    public bool puedeDisparar = true;
     
-    private Rigidbody2D rigidbody;
+    private Rigidbody rigidbody;
 
     private BoxCollider2D boxCollider;
     public DistanceJoint2D distanceJoint;
@@ -42,7 +42,7 @@ public class PlayerGanchoController : MonoBehaviour
     private void Awake()
     {
         ganchoSpeedInicio = ganchoSpeed;
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody>();
         boxCollider = GetComponent<BoxCollider2D>();
         playerMovement = GetComponent<PlayerMovement>();
     }
@@ -69,7 +69,7 @@ public class PlayerGanchoController : MonoBehaviour
         
         if (!ganchoDisparado)
         {
-            float anclajeCercano = 1000;
+            float anclajeCercano = 100000;
             foreach (var anclaje in puntosAnclaje)
             {
                 float distancia = Vector2.Distance(transform.position, anclaje.transform.position);
@@ -113,29 +113,6 @@ public class PlayerGanchoController : MonoBehaviour
                     indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.red;
                     puedeDisparar = false;
                 }
-                
-                if (puedeDisparar)
-                {
-                    boxCollider.enabled = false;
-                    direccionDisparargancho = new Vector2(puntoAnclaje.transform.position.x - transform.position.x,
-                        puntoAnclaje.transform.position.y - transform.position.y);
-
-                    RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direccionDisparargancho);
-
-                    Debug.DrawRay(transform.position, direccionDisparargancho, Color.red);
-
-                    if (hitInfo.collider.tag.Equals("PuntoAnclaje"))
-                    {
-                        puedeDisparar = true;
-                    }
-                    else
-                    {
-                        puedeDisparar = false;
-                        indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.red;
-                    }
-
-                    boxCollider.enabled = true;
-                }
 
                 if (puedeDisparar)
                 {
@@ -165,11 +142,11 @@ public class PlayerGanchoController : MonoBehaviour
             {
                 if (playerMovement.movement.x < 0)
                 {
-                    rigidbody.AddForce(Vector2.left * 5, ForceMode2D.Impulse);
+                    rigidbody.AddForce(Vector2.left * 5, ForceMode.Impulse);
                 }
                 else if (playerMovement.movement.x > 0) 
                 {
-                    rigidbody.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
+                    rigidbody.AddForce(Vector2.right * 5, ForceMode.Impulse);
                 }
 
                 if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
@@ -179,7 +156,7 @@ public class PlayerGanchoController : MonoBehaviour
                     cameraController.shakeCamera(0.2f,3);
                 }
 
-                rigidbody.gravityScale = 1;
+                rigidbody.mass = 1;
                 playerMovement.mov = true;
                 ganchoDisparado = false;
                 ganchoEnganchado = false;
@@ -190,6 +167,35 @@ public class PlayerGanchoController : MonoBehaviour
         
         gancho.GetComponent<LineRenderer>().SetPosition(0, gancho.transform.position);
         gancho.GetComponent<LineRenderer>().SetPosition(1, transform.position);
+    }
+
+    private void FixedUpdate()
+    {
+        if (!ganchoDisparado)
+        {
+            if (puntoAnclaje != null)
+            {
+                if (puedeDisparar)
+                {
+                    direccionDisparargancho = new Vector2(puntoAnclaje.transform.position.x - transform.position.x,
+                        puntoAnclaje.transform.position.y - transform.position.y);
+
+                    RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direccionDisparargancho, 100, 1 << 9);
+
+                    Debug.DrawRay(transform.position, direccionDisparargancho, Color.red);
+
+                    if (hitInfo.collider != null && hitInfo.collider.tag.Equals("PuntoAnclaje"))
+                    {
+                        puedeDisparar = true;
+                    }
+                    else
+                    {
+                        puedeDisparar = false;
+                        indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.red;
+                    }
+                }
+            }
+        }
     }
 
     private IEnumerator moverGanchoAEnganche()
@@ -214,7 +220,7 @@ public class PlayerGanchoController : MonoBehaviour
     private IEnumerator putMovFalse()
     {
         yield return new WaitForSeconds(0.2f);
-        rigidbody.gravityScale = 1;
+        rigidbody.mass = 1;
         playerMovement.mov = true;
         ganchoDisparado = false;
     }
@@ -225,7 +231,7 @@ public class PlayerGanchoController : MonoBehaviour
         
         if (puntoAnclajeScript.tipoEnganche.Equals("enganche") || puntoAnclajeScript.tipoEnganche.Equals("enemigo"))
         {
-            rigidbody.gravityScale = 0;
+            rigidbody.mass = 0;
             rigidbody.velocity = Vector2.zero;
 
             if (!puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
@@ -249,9 +255,9 @@ public class PlayerGanchoController : MonoBehaviour
             {
                 distanceJoint.enabled = false;
                 rigidbody.velocity = rigidbody.velocity / 3;
-                rigidbody.AddForce(Vector2.up * fuerzaSalidaGancho, ForceMode2D.Impulse);
+                rigidbody.AddForce(Vector2.up * fuerzaSalidaGancho, ForceMode.Impulse);
                 
-                rigidbody.gravityScale = 1;
+                rigidbody.mass = 1;
                 playerMovement.mov = true;
                 ganchoDisparado = false;
                 ganchoEnganchado = false;
