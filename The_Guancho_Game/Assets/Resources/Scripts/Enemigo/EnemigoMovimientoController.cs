@@ -16,6 +16,8 @@ public class EnemigoMovimientoController : MonoBehaviour
 
     void Update()
     {
-        navMeshAgent.SetDestination(objetoSeguir.transform.position);
+        Vector3 seguimientoObeto = new Vector3(objetoSeguir.transform.position.x, objetoSeguir.transform.position.y,
+            transform.position.z);
+        navMeshAgent.SetDestination(seguimientoObeto);
     }
 }

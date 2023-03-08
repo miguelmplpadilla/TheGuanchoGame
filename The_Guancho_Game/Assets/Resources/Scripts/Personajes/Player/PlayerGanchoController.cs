@@ -144,14 +144,14 @@ public class PlayerGanchoController : MonoBehaviour
             }
             else
             {
-                if (playerMovement.movement.x < 0)
+                /*if (playerMovement.movement.x < 0)
                 {
                     rigidbody.AddForce(Vector2.left * 5, ForceMode2D.Impulse);
                 }
                 else if (playerMovement.movement.x > 0) 
                 {
                     rigidbody.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
-                }
+                }*/
 
                 if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
                 {
@@ -259,7 +259,8 @@ public class PlayerGanchoController : MonoBehaviour
             {
                 distanceJoint.enabled = false;
                 rigidbody.velocity = rigidbody.velocity / 3;
-                rigidbody.AddForce(Vector2.up * fuerzaSalidaGancho, ForceMode2D.Impulse);
+                
+                playerMovement.saltar();
                 
                 rigidbody.gravityScale = grvityScaleInicio;
                 playerMovement.mov = true;

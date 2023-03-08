@@ -2,10 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
+
+    public float speedMin;
+    public float speedMax;
+    
     public float jumpForce;
     
     public Vector2 movement;
@@ -20,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
     private float verticalInput = 0;
 
     public GameObject textoPlayer;
+
+    public float maxVerticalSpeed = 100;
+    public float minVerticalSpeed = -10;
+
+    public float horizontalVelocity = 0;
 
     private void Awake()
     {
@@ -68,10 +78,21 @@ public class PlayerMovement : MonoBehaviour
                     saltar();
                 }
             }
+
+            if (Input.GetButton("Sprint"))
+            {
+                speed = speedMax;
+            }
+            else
+            {
+                speed = speedMin;
+            }
+            
+            horizontalVelocity = movement.normalized.x * speed;
             
         }
     }
-    
+
     public void saltar()
     {
         rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -79,14 +100,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        float y =  Mathf.Clamp(rigidbody.velocity.y, minVerticalSpeed, maxVerticalSpeed);
+        rigidbody.velocity = new Vector2(rigidbody.velocity.x, y);
         
-    }
-
-    private void LateUpdate()
-    {
         if (mov)
         {
-            float horizontalVelocity = movement.normalized.x * speed;
             //rigidbody.velocity = new Vector2(horizontalVelocity, rigidbody.velocity.y);
             
             transform.Translate(movement * speed);

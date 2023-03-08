@@ -17,7 +17,7 @@ public class NPCController : MonoBehaviour
     public TextMeshProUGUI textoNPC;
 
     private GameObject player;
-    //private BotonInteractuarController botonInteractuarController;
+    private BotonInteractuarController botonInteractuarController;
 
     private List<Frase> frases = new List<Frase>();
     private DialogeController dialogeController;
@@ -33,7 +33,7 @@ public class NPCController : MonoBehaviour
     private void Awake()
     {
         dialogeController = GetComponent<DialogeController>();
-        //botonInteractuarController = gameObject.GetComponentInChildren<BotonInteractuarController>();
+        botonInteractuarController = gameObject.GetComponentInChildren<BotonInteractuarController>();
     }
 
     void Start()
@@ -71,8 +71,7 @@ public class NPCController : MonoBehaviour
     {
         if (hablando == false)
         {
-            interController = intController.GetComponent<InteractuarController>();
-            //botonInteractuarController.visible();
+            botonInteractuarController.visible();
             hablando = true;
             player.GetComponent<PlayerMovement>().mov = false;
             StartCoroutine("mostrarFrase");
@@ -81,12 +80,12 @@ public class NPCController : MonoBehaviour
 
     public void interEnter()
     {
-        //botonInteractuarController.visible();
+        botonInteractuarController.visible();
     }
 
     public void interExit()
     {
-        //botonInteractuarController.visible();
+        botonInteractuarController.visible();
     }
 
     IEnumerator mostrarFrase()
@@ -150,7 +149,7 @@ public class NPCController : MonoBehaviour
         panelPlayer.transform.localScale = new Vector3(0,0,0);
         panelNPC.transform.localScale = new Vector3(0,0,0);
 
-        //botonInteractuarController.visible();
+        botonInteractuarController.visible();
         dejarHablar();
     }
 
@@ -159,7 +158,14 @@ public class NPCController : MonoBehaviour
         hablar = false;
         hablando = false;
         player.GetComponent<PlayerMovement>().mov = true;
-        interController.GetComponent<InteractuarController>().interactuando = false;
+        player.GetComponentInChildren<InteractuarController>().interactuando = false;
+        cinemachineVirtualCamera.Follow = player.transform;
+        cinemachineVirtualCamera.enabled = false;
+        cinemachineVirtualCamera.transform.rotation = Quaternion.Euler(cinemachineVirtualCamera.transform.rotation.x, 0, 
+            cinemachineVirtualCamera.transform.rotation.z);
+        GameObject.Find("MainCamera").transform.rotation = Quaternion.Euler(cinemachineVirtualCamera.transform.rotation.x, 0, 
+            cinemachineVirtualCamera.transform.rotation.z);
+        cinemachineVirtualCamera.enabled = true;
     }
 
     /*private void OnTriggerEnter2D(Collider2D other)
@@ -172,12 +178,12 @@ public class NPCController : MonoBehaviour
         }
     }*/
 
-    private void OnTriggerExit2D(Collider2D other)
+    /*private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             //botonInteractuarController.visible();
             dejarHablar();
         }
-    }
+    }*/
 }
