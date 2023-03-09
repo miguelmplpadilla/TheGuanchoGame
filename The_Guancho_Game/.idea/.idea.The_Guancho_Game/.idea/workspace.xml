@@ -2,16 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec41ed5e-6894-4cdc-8127-e636cba0ab03" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel1/Nivel1-Seccion1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel1/Nivel1-Seccion2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel1/Nivel1-Seccion3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel1/Nivel1-Seccion4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel2/Nivel2-Seccion1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel2/Nivel2-Seccion2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel2/Nivel2-Seccion3.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel2/Nivel2-Seccion4.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoPersonajes/WhatsApp Image 2023-01-15 at 17.24.58.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoPersonajes/WhatsApp Image 2023-03-06 at 08.45.39.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoPersonajes/WhatsApp Image 2023-03-06 at 08.45.40 (1).jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoPersonajes/WhatsApp Image 2023-03-06 at 08.45.40 (2).jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoPersonajes/WhatsApp Image 2023-03-06 at 08.45.40.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Modelos/gate_1.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Modelos/gate_1.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MaterialesFisicos.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MaterialesFisicos/Aspero.physicsMaterial2D" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MaterialesFisicos/Aspero.physicsMaterial2D.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MaterialesFisicos/Ice.physicsMaterial2D" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/MaterialesFisicos/Ice.physicsMaterial2D.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/IndicadorLanzarGancho.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/IndicadorLanzarGancho.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Suelo.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Suelo.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenaPruebaMiguel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenaPruebaMiguel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enganche.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enganche/PuntoAnclajeScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enganche/PuntoAnclajeScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Escalera.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Escalera/OneWayPlatform.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Escalera/OneWayPlatform.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Escenario/Puerta/PuertaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Escenario/Puerta/PuertaController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerGanchoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerGanchoController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,11 +36,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/1Enemigo2D/Enemigo2DHurtController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/ManchaSangreController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Farming_Tales/FarmingTales/Assets/Scripts/Personajes/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../MedievalBattle/MedievalBattle/Assets/Resources/Scripts/Personajes/MovementController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/1Enemigo2D/Enemigo2DHurtController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../MedievalBattle/MedievalBattle/Assets/Resources/Scripts/Personajes/MovementController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Player2D/Player2DMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Farming_Tales/FarmingTales/Assets/Scripts/Personajes/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/KunaiController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -35,13 +53,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.12f1\Editor\Unity.exe" />
@@ -102,6 +119,7 @@
       <workItem from="1678229998897" duration="988000" />
       <workItem from="1678261869039" duration="5456000" />
       <workItem from="1678359414137" duration="430000" />
+      <workItem from="1678383908738" duration="5647000" />
     </task>
     <servers />
   </component>

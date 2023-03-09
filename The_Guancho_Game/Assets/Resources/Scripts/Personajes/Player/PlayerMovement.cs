@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigidbody;
 
     private GroundController groundController;
+    private CharacterController2D characterController2D;
+    private PlayerGanchoController playerGanchoController;
 
     public bool mov = true;
 
@@ -35,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         groundController = GetComponentInChildren<GroundController>();
+        characterController2D = GetComponent<CharacterController2D>();
+        playerGanchoController = GetComponent<PlayerGanchoController>();
     }
 
     void Update()
@@ -59,8 +63,6 @@ public class PlayerMovement : MonoBehaviour
                 verticalInput = 0;
             }
 
-            movement = new Vector2(horizontalInput, verticalInput) * Time.deltaTime;
-            
 
             // Flip character
             if (horizontalInput > 0f) {
@@ -88,8 +90,8 @@ public class PlayerMovement : MonoBehaviour
                 speed = speedMin;
             }
             
+            movement = new Vector2(horizontalInput, verticalInput) * Time.deltaTime;
             horizontalVelocity = movement.normalized.x * speed;
-            
         }
     }
 
@@ -101,13 +103,20 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         float y =  Mathf.Clamp(rigidbody.velocity.y, minVerticalSpeed, maxVerticalSpeed);
-        rigidbody.velocity = new Vector2(rigidbody.velocity.x, y);
-        
+
         if (mov)
         {
-            //rigidbody.velocity = new Vector2(horizontalVelocity, rigidbody.velocity.y);
-            
-            transform.Translate(movement * speed);
+            //rigidbody.velocity = new Vector2(horizontalVelocity, y);
+
+            if (playerGanchoController.ganchoEnganchado && playerGanchoController.tipoEnganche.Equals("balanceo"))
+            {
+                transform.Translate(movement * speed);
+            }
+            else
+            {
+                rigidbody.velocity =
+                    transform.TransformDirection(new Vector3(horizontalVelocity, rigidbody.velocity.y, 0));
+            }
         }
     }
 }

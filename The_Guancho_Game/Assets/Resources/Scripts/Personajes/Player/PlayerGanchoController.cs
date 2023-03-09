@@ -41,6 +41,8 @@ public class PlayerGanchoController : MonoBehaviour
 
     private float grvityScaleInicio;
 
+    public string tipoEnganche = "";
+
     private void Awake()
     {
         ganchoSpeedInicio = ganchoSpeed;
@@ -62,15 +64,6 @@ public class PlayerGanchoController : MonoBehaviour
 
     void Update()
     {
-        if (puntoAnclaje == null)
-        {
-            indicadorLanzarGancho.GetComponent<MeshRenderer>().enabled = false;
-        }
-        else
-        {
-            indicadorLanzarGancho.GetComponent<MeshRenderer>().enabled = true;
-        }
-        
         if (!ganchoDisparado)
         {
             float anclajeCercano = 100000;
@@ -80,7 +73,10 @@ public class PlayerGanchoController : MonoBehaviour
                 
                 if (distancia < anclajeCercano)
                 {
-                    if (transform.localScale.x > 0)
+                    puntoAnclaje = anclaje;
+                    anclajeCercano = distancia;
+                    
+                    /*if (transform.localScale.x > 0)
                     {
                         if (anclaje.transform.position.x > transform.position.x)
                         {
@@ -90,12 +86,12 @@ public class PlayerGanchoController : MonoBehaviour
                     }
                     else
                     {
-                        if (anclaje.transform.position.x < transform.position.x)
+                        if (anclaje.transform.position.x > transform.position.x)
                         {
                             puntoAnclaje = anclaje;
                             anclajeCercano = distancia;
                         }
-                    }
+                    }*/
                 }
             }
 
@@ -107,7 +103,7 @@ public class PlayerGanchoController : MonoBehaviour
                 
                 if (distanciaPuntoAnclaje <= 15)
                 {
-                    indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.green;
+                    indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.white;
                     indicadorLanzarGancho.transform.position = new Vector3(puntoAnclaje.transform.position.x, puntoAnclaje.transform.position.y, 
                         indicadorLanzarGancho.transform.position.z);
                     puedeDisparar = true;
@@ -131,6 +127,15 @@ public class PlayerGanchoController : MonoBehaviour
                         StartCoroutine(moverGanchoAEnganche());
                         ganchoDisparado = true;
                     }
+                }
+                
+                if (!puedeDisparar)
+                {
+                    indicadorLanzarGancho.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                else
+                {
+                    indicadorLanzarGancho.GetComponent<SpriteRenderer>().enabled = true;
                 }
             }
         }
@@ -270,6 +275,8 @@ public class PlayerGanchoController : MonoBehaviour
                 gancho.transform.localPosition = posicionInicialGancho;
             }
         }
-        
+
+        tipoEnganche = puntoAnclajeScript.tipoEnganche;
+
     }
 }
