@@ -1007,6 +1007,7 @@ MonoBehaviour:
   maxVerticalSpeed: 100
   minVerticalSpeed: -15
   horizontalVelocity: 0
+  animator: {fileID: 0}
 --- !u!114 &6105667509878236674
 MonoBehaviour:
   m_ObjectHideFlags: 0

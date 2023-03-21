@@ -49,6 +49,8 @@ public class PlayerGanchoController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         playerMovement = GetComponent<PlayerMovement>();
+        
+        posicionInicialGancho = gancho.transform.localPosition;
     }
 
     private void Start()
@@ -56,8 +58,6 @@ public class PlayerGanchoController : MonoBehaviour
         indicadorLanzarGancho = GameObject.Find("IndicadorLanzarGancho");
         puntosAnclaje = GameObject.FindGameObjectsWithTag("PuntoAnclaje").ToList();
         cameraController = GameObject.Find("CM").GetComponent<CameraController>();
-
-        posicionInicialGancho = gancho.transform.localPosition;
 
         grvityScaleInicio = rigidbody.gravityScale;
     }
@@ -175,7 +175,7 @@ public class PlayerGanchoController : MonoBehaviour
         }
         
         gancho.GetComponent<LineRenderer>().SetPosition(0, gancho.transform.position);
-        gancho.GetComponent<LineRenderer>().SetPosition(1, transform.position);
+        gancho.GetComponent<LineRenderer>().SetPosition(1, transform.position + posicionInicialGancho);
     }
 
     private void FixedUpdate()
