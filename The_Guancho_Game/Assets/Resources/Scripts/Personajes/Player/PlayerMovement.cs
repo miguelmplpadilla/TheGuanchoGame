@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float horizontalVelocity = 0;
 
+    public Animator animator;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -46,6 +48,15 @@ public class PlayerMovement : MonoBehaviour
         if (mov)
         {
             horizontalInput = Input.GetAxisRaw("Horizontal");
+
+            if (horizontalInput != 0)
+            {
+                animator.SetBool("run", true);
+            }
+            else
+            {
+                animator.SetBool("run", false);
+            }
 
             if (!groundController.isGrounded)
             {
@@ -102,12 +113,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        animator.SetFloat("horizontalVelocity", speed);
+        
         float y =  Mathf.Clamp(rigidbody.velocity.y, minVerticalSpeed, maxVerticalSpeed);
 
         if (mov)
         {
-            //rigidbody.velocity = new Vector2(horizontalVelocity, y);
-
             if (playerGanchoController.ganchoEnganchado && playerGanchoController.tipoEnganche.Equals("balanceo"))
             {
                 transform.Translate(movement * speed);
@@ -115,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 rigidbody.velocity =
-                    transform.TransformDirection(new Vector3(horizontalVelocity, rigidbody.velocity.y, 0));
+                    transform.TransformDirection(new Vector3(horizontalVelocity, y, 0));
             }
         }
     }

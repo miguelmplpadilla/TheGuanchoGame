@@ -2,33 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec41ed5e-6894-4cdc-8127-e636cba0ab03" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel1/Nivel1-Seccion1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel1/Nivel1-Seccion2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel1/Nivel1-Seccion3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel1/Nivel1-Seccion4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel2/Nivel2-Seccion1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel2/Nivel2-Seccion2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel2/Nivel2-Seccion3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoNiveles/Nivel2/Nivel2-Seccion4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoPersonajes/WhatsApp Image 2023-01-15 at 17.24.58.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoPersonajes/WhatsApp Image 2023-03-06 at 08.45.39.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoPersonajes/WhatsApp Image 2023-03-06 at 08.45.40 (1).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoPersonajes/WhatsApp Image 2023-03-06 at 08.45.40 (2).jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Assets/DiseñoPersonajes/WhatsApp Image 2023-03-06 at 08.45.40.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/MaterialesFisicos.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/MaterialesFisicos/Aspero.physicsMaterial2D" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/MaterialesFisicos/Aspero.physicsMaterial2D.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/MaterialesFisicos/Ice.physicsMaterial2D" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/MaterialesFisicos/Ice.physicsMaterial2D.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/IndicadorLanzarGancho.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/IndicadorLanzarGancho.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Suelo.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Suelo.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenaPruebaMiguel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenaPruebaMiguel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Escenario/Puerta/PuertaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Escenario/Puerta/PuertaController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerGanchoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerGanchoController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +96,7 @@
       <workItem from="1678261869039" duration="5456000" />
       <workItem from="1678359414137" duration="430000" />
       <workItem from="1678383908738" duration="5647000" />
+      <workItem from="1679426660698" duration="364000" />
     </task>
     <servers />
   </component>
