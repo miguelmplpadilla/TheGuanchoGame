@@ -37,11 +37,12 @@ public class PlayerGanchoController : MonoBehaviour
     public GameObject gancho;
     public bool ganchoEnganchado = false;
     public float speedDisparoGancho = 2;
-    public Vector3 posicionInicialGancho;
 
     private float grvityScaleInicio;
 
     public string tipoEnganche = "";
+
+    [SerializeField] private GameObject posicionAgarreGancho;
 
     private void Awake()
     {
@@ -49,8 +50,6 @@ public class PlayerGanchoController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         playerMovement = GetComponent<PlayerMovement>();
-        
-        posicionInicialGancho = gancho.transform.localPosition;
     }
 
     private void Start()
@@ -118,6 +117,9 @@ public class PlayerGanchoController : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Fire2"))
                     {
+                        playerMovement.animator.SetBool("swinging", true);
+                        playerMovement.animator.SetTrigger("swing");
+                        
                         distanciaGanchoInicio = Vector2.Distance(transform.position, puntoAnclaje.transform.position);
                         if (!puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("balanceo"))
                         {
@@ -164,18 +166,20 @@ public class PlayerGanchoController : MonoBehaviour
                     puntoAnclaje.SendMessage("hit", 1);
                     cameraController.shakeCamera(0.2f,3);
                 }
+                
+                playerMovement.animator.SetBool("swinging", false);
 
                 rigidbody.gravityScale = grvityScaleInicio;
                 playerMovement.mov = true;
                 ganchoDisparado = false;
                 ganchoEnganchado = false;
-                gancho.transform.parent = transform;
-                gancho.transform.localPosition = posicionInicialGancho;
+                gancho.transform.parent = posicionAgarreGancho.transform;
+                gancho.transform.localPosition = new Vector3(0, 0, 0);
             }
         }
         
         gancho.GetComponent<LineRenderer>().SetPosition(0, gancho.transform.position);
-        gancho.GetComponent<LineRenderer>().SetPosition(1, transform.position + posicionInicialGancho);
+        gancho.GetComponent<LineRenderer>().SetPosition(1, posicionAgarreGancho.transform.position);
     }
 
     private void FixedUpdate()
@@ -257,11 +261,20 @@ public class PlayerGanchoController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, puntoAnclaje.transform.position, velocidadGancho * Time.deltaTime);
         } else if (puntoAnclajeScript.tipoEnganche.Equals("balanceo"))
         {
+            Vector3 dir = puntoAnclajeScript.transform.position - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
+            
             distanceJoint.enabled = true;
             distanceJoint.connectedBody = puntoAnclaje.GetComponent<Rigidbody2D>();
+            
+            playerMovement.animator.SetFloat("swingHorizontalSpeed", rigidbody.velocity.x);
 
             if (Input.GetButtonDown("Jump"))
             {
+                transform.rotation = Quaternion.Euler(0,0,0);
+                    
+                playerMovement.animator.SetBool("swinging", false);
                 distanceJoint.enabled = false;
                 rigidbody.velocity = rigidbody.velocity / 3;
                 
@@ -271,12 +284,11 @@ public class PlayerGanchoController : MonoBehaviour
                 playerMovement.mov = true;
                 ganchoDisparado = false;
                 ganchoEnganchado = false;
-                gancho.transform.parent = transform;
-                gancho.transform.localPosition = posicionInicialGancho;
+                gancho.transform.parent = posicionAgarreGancho.transform;
+                gancho.transform.localPosition = new Vector3(0, 0, 0);
             }
         }
 
         tipoEnganche = puntoAnclajeScript.tipoEnganche;
-
     }
 }

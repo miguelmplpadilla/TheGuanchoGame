@@ -8,8 +8,11 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
 
-    public float speedMin;
-    public float speedMax;
+    [SerializeField] private float speedMin;
+    [SerializeField] private float speedMax;
+
+    [SerializeField] private float sumSpeed = 1;
+    [SerializeField] private float restSpeed = 1;
     
     public float jumpForce;
     
@@ -18,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigidbody;
 
     private GroundController groundController;
-    private CharacterController2D characterController2D;
     private PlayerGanchoController playerGanchoController;
 
     public bool mov = true;
@@ -39,7 +41,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         groundController = GetComponentInChildren<GroundController>();
-        characterController2D = GetComponent<CharacterController2D>();
         playerGanchoController = GetComponent<PlayerGanchoController>();
     }
 
@@ -51,10 +52,42 @@ public class PlayerMovement : MonoBehaviour
 
             if (horizontalInput != 0)
             {
+                if (Input.GetButton("Sprint"))
+                {
+                    if (speed < speedMax)
+                    {
+                        speed += sumSpeed * Time.deltaTime;
+                    }
+                    else
+                    {
+                        speed = speedMax;
+                    }
+                }
+                else
+                {
+                    if (speed > speedMin)
+                    {
+                        speed -= restSpeed * Time.deltaTime;
+                    }
+                    else
+                    {
+                        speed = speedMin;
+                    }
+                }
+                
                 animator.SetBool("run", true);
             }
             else
             {
+                if (speed > 0)
+                {
+                    speed -= (restSpeed + 5) * Time.deltaTime;
+                }
+                else
+                {
+                    speed = 0;
+                }
+                
                 animator.SetBool("run", false);
             }
 
@@ -75,13 +108,15 @@ public class PlayerMovement : MonoBehaviour
             }
 
 
-            // Flip character
-            if (horizontalInput > 0f) {
-                transform.localScale = new Vector3(1, 1, 1);
-                textoPlayer.transform.localScale = new Vector3(1,1,1);
-            } else if (horizontalInput < 0f) {
-                transform.localScale = new Vector3(-1, 1, 1);
-                textoPlayer.transform.localScale = new Vector3(-1,1,1);
+            if (!playerGanchoController.ganchoEnganchado)
+            {
+                if (horizontalInput > 0f) {
+                    transform.localScale = new Vector3(1, 1, 1);
+                    textoPlayer.transform.localScale = new Vector3(1,1,1);
+                } else if (horizontalInput < 0f) {
+                    transform.localScale = new Vector3(-1, 1, 1);
+                    textoPlayer.transform.localScale = new Vector3(-1,1,1);
+                }
             }
 
             if (groundController.isGrounded)
@@ -92,15 +127,6 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            if (Input.GetButton("Sprint"))
-            {
-                speed = speedMax;
-            }
-            else
-            {
-                speed = speedMin;
-            }
-            
             movement = new Vector2(horizontalInput, verticalInput) * Time.deltaTime;
             horizontalVelocity = movement.normalized.x * speed;
         }
@@ -108,11 +134,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void saltar()
     {
+        animator.SetTrigger("jump");
         rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
     private void FixedUpdate()
     {
+        animator.SetBool("isGrounded", groundController.isGrounded);
         animator.SetFloat("horizontalVelocity", speed);
         
         float y =  Mathf.Clamp(rigidbody.velocity.y, minVerticalSpeed, maxVerticalSpeed);
