@@ -1343,6 +1343,7 @@ MonoBehaviour:
   speed: 0
   speedMin: 5
   speedMax: 10
+  speedAir: 0
   sumSpeed: 15
   restSpeed: 15
   jumpForce: 30
@@ -5569,9 +5570,17 @@ PrefabInstance:
       propertyPath: textoNPC
       value: 
       objectReference: {fileID: 502000221}
+    - target: {fileID: 7256508840764713098, guid: 435ed364d229ba64bbad2aeb30812b31, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7256508840764713101, guid: 435ed364d229ba64bbad2aeb30812b31, type: 3}
       propertyPath: m_Name
       value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 7256508841958812716, guid: 435ed364d229ba64bbad2aeb30812b31, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 435ed364d229ba64bbad2aeb30812b31, type: 3}
@@ -5935,6 +5944,10 @@ PrefabInstance:
     - target: {fileID: 8531041663941484040, guid: f9ff5f9deb88bd24094fa3b20270f8cf, type: 3}
       propertyPath: m_Name
       value: EnemigoBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531041663941484040, guid: f9ff5f9deb88bd24094fa3b20270f8cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8531041663941484045, guid: f9ff5f9deb88bd24094fa3b20270f8cf, type: 3}
       propertyPath: m_RootOrder

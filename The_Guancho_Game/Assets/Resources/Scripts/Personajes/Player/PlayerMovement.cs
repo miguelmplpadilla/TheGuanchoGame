@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float speedMin;
     [SerializeField] private float speedMax;
+    [SerializeField] private float speedAir;
 
     [SerializeField] private float sumSpeed = 1;
     [SerializeField] private float restSpeed = 1;
@@ -52,29 +53,36 @@ public class PlayerMovement : MonoBehaviour
 
             if (horizontalInput != 0)
             {
-                if (Input.GetButton("Sprint"))
+                if (groundController.isGrounded)
                 {
-                    if (speed < speedMax)
+                    if (Input.GetButton("Sprint"))
                     {
-                        speed += sumSpeed * Time.deltaTime;
+                        if (speed < speedMax)
+                        {
+                            speed += sumSpeed * Time.deltaTime;
+                        }
+                        else
+                        {
+                            speed = speedMax;
+                        }
                     }
                     else
                     {
-                        speed = speedMax;
+                        if (speed > speedMin)
+                        {
+                            speed -= restSpeed * Time.deltaTime;
+                        }
+                        else
+                        {
+                            speed = speedMin;
+                        }
                     }
                 }
                 else
                 {
-                    if (speed > speedMin)
-                    {
-                        speed -= restSpeed * Time.deltaTime;
-                    }
-                    else
-                    {
-                        speed = speedMin;
-                    }
+                    speed = speedAir;
                 }
-                
+
                 animator.SetBool("run", true);
             }
             else
