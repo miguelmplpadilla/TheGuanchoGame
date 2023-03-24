@@ -1343,9 +1343,9 @@ MonoBehaviour:
   speed: 0
   speedMin: 5
   speedMax: 10
-  speedAir: 0
-  sumSpeed: 15
-  restSpeed: 15
+  speedAir: 13
+  sumSpeed: 20
+  restSpeed: 25
   jumpForce: 30
   movement: {x: 0, y: 0}
   mov: 1
@@ -5947,7 +5947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8531041663941484040, guid: f9ff5f9deb88bd24094fa3b20270f8cf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8531041663941484045, guid: f9ff5f9deb88bd24094fa3b20270f8cf, type: 3}
       propertyPath: m_RootOrder
