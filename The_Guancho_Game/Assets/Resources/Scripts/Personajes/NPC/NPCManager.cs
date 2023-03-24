@@ -16,7 +16,6 @@ public class NPCManager : MonoBehaviour
     private List<List<Vector3>> vertexOrig = new List<List<Vector3>>();
     private List<List<Vector3>> tamanoVertices = new List<List<Vector3>>();
 
-    //private Mesh mesh;
     private Vector3[] vertices;
 
     public Color32 color;
@@ -38,9 +37,14 @@ public class NPCManager : MonoBehaviour
     [SerializeField] private List<TipoFrase> wordIndexes;
     [SerializeField] private List<int> wordLengths;
 
+    private Mesh meshPrincipal;
+
     private void Start()
     {
         textComponent.ForceMeshUpdate();
+
+        meshPrincipal = textComponent.mesh;
+        vertices = meshPrincipal.vertices;
 
         textComponent.text = textoEscribir;
         
@@ -62,7 +66,19 @@ public class NPCManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        moverCaracteresArribaAbajo();
+        animarTextos();
+    }
+
+    private void animarTextos()
+    {
+        textComponent.ForceMeshUpdate();
+        vertices = meshPrincipal.vertices;
+        
+        for (int i = 0; i < wordIndexes.Count; i++)
+        {
+            animar();
+            textComponent.canvasRenderer.SetMesh(meshPrincipal);
+        }
     }
 
     private void initialiceWordIndexer()
@@ -70,108 +86,93 @@ public class NPCManager : MonoBehaviour
         wordIndexes = new List<TipoFrase> {new TipoFrase(0, "")};
         wordLengths = new List<int>();
 
-        string s = textComponent.text;
-        
-        string[] values = Regex.Split(s, " ");
-
-        for (int i = s.IndexOf(' '); i > -1; i = s.IndexOf(' ', i + 1))
+        for (int i = textoEscribir.IndexOf(' '); i > -1; i = textoEscribir.IndexOf(' ', i + 1))
         {
             wordLengths.Add(i - wordIndexes[wordIndexes.Count - 1].wordIndex);
             wordIndexes.Add(new TipoFrase(i+1, ""));
         }
         
-        wordLengths.Add(s.Length - wordIndexes[wordIndexes.Count - 1].wordIndex);
-        
-        for (int i = 0; i < values.Length; i++)
-        {
-            string tresCaracteres = values[i].Substring(0, 3);
-            
-            if (tresCaracteres.Equals("<t>"))
-            {
-                wordIndexes[i].tipoFrase = "t";
+        wordLengths.Add(textoEscribir.Length - wordIndexes[wordIndexes.Count - 1].wordIndex);
 
-                wordLengths[i] -= 3;
-                
-                for (int j = i+1; j < wordIndexes.Count; j++)
+        while (true)
+        {
+            string[] values = Regex.Split(textoEscribir, " ");
+            
+            bool terminarBucle = true;
+            
+            for (int i = 0; i < values.Length; i++)
+            {
+                string tresCaracteres = values[i].Substring(0, 3);
+
+                if (tresCaracteres[0].Equals('<') && tresCaracteres[2].Equals('>'))
                 {
-                    wordIndexes[j].wordIndex -= 3;
+                    wordIndexes[i].tipoFrase = tresCaracteres[1].ToString();
+                    
+                    textoEscribir = textoEscribir.Remove(wordIndexes[i].wordIndex, 3);
+                
+                    wordLengths[i] -= 3;
+
+                    for (int j = i+1; j < wordIndexes.Count; j++)
+                    {
+                        wordIndexes[j].wordIndex -= 3;
+                    }
+
+                    terminarBucle = false;
+
+                    break;
                 }
             }
-        }
-
-        textComponent.text = textComponent.text.Replace("<t>", "");
-    }
-
-    private void temblarVertices()
-    {
-        textComponent.ForceMeshUpdate();
-        Mesh mesh = textComponent.mesh;
-        vertices = mesh.vertices;
-
-        for (int i = 0; i < vertices.Length; i++)
-        {
-            Vector3 offset = new Vector3(Random.Range(1.5f,5f), Random.Range(1.5f,5f), Random.Range(1.5f,5f));
-
-            vertices[i] = vertices[i] + offset;
-        }
-
-        mesh.vertices = vertices;
-        textComponent.canvasRenderer.SetMesh(mesh);
-    }
-    
-    private void temblarCaracteres()
-    {
-        textComponent.ForceMeshUpdate();
-        Mesh mesh = textComponent.mesh;
-        vertices = mesh.vertices;
-
-        for (int i = 0; i < textComponent.textInfo.characterCount; i++)
-        {
-            TMP_CharacterInfo c = textComponent.textInfo.characterInfo[i];
-
-            int index = c.vertexIndex;
             
-            Vector3 offset = new Vector3(Random.Range(1.5f,5f), Random.Range(1.5f,5f), Random.Range(1.5f,5f));
-
-            vertices[index] += offset;
-            vertices[index+1] += offset;
-            vertices[index+2] += offset;
-            vertices[index+3] += offset;
+            if (terminarBucle)
+            {
+                break;
+            }
         }
-
-        mesh.vertices = vertices;
-        textComponent.canvasRenderer.SetMesh(mesh);
+        
+        textComponent.text = textoEscribir;
     }
-    
-    private void temblarPalabras()
+
+    private void animar()
     {
         textComponent.ForceMeshUpdate();
-        Mesh mesh = textComponent.mesh;
-        vertices = mesh.vertices;
+        
+        //Vector3 offset = new Vector3(Random.Range(1.5f,5f), Random.Range(1.5f,5f), Random.Range(1.5f,5f));
 
         for (int i = 0; i < wordIndexes.Count; i++)
         {
-            if (wordIndexes[i].tipoFrase.Equals("t"))
+            int wordIndex = wordIndexes[i].wordIndex;
+
+            for (int j = 0; j < wordLengths[i]; j++)
             {
-                int wordIndex = wordIndexes[i].wordIndex;
-                Vector3 offset = new Vector3(Random.Range(1.5f,5f), Random.Range(1.5f,5f), Random.Range(1.5f,5f));
+                if (wordIndexes[i].tipoFrase.Equals("t")) // Temblar
+                {
+                    Vector3 offset = new Vector3(Random.Range(1.5f,5f), Random.Range(1.5f,5f), Random.Range(1.5f,5f));
+                    
+                    TMP_CharacterInfo c = textComponent.textInfo.characterInfo[wordIndex + j];
+
+                    int index = c.vertexIndex;
+
+                    vertices[index] += offset;
+                    vertices[index+1] += offset;
+                    vertices[index+2] += offset;
+                    vertices[index+3] += offset;
             
-                for (int j = 0; j < wordLengths[i]; j++)
+                    meshPrincipal.vertices = vertices;
+                } else if (wordIndexes[i].tipoFrase.Equals("m")) // Mover de arriba a abajo
                 {
                     TMP_CharacterInfo c = textComponent.textInfo.characterInfo[wordIndex + j];
 
-                    if (c.isVisible)
-                    {
-                        int index = c.vertexIndex;
+                    int index = c.vertexIndex;
 
-                        vertices[index] += offset;
-                        vertices[index+1] += offset;
-                        vertices[index+2] += offset;
-                        vertices[index+3] += offset;
-                        
-                        mesh.vertices = vertices;
-                        textComponent.canvasRenderer.SetMesh(mesh);
+                    Vector3 orig = vertices[index];
+                    Vector3 offset = new Vector3(0, Mathf.Sin(Time.time * 2 + orig.x * 0.01f) * 10, 0);
+
+                    for (int n = 0; n < 4; n++)
+                    {
+                        vertices[index + n] += offset;
                     }
+
+                    meshPrincipal.vertices = vertices;
                 }
             }
         }
@@ -202,6 +203,36 @@ public class NPCManager : MonoBehaviour
             
                 mesh.vertices = vertices;
                 textComponent.canvasRenderer.SetMesh(mesh);
+            }
+        }
+    }
+
+    private void moverPalabrasArribaAbajo()
+    {
+        textComponent.ForceMeshUpdate();
+
+        for (int i = 0; i < wordIndexes.Count; i++)
+        {
+            int wordIndex = wordIndexes[i].wordIndex;
+
+            for (int j = 0; j < wordLengths[i]; j++)
+            {
+                if (wordIndexes[i].tipoFrase.Equals("m"))
+                {
+                    TMP_CharacterInfo c = textComponent.textInfo.characterInfo[wordIndex + j];
+
+                    int index = c.vertexIndex;
+
+                    Vector3 orig = vertices[index];
+                    Vector3 offset = new Vector3(0, Mathf.Sin(Time.time * 2 + orig.x * 0.01f) * 10, 0);
+
+                    for (int n = 0; n < 4; n++)
+                    {
+                        vertices[index + n] += offset;
+                    }
+
+                    meshPrincipal.vertices = vertices;
+                }
             }
         }
     }
@@ -318,5 +349,46 @@ public class NPCManager : MonoBehaviour
 
             yield return new WaitForSeconds(0.05f);
         }
+    }
+    
+    private void temblarVertices()
+    {
+        textComponent.ForceMeshUpdate();
+        Mesh mesh = textComponent.mesh;
+        vertices = mesh.vertices;
+
+        for (int i = 0; i < vertices.Length; i++)
+        {
+            Vector3 offset = new Vector3(Random.Range(1.5f,5f), Random.Range(1.5f,5f), Random.Range(1.5f,5f));
+
+            vertices[i] = vertices[i] + offset;
+        }
+
+        mesh.vertices = vertices;
+        textComponent.canvasRenderer.SetMesh(mesh);
+    }
+    
+    private void temblarCaracteres()
+    {
+        textComponent.ForceMeshUpdate();
+        Mesh mesh = textComponent.mesh;
+        vertices = mesh.vertices;
+
+        for (int i = 0; i < textComponent.textInfo.characterCount; i++)
+        {
+            TMP_CharacterInfo c = textComponent.textInfo.characterInfo[i];
+
+            int index = c.vertexIndex;
+            
+            Vector3 offset = new Vector3(Random.Range(1.5f,5f), Random.Range(1.5f,5f), Random.Range(1.5f,5f));
+
+            vertices[index] += offset;
+            vertices[index+1] += offset;
+            vertices[index+2] += offset;
+            vertices[index+3] += offset;
+        }
+
+        mesh.vertices = vertices;
+        textComponent.canvasRenderer.SetMesh(mesh);
     }
 }
