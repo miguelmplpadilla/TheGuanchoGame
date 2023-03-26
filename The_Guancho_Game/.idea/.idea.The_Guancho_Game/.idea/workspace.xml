@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ec41ed5e-6894-4cdc-8127-e636cba0ab03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenaPruebaTextos.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenaPruebaTextos.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/NPC/NPCManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/NPC/NPCManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/NPC/NPCManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/NPC/NPCManager.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,7 @@
     <setting file="file://$PROJECT_DIR$/../../MedievalBattle/MedievalBattle/Assets/Resources/Scripts/Personajes/MovementController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/KunaiController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/VIDE/VIDE_Assign.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -104,6 +105,8 @@
       <workItem from="1679565610375" duration="14412000" />
       <workItem from="1679642163059" duration="10043000" />
       <workItem from="1679684339300" duration="9939000" />
+      <workItem from="1679746486252" duration="1736000" />
+      <workItem from="1679761529920" duration="595000" />
     </task>
     <servers />
   </component>

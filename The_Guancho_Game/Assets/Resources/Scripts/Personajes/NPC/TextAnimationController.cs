@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class NPCManager : MonoBehaviour
+public class TextAnimationController : MonoBehaviour
 {
     public TMP_Text textComponent;
 
@@ -66,19 +66,73 @@ public class NPCManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        animarTextos();
+        recorrerPalabrasAnimar();
     }
 
-    private void animarTextos()
+    private void recorrerPalabrasAnimar()
     {
         textComponent.ForceMeshUpdate();
         vertices = meshPrincipal.vertices;
         
         for (int i = 0; i < wordIndexes.Count; i++)
         {
-            animar();
+            animarTexto();
             textComponent.canvasRenderer.SetMesh(meshPrincipal);
         }
+    }
+    
+    private void animarTexto()
+    {
+        textComponent.ForceMeshUpdate();
+
+        for (int i = 0; i < wordIndexes.Count; i++)
+        {
+            int wordIndex = wordIndexes[i].wordIndex;
+
+            for (int j = 0; j < wordLengths[i]; j++)
+            {
+                if (wordIndexes[i].tipoFrase.Equals("t")) // Temblar
+                {
+                    temblarPalabras(wordIndex + j);
+                } else if (wordIndexes[i].tipoFrase.Equals("m")) // Mover de arriba a abajo
+                {
+                    moverPalabrasArribaAbajo(wordIndex + j);
+                }
+            }
+        }
+    }
+
+    private void temblarPalabras(int wordIndex)
+    {
+        Vector3 offset = new Vector3(Random.Range(1.5f,3f), Random.Range(1.5f,3f), Random.Range(1.5f,3f));
+                    
+        TMP_CharacterInfo c = textComponent.textInfo.characterInfo[wordIndex];
+
+        int index = c.vertexIndex;
+
+        for (int n = 0; n < 4; n++)
+        {
+            vertices[index + n] += offset;
+        }
+            
+        meshPrincipal.vertices = vertices;
+    }
+
+    private void moverPalabrasArribaAbajo(int wordIndex)
+    {
+        TMP_CharacterInfo c = textComponent.textInfo.characterInfo[wordIndex];
+
+        int index = c.vertexIndex;
+
+        Vector3 orig = vertices[index];
+        Vector3 offset = new Vector3(0, Mathf.Sin(Time.time * 2 + orig.x * 0.01f) * 5, 0);
+
+        for (int n = 0; n < 4; n++)
+        {
+            vertices[index + n] += offset;
+        }
+
+        meshPrincipal.vertices = vertices;
     }
 
     private void initialiceWordIndexer()
@@ -132,52 +186,6 @@ public class NPCManager : MonoBehaviour
         textComponent.text = textoEscribir;
     }
 
-    private void animar()
-    {
-        textComponent.ForceMeshUpdate();
-        
-        //Vector3 offset = new Vector3(Random.Range(1.5f,5f), Random.Range(1.5f,5f), Random.Range(1.5f,5f));
-
-        for (int i = 0; i < wordIndexes.Count; i++)
-        {
-            int wordIndex = wordIndexes[i].wordIndex;
-
-            for (int j = 0; j < wordLengths[i]; j++)
-            {
-                if (wordIndexes[i].tipoFrase.Equals("t")) // Temblar
-                {
-                    Vector3 offset = new Vector3(Random.Range(1.5f,5f), Random.Range(1.5f,5f), Random.Range(1.5f,5f));
-                    
-                    TMP_CharacterInfo c = textComponent.textInfo.characterInfo[wordIndex + j];
-
-                    int index = c.vertexIndex;
-
-                    vertices[index] += offset;
-                    vertices[index+1] += offset;
-                    vertices[index+2] += offset;
-                    vertices[index+3] += offset;
-            
-                    meshPrincipal.vertices = vertices;
-                } else if (wordIndexes[i].tipoFrase.Equals("m")) // Mover de arriba a abajo
-                {
-                    TMP_CharacterInfo c = textComponent.textInfo.characterInfo[wordIndex + j];
-
-                    int index = c.vertexIndex;
-
-                    Vector3 orig = vertices[index];
-                    Vector3 offset = new Vector3(0, Mathf.Sin(Time.time * 2 + orig.x * 0.01f) * 10, 0);
-
-                    for (int n = 0; n < 4; n++)
-                    {
-                        vertices[index + n] += offset;
-                    }
-
-                    meshPrincipal.vertices = vertices;
-                }
-            }
-        }
-    }
-
     private void moverCaracteresArribaAbajo()
     {
         textComponent.ForceMeshUpdate();
@@ -207,7 +215,7 @@ public class NPCManager : MonoBehaviour
         }
     }
 
-    private void moverPalabrasArribaAbajo()
+    /*private void moverPalabrasArribaAbajo()
     {
         textComponent.ForceMeshUpdate();
 
@@ -235,7 +243,7 @@ public class NPCManager : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     private void moverTextoArribaAbajo()
     {
