@@ -57,25 +57,11 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (Input.GetButton("Sprint"))
                     {
-                        if (speed < speedMax)
-                        {
-                            speed += sumSpeed * Time.deltaTime;
-                        }
-                        else
-                        {
-                            speed = speedMax;
-                        }
+                        speed = speedMax;
                     }
                     else
                     {
-                        if (speed > speedMin)
-                        {
-                            speed -= restSpeed * Time.deltaTime;
-                        }
-                        else
-                        {
-                            speed = speedMin;
-                        }
+                        speed = speedMin;
                     }
                 }
                 else
@@ -87,14 +73,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                if (speed > 0)
-                {
-                    speed -= (restSpeed + 5) * Time.deltaTime;
-                }
-                else
-                {
-                    speed = 0;
-                }
+                speed = 0;
                 
                 animator.SetBool("run", false);
             }

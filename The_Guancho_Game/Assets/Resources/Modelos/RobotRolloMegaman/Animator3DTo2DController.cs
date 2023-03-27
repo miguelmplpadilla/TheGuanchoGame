@@ -9,12 +9,16 @@ public class Animator3DTo2DController : MonoBehaviour
 
     public float speedAnimacion;
     public float numFrameAnimacion;
+    public float sumFotogramas = 0.1f;
 
     public string nombreAnimacion = "";
+
+    private string anteriorAnimacion = "";
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        animator.speed = 0;
     }
 
     private void Start()
@@ -24,7 +28,14 @@ public class Animator3DTo2DController : MonoBehaviour
 
     private void Update()
     {
-        animator.speed = 0;
+        nombreAnimacion = animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
+
+        if (!nombreAnimacion.Equals(anteriorAnimacion))
+        {
+            Debug.Log("Animacion diferente");
+            numFrameAnimacion = 0;
+            anteriorAnimacion = nombreAnimacion;
+        }
     }
 
     IEnumerator animar()
@@ -32,8 +43,8 @@ public class Animator3DTo2DController : MonoBehaviour
         while (true)
         {
             animator.Play(nombreAnimacion, 0, numFrameAnimacion);
-            numFrameAnimacion += 0.1f;
-            if (numFrameAnimacion > 1)
+            numFrameAnimacion += sumFotogramas;
+            if (numFrameAnimacion > 1.1f)
             {
                 numFrameAnimacion = 0;
             }
