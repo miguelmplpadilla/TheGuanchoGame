@@ -8,14 +8,18 @@ public class GroundController : MonoBehaviour
     public bool isGrounded = true;
     private Rigidbody2D rigidbody;
 
+    private Animator animator;
+
     private void Awake()
     {
         rigidbody = GetComponentInParent<Rigidbody2D>();
-    }
 
-    private void OnTriggerEnter(Collider other)
+        animator = transform.parent.GetComponentInChildren<Animator>();
+    }
+    
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        if (other.CompareTag("Suelo"))
+        if (col.CompareTag("Suelo"))
         {
             rigidbody.velocity = Vector2.zero;
         }
@@ -34,6 +38,7 @@ public class GroundController : MonoBehaviour
         if (other.CompareTag("Suelo"))
         {
             isGrounded = false;
+            animator.SetTrigger("jump");
         }
     }
 }

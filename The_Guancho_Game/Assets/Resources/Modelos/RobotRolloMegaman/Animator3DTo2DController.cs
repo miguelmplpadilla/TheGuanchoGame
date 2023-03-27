@@ -8,12 +8,15 @@ public class Animator3DTo2DController : MonoBehaviour
     public Animator animator;
 
     public float speedAnimacion;
-    public float numFrameAnimacion;
+    public float numFrameAnimacion = 0.1f;
     public float sumFotogramas = 0.1f;
 
     public string nombreAnimacion = "";
 
     private string anteriorAnimacion = "";
+
+    private bool isLooping;
+    private bool sumarParado = false;
 
     private void Awake()
     {
@@ -30,10 +33,14 @@ public class Animator3DTo2DController : MonoBehaviour
     {
         nombreAnimacion = animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
 
+        sumFotogramas = (animator.GetCurrentAnimatorClipInfo(0)[0].clip.length * 0.1f) / 0.8f;
+
+        isLooping = animator.GetCurrentAnimatorClipInfo(0)[0].clip.isLooping;
+
         if (!nombreAnimacion.Equals(anteriorAnimacion))
         {
-            Debug.Log("Animacion diferente");
-            numFrameAnimacion = 0;
+            sumarParado = false;
+            numFrameAnimacion = 0.1f;
             anteriorAnimacion = nombreAnimacion;
         }
     }
@@ -42,13 +49,30 @@ public class Animator3DTo2DController : MonoBehaviour
     {
         while (true)
         {
-            animator.Play(nombreAnimacion, 0, numFrameAnimacion);
-            numFrameAnimacion += sumFotogramas;
-            if (numFrameAnimacion > 1.1f)
+            if (!sumarParado)
             {
-                numFrameAnimacion = 0;
+                animator.Play(nombreAnimacion, 0, numFrameAnimacion);
+                numFrameAnimacion += sumFotogramas;
+                if (numFrameAnimacion > 1f)
+                {
+                    if (isLooping)
+                    {
+                        numFrameAnimacion = 0.1f;
+                    }
+                    else
+                    {
+                        numFrameAnimacion = 1;
+                        
+                        animator.Play(nombreAnimacion, 0, numFrameAnimacion);
+                        
+                        sumarParado = true;
+                    }
+                }
+                
+                yield return new WaitForSeconds(speedAnimacion);
             }
-            yield return new WaitForSeconds(speedAnimacion);
+
+            yield return null;
         }
     }
 }
