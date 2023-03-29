@@ -74,23 +74,6 @@ public class PlayerGanchoController : MonoBehaviour
                 {
                     puntoAnclaje = anclaje;
                     anclajeCercano = distancia;
-                    
-                    /*if (transform.localScale.x > 0)
-                    {
-                        if (anclaje.transform.position.x > transform.position.x)
-                        {
-                            puntoAnclaje = anclaje;
-                            anclajeCercano = distancia;
-                        }
-                    }
-                    else
-                    {
-                        if (anclaje.transform.position.x > transform.position.x)
-                        {
-                            puntoAnclaje = anclaje;
-                            anclajeCercano = distancia;
-                        }
-                    }*/
                 }
             }
 
@@ -151,15 +134,6 @@ public class PlayerGanchoController : MonoBehaviour
             }
             else
             {
-                /*if (playerMovement.movement.x < 0)
-                {
-                    rigidbody.AddForce(Vector2.left * 5, ForceMode2D.Impulse);
-                }
-                else if (playerMovement.movement.x > 0) 
-                {
-                    rigidbody.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
-                }*/
-
                 if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
                 {
                     puntosAnclaje.Remove(puntoAnclaje);
