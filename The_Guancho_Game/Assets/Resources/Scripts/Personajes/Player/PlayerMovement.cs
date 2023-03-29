@@ -122,16 +122,11 @@ public class PlayerMovement : MonoBehaviour
     public void saltar()
     {
         rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        //animator.SetTrigger("jump");
-    }
-
-    private void LateUpdate()
-    {
-        animator.SetBool("isGrounded", groundController.isGrounded);
     }
 
     private void FixedUpdate()
     {
+        animator.SetBool("isGrounded", groundController.isGrounded);
         animator.SetFloat("horizontalVelocity", speed);
         
         float y =  Mathf.Clamp(rigidbody.velocity.y, minVerticalSpeed, maxVerticalSpeed);

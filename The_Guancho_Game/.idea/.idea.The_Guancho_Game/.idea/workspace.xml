@@ -3,30 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ec41ed5e-6894-4cdc-8127-e636cba0ab03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materiales/ColorAmarillo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materiales/ColorAmarillo.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materiales/ColorBlanco.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materiales/ColorBlanco.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materiales/ColorMorado.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materiales/ColorMorado.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materiales/ColorNegro.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materiales/ColorNegro.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materiales/ColorVerde.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materiales/ColorVerde.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materiales/Rojo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materiales/Rojo.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materiales/SueloMadera.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materiales/SueloMadera.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/PlayerRobot/PlayerRobotAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/PlayerRobot/PlayerRobotAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/Player.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenaPruebaMiguel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenaPruebaMiguel.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerGanchoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerGanchoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Ground_Tile_01/Ground_Tile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Ground_Tile_01/Ground_Tile.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Ground_Tile_01/Materials/Ground_01_basecolor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Ground_Tile_01/Materials/Ground_01_basecolor.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Stylized_Brick_01/Stylized_Brick_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Stylized_Brick_01/Stylized_Brick_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Stylized_Stone_01/Stylized_Stone_Tile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Stylized_Stone_01/Stylized_Stone_Tile.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Stylized_Tiles_02/Materials/CubbleStone_ArcTiles_Custom_basecolor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Stylized_Tiles_02/Materials/CubbleStone_ArcTiles_Custom_basecolor.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Stylized_Tiles_02/Materials/CubbleStone_ArcTiles_Custom_height.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Stylized_Tiles_02/Materials/CubbleStone_ArcTiles_Custom_height.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Stylized_Tiles_02/Stylized_Tiles_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Stylized_Tiles_02/Stylized_Tiles_02.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Wood_Surface_01/Stylized_Wood_Planks.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Texturas/Stylized Texture Pack/Stylized Texture Pack 2k .png/Wood_Surface_01/Stylized_Wood_Planks.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VIDE/Data/DemoAssets/Materials/BlueForPainting.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VIDE/Data/DemoAssets/Materials/BlueForPainting.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VIDE/Data/DemoAssets/Materials/MAT_Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VIDE/Data/DemoAssets/Materials/MAT_Floor.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VIDE/Data/DemoAssets/Materials/MAT_Npc.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VIDE/Data/DemoAssets/Materials/MAT_Npc.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +17,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/1Enemigo2D/Enemigo2DHurtController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/ManchaSangreController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/1Enemigo2D/Enemigo2DHurtController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../MedievalBattle/MedievalBattle/Assets/Resources/Scripts/Personajes/MovementController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Player2D/Player2DMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Farming_Tales/FarmingTales/Assets/Scripts/Personajes/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../MedievalBattle/MedievalBattle/Assets/Resources/Scripts/Personajes/MovementController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/KunaiController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,13 +34,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.12f1\Editor\Unity.exe" />
@@ -133,6 +115,7 @@
       <workItem from="1679939808394" duration="4504000" />
       <workItem from="1680073694321" duration="4000" />
       <workItem from="1680076736964" duration="1128000" />
+      <workItem from="1680125965094" duration="1611000" />
     </task>
     <servers />
   </component>

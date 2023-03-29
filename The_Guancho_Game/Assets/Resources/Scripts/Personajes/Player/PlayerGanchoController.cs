@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -149,6 +150,7 @@ public class PlayerGanchoController : MonoBehaviour
                 ganchoEnganchado = false;
                 gancho.transform.parent = posicionAgarreGancho.transform;
                 gancho.transform.localPosition = new Vector3(0, 0, 0);
+                transform.rotation = quaternion.Euler(0,0,0);
             }
         }
         
@@ -233,6 +235,11 @@ public class PlayerGanchoController : MonoBehaviour
             }
 
             transform.position = Vector3.MoveTowards(transform.position, puntoAnclaje.transform.position, velocidadGancho * Time.deltaTime);
+            
+            Vector3 dir = puntoAnclaje.transform.position - transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
+            
         } else if (puntoAnclajeScript.tipoEnganche.Equals("balanceo"))
         {
             Vector3 dir = puntoAnclajeScript.transform.position - transform.position;
