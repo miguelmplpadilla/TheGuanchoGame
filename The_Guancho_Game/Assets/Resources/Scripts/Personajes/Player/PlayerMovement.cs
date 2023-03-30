@@ -14,9 +14,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float sumSpeed = 1;
     [SerializeField] private float restSpeed = 1;
-    
+
     public float jumpForce;
-    
+
     public Vector2 movement;
 
     private Rigidbody2D rigidbody;
@@ -38,11 +38,16 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
+    public GameObject dustParticle;
+    public GameObject puntoInstanciaDust;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         groundController = GetComponentInChildren<GroundController>();
         playerGanchoController = GetComponent<PlayerGanchoController>();
+        
+        StartCoroutine("instanciarPolvo");
     }
 
     void Update()
@@ -74,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 speed = 0;
-                
+
                 animator.SetBool("run", false);
             }
 
@@ -97,12 +102,15 @@ public class PlayerMovement : MonoBehaviour
 
             if (!playerGanchoController.ganchoEnganchado)
             {
-                if (horizontalInput > 0f) {
+                if (horizontalInput > 0f)
+                {
                     transform.localScale = new Vector3(1, 1, 1);
-                    textoPlayer.transform.localScale = new Vector3(1,1,1);
-                } else if (horizontalInput < 0f) {
+                    textoPlayer.transform.localScale = new Vector3(1, 1, 1);
+                }
+                else if (horizontalInput < 0f)
+                {
                     transform.localScale = new Vector3(-1, 1, 1);
-                    textoPlayer.transform.localScale = new Vector3(-1,1,1);
+                    textoPlayer.transform.localScale = new Vector3(-1, 1, 1);
                 }
             }
 
@@ -132,8 +140,8 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         animator.SetFloat("horizontalVelocity", speed);
-        
-        float y =  Mathf.Clamp(rigidbody.velocity.y, minVerticalSpeed, maxVerticalSpeed);
+
+        float y = Mathf.Clamp(rigidbody.velocity.y, minVerticalSpeed, maxVerticalSpeed);
 
         if (mov)
         {
@@ -146,6 +154,25 @@ public class PlayerMovement : MonoBehaviour
                 rigidbody.velocity =
                     transform.TransformDirection(new Vector3(horizontalVelocity, y, 0));
             }
+        }
+    }
+
+    private IEnumerator instanciarPolvo()
+    {
+        while (true)
+        {
+            if (speed > speedMin && groundController.isGrounded)
+            {
+                Instantiate(dustParticle, puntoInstanciaDust.transform.position, Quaternion.identity);
+                
+                yield return new WaitForSeconds(0.05f);
+                
+                Instantiate(dustParticle, puntoInstanciaDust.transform.position, Quaternion.identity);
+                
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            yield return null;
         }
     }
 }

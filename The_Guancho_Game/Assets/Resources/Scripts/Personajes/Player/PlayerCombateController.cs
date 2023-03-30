@@ -48,6 +48,11 @@ public class PlayerCombateController : MonoBehaviour
         GameObject kunaiLanzado = Instantiate(kunai);
         kunaiLanzado.transform.position = shootPoint.transform.position;
 
+        if (transform.localScale.x < 0)
+        {
+            kunaiLanzado.transform.rotation = Quaternion.Euler(0, 180, 90);
+        }
+
         direccionLanzarKunai = new Vector2(transform.localScale.x, 0);
             
         kunaiLanzado.GetComponent<Rigidbody2D>().AddForce(direccionLanzarKunai * speedKunai, ForceMode2D.Impulse);
