@@ -33,6 +33,7 @@ public class KunaiController : MonoBehaviour
 
         if (!col.CompareTag("Player"))
         {
+            Debug.Log("Colision Kunai: "+col.name);
             Destroy(gameObject);
         }
     }

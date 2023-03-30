@@ -124,9 +124,13 @@ public class PlayerMovement : MonoBehaviour
         rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         animator.SetBool("isGrounded", groundController.isGrounded);
+    }
+
+    private void FixedUpdate()
+    {
         animator.SetFloat("horizontalVelocity", speed);
         
         float y =  Mathf.Clamp(rigidbody.velocity.y, minVerticalSpeed, maxVerticalSpeed);
