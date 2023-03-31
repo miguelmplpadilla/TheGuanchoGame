@@ -161,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
     {
         while (true)
         {
-            if (speed > speedMin && groundController.isGrounded)
+            if (speed > speedMin && groundController.isGrounded && mov)
             {
                 Instantiate(dustParticle, puntoInstanciaDust.transform.position, Quaternion.identity);
                 
