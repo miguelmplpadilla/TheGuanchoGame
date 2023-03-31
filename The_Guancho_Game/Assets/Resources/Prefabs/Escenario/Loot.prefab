@@ -180,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variablesPlayer: {fileID: 11400000, guid: ede6c1856fa8e674f8456512816bcc20, type: 2}
   lootType: kunai
-  numLoot: 1
+  numLoot: 5
 --- !u!61 &5387345138972601999
 BoxCollider2D:
   m_ObjectHideFlags: 0

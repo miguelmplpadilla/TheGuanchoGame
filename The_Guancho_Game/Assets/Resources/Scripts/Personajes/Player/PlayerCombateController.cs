@@ -12,6 +12,7 @@ public class PlayerCombateController : MonoBehaviour
     public VariablesPlayer variablesPlayer;
     private Animator animator;
     private PlayerMovement playerMovement;
+    private GroundController groundController;
     private Rigidbody2D rigidbody;
 
     private Vector2 direccionLanzarKunai;
@@ -24,12 +25,13 @@ public class PlayerCombateController : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
+        groundController = GetComponentInChildren<GroundController>();
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        if (!isKunaiLanzado && variablesPlayer.kunais > 0)
+        if (!isKunaiLanzado && variablesPlayer.kunais > 0 && groundController.isGrounded)
         {
             if (Input.GetButtonDown("Fire1"))
             {
