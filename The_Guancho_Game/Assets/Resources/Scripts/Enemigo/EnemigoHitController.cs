@@ -11,11 +11,13 @@ public class EnemigoHitController : MonoBehaviour
 
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
+    private Animator animator;
 
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         audioSource = GetComponent<AudioSource>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void hit(float dano)
@@ -27,18 +29,9 @@ public class EnemigoHitController : MonoBehaviour
 
         if (vida <= 0)
         {
-            // Aqui va la animacion de morir y despues se destruye
-            StartCoroutine("destruirEnemigo");
+            animator.SetTrigger("morir");
+            audioSource.Play();
+            navMeshAgent.speed = 0;
         }
-    }
-
-    IEnumerator destruirEnemigo()
-    {
-        audioSource.Play();
-        navMeshAgent.speed = 0;
-        
-        yield return new WaitForSeconds(0.9f);
-        
-        Destroy(gameObject);
     }
 }
