@@ -12,6 +12,7 @@ public class ItemKunaiController : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             PlayerCombateController playerCombateController = col.GetComponent<PlayerCombateController>();
+            
             if (variablesPlayer.kunais < 5)
             {
                 variablesPlayer.sumarKunais(1);

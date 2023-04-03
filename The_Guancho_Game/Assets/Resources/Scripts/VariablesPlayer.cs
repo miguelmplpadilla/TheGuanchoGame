@@ -47,4 +47,10 @@ public class VariablesPlayer : ScriptableObject
     {
         imagenKunai.sizeDelta = new Vector2(200*kunais, imagenKunai.sizeDelta.y);
     }
+
+    public void reiniciarVariables()
+    {
+        vida = 3;
+        kunais = 5;
+    }
 }

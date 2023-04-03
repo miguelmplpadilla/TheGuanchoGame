@@ -13,11 +13,13 @@ public class EnemigoHitController : MonoBehaviour
     private AudioSource audioSource;
     private Animator animator;
 
+    public bool muerto = false;
+
     private void Awake()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        audioSource = GetComponent<AudioSource>();
-        animator = GetComponentInChildren<Animator>();
+        navMeshAgent = GetComponentInParent<NavMeshAgent>();
+        audioSource = GetComponentInParent<AudioSource>();
+        animator = transform.parent.GetComponentInChildren<Animator>();
     }
 
     public void hit(float dano)
@@ -29,6 +31,7 @@ public class EnemigoHitController : MonoBehaviour
 
         if (vida <= 0)
         {
+            muerto = true;
             animator.SetTrigger("morir");
             audioSource.Play();
             navMeshAgent.speed = 0;

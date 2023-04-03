@@ -8,9 +8,11 @@ public class EnemigoMovimientoController : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
     private Animator animator;
+    private EnemigoHitController enemigoHitController;
 
     public GameObject objetoSeguir;
     private GameObject player;
+    public GameObject modelo;
 
     [SerializeField] private GameObject[] puntosPatrulla;
     private GameObject puntoPatrullaActual;
@@ -22,6 +24,7 @@ public class EnemigoMovimientoController : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
+        enemigoHitController = GetComponentInChildren<EnemigoHitController>();
     }
 
     private void Start()
@@ -33,36 +36,54 @@ public class EnemigoMovimientoController : MonoBehaviour
 
     void Update()
     {
-        float distanciaPlayer = Vector2.Distance(player.transform.position, transform.position);
-        float distanciaVerticalPlayer = Vector2.Distance(new Vector2(transform.position.x, player.transform.position.y),
-            transform.position);
-
-        if (distanciaPlayer < 15 && distanciaVerticalPlayer < 3)
+        if (!enemigoHitController.muerto && !player.GetComponentInChildren<PlayerHurtController>().muerto)
         {
-            if (!atacando)
-            {
-                objetoSeguir = player;
+            float distanciaPlayer = Vector2.Distance(player.transform.position, transform.position);
+            float distanciaVerticalPlayer = Vector2.Distance(new Vector2(transform.position.x, player.transform.position.y),
+                transform.position);
 
-                if (distanciaPlayer < 2)
+            if (distanciaPlayer < 15 && distanciaVerticalPlayer < 3)
+            {
+                if (!atacando)
                 {
-                    StartCoroutine("pararAtacar");
-                    animator.SetTrigger("atacar");
-                    animator.SetBool("run", false);
-                    atacando = true;
+                    objetoSeguir = player;
+
+                    if (distanciaPlayer < 2)
+                    {
+                        StartCoroutine("pararAtacar");
+                        animator.SetTrigger("atacar");
+                        animator.SetBool("run", false);
+                        atacando = true;
+                    }
+                }
+                else
+                {
+                    objetoSeguir = gameObject;
                 }
             }
             else
             {
-                objetoSeguir = gameObject;
+                objetoSeguir = puntoPatrullaActual;
             }
         }
         else
         {
-            objetoSeguir = puntoPatrullaActual;
+            StopCoroutine("pararAtacar");
+            objetoSeguir = gameObject;
         }
+        
         Vector3 seguimientoObeto = new Vector3(objetoSeguir.transform.position.x, objetoSeguir.transform.position.y,
             transform.position.z);
         navMeshAgent.SetDestination(seguimientoObeto);
+
+        if (objetoSeguir.transform.position.x > transform.position.x)
+        {
+            modelo.transform.rotation = Quaternion.Euler(0,90,0);
+        }
+        else
+        {
+            modelo.transform.rotation = Quaternion.Euler(0,-90,0);
+        }
     }
 
     private void LateUpdate()

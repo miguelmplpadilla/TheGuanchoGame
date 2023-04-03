@@ -20,20 +20,18 @@ public class KunaiController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.CompareTag("PuntoAnclaje"))
+        Debug.Log("Colisionado: "+col.name);
+        
+        if (col.CompareTag("HurtBoxEnemigo"))
         {
-            if (col.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
-            {
-                player.GetComponent<PlayerGanchoController>().puntosAnclaje.Remove(col.gameObject);
-                col.SendMessage("hit", 1);
-            }
+            player.GetComponent<PlayerGanchoController>().puntosAnclaje.Remove(col.transform.parent.gameObject);
+            col.SendMessage("hit", 1);
         }
 
-        if (!col.CompareTag("Player"))
+        if (!col.CompareTag("Player") && (col.CompareTag("Untagged") || col.CompareTag("Suelo") || col.CompareTag("HurtBoxEnemigo")))
         {
-            Debug.Log("Colision Kunai: "+col.name);
             Destroy(gameObject);
         }
     }

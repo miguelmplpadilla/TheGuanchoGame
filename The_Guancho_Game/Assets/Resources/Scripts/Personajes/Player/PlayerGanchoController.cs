@@ -138,7 +138,7 @@ public class PlayerGanchoController : MonoBehaviour
                 if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
                 {
                     puntosAnclaje.Remove(puntoAnclaje);
-                    puntoAnclaje.SendMessage("hit", 1);
+                    puntoAnclaje.BroadcastMessage("hit", 1);
                     cameraController.shakeCamera(0.2f,3);
                 }
                 

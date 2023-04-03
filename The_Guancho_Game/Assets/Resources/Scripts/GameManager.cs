@@ -11,8 +11,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("VidaPlayer: "+variablesPlayer.vida);
-        Debug.Log("KunaisPlayer: "+variablesPlayer.kunais);
+        variablesPlayer.reiniciarVariables();
         
         variablesPlayer.inicializacion();
     }
@@ -29,5 +28,10 @@ public class GameManager : MonoBehaviour
     {
         variablesPlayer.actualizarKunais();
         variablesPlayer.actualizarVida();
+    }
+
+    public void reiniciarVariables()
+    {
+        variablesPlayer.reiniciarVariables();
     }
 }
