@@ -18,6 +18,13 @@ public class Animator3DTo2DController : MonoBehaviour
     private bool isLooping;
     private bool sumarParado = false;
 
+    public string funcionEjecutarFinal;
+    public string animacionEjecutarFuncion;
+
+    public string[] animacionesExcluidas;
+
+    public bool animacionEsExcluida = false;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -43,36 +50,67 @@ public class Animator3DTo2DController : MonoBehaviour
             numFrameAnimacion = 0.1f;
             anteriorAnimacion = nombreAnimacion;
         }
+
+        animacionEsExcluida = animacionExcluida();
     }
 
     IEnumerator animar()
     {
         while (true)
         {
-            if (!sumarParado)
+            if (!animacionEsExcluida)
             {
-                animator.Play(nombreAnimacion, 0, numFrameAnimacion);
-                numFrameAnimacion += sumFotogramas;
-                if (numFrameAnimacion > 1f)
+                if (!sumarParado)
                 {
-                    if (isLooping)
+                    animator.speed = 0;
+                    animator.Play(nombreAnimacion, 0, numFrameAnimacion);
+                    numFrameAnimacion += sumFotogramas;
+                    if (numFrameAnimacion > 0.9f)
                     {
-                        numFrameAnimacion = 0.1f;
-                    }
-                    else
-                    {
-                        numFrameAnimacion = 1;
-                        
-                        animator.Play(nombreAnimacion, 0, numFrameAnimacion);
-                        
-                        sumarParado = true;
-                    }
-                }
-                
-                yield return new WaitForSeconds(speedAnimacion);
-            }
+                        if (isLooping)
+                        {
+                            numFrameAnimacion = 0.1f;
+                        }
+                        else
+                        {
+                            if (!animacionEjecutarFuncion.Equals("") && animacionEjecutarFuncion.Equals(nombreAnimacion))
+                            {
+                                gameObject.SendMessage(funcionEjecutarFinal);
+                            }
 
+                            numFrameAnimacion = 1;
+                        
+                            animator.Play(nombreAnimacion, 0, numFrameAnimacion);
+                        
+                            sumarParado = true;
+                        }
+                    }
+                
+                    yield return new WaitForSeconds(speedAnimacion);
+                }
+            }
+            else
+            {
+                numFrameAnimacion = 0;
+                animator.speed = 1;
+            }
+            
             yield return null;
         }
+    }
+
+    private bool animacionExcluida()
+    {
+        bool excluir = false;
+
+        for (int i = 0; i < animacionesExcluidas.Length; i++)
+        {
+            if (animacionesExcluidas[i].Equals(nombreAnimacion))
+            {
+                excluir = true;
+            }
+        }
+
+        return excluir;
     }
 }

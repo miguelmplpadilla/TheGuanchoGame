@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec41ed5e-6894-4cdc-8127-e636cba0ab03" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Recursos/Blender/Miguel/Katana-Miguel.blend" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursos/Blender/Miguel/Katana-Miguel.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Recursos/Blender/Miguel/Katana-Miguel.blend1" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursos/Blender/Miguel/Katana-Miguel.blend1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Modelos/RobotGodot/RobotGodot_Walking.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Modelos/RobotGodot/RobotGodot_Walking.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/EnemigoRobotGodot/RobotGodotAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/EnemigoRobotGodot/RobotGodotAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Modelos/RobotRolloMegaman/Animator3DTo2DController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Modelos/RobotRolloMegaman/Animator3DTo2DController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasMiguel/EscenaPruebaMiguel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasMiguel/EscenaPruebaMiguel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoMovimientoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoMovimientoController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,13 +17,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../MiniCombatGame/MiniCombatGame/Assets/Resources/Scripts/Player/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/ManchaSangreController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/1Enemigo2D/Enemigo2DHurtController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../MedievalBattle/MedievalBattle/Assets/Resources/Scripts/Personajes/MovementController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/ManchaSangreController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Player2D/Player2DMovement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Farming_Tales/FarmingTales/Assets/Scripts/Personajes/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../MedievalBattle/MedievalBattle/Assets/Resources/Scripts/Personajes/MovementController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../MiniCombatGame/MiniCombatGame/Assets/Resources/Scripts/Player/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/KunaiController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -33,12 +35,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Discover.Launch.Via.Unity" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="rider.run.widget.enabled.cache" value="false" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.12f1\Editor\Unity.exe" />
@@ -122,6 +125,7 @@
       <workItem from="1680245864705" duration="1000000" />
       <workItem from="1680252345901" duration="1179000" />
       <workItem from="1680469843737" duration="2553000" />
+      <workItem from="1680505283794" duration="4207000" />
     </task>
     <servers />
   </component>

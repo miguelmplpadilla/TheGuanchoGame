@@ -16,6 +16,8 @@ public class EnemigoMovimientoController : MonoBehaviour
     private GameObject puntoPatrullaActual;
     private int contadorPatrulla = 0;
 
+    public bool atacando = false;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -37,13 +39,27 @@ public class EnemigoMovimientoController : MonoBehaviour
 
         if (distanciaPlayer < 15 && distanciaVerticalPlayer < 3)
         {
-            objetoSeguir = player;
+            if (!atacando)
+            {
+                objetoSeguir = player;
+
+                if (distanciaPlayer < 2)
+                {
+                    StartCoroutine("pararAtacar");
+                    animator.SetTrigger("atacar");
+                    animator.SetBool("run", false);
+                    atacando = true;
+                }
+            }
+            else
+            {
+                objetoSeguir = gameObject;
+            }
         }
         else
         {
             objetoSeguir = puntoPatrullaActual;
         }
-
         Vector3 seguimientoObeto = new Vector3(objetoSeguir.transform.position.x, objetoSeguir.transform.position.y,
             transform.position.z);
         navMeshAgent.SetDestination(seguimientoObeto);
@@ -55,7 +71,6 @@ public class EnemigoMovimientoController : MonoBehaviour
         {
             float distanciaPuntoPatrulla = Vector2.Distance(transform.position, puntoPatrullaActual.transform.position);
 
-            Debug.Log("Distancia punto patrulla: "+distanciaPuntoPatrulla);
         
             if (distanciaPuntoPatrulla < 1)
             {
@@ -69,5 +84,12 @@ public class EnemigoMovimientoController : MonoBehaviour
                 puntoPatrullaActual = puntosPatrulla[contadorPatrulla];
             }
         }
+    }
+
+    private IEnumerator pararAtacar()
+    {
+        yield return new WaitForSeconds(2f);
+        atacando = false;
+        animator.SetBool("run", true);
     }
 }
