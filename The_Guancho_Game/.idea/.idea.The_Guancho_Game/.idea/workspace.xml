@@ -4,15 +4,16 @@
     <list default="true" id="ec41ed5e-6894-4cdc-8127-e636cba0ab03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/EnemigoRobotGodot/RobotGodotAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/EnemigoRobotGodot/RobotGodotAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/PlayerRobot/PlayerRobotAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/PlayerRobot/PlayerRobotAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/Kunai.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/Kunai.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Escenario/Loot.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Escenario/Loot.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Escenario/Puertas/PuertaBase.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Escenario/Puertas/PuertaBase.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasMiguel/EscenaPruebaMiguel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasMiguel/EscenaPruebaMiguel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasMiguel/EscenaPruebaMiguel/NavMesh-NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasMiguel/EscenaPruebaMiguel/NavMesh-NavMesh.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoMovimientoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoMovimientoController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Kunai/ItemKunaiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Kunai/ItemKunaiController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Escenario/Loot/LootController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Escenario/Loot/LootController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Escenario/Puerta/PuertaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Escenario/Puerta/PuertaController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/KunaiController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/KunaiController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerGanchoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerGanchoController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/VariablesPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/VariablesPlayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
@@ -131,7 +132,8 @@
       <workItem from="1680252345901" duration="1179000" />
       <workItem from="1680469843737" duration="2553000" />
       <workItem from="1680505283794" duration="4207000" />
-      <workItem from="1680537584354" duration="5304000" />
+      <workItem from="1680537584354" duration="6621000" />
+      <workItem from="1680558475058" duration="2173000" />
     </task>
     <servers />
   </component>

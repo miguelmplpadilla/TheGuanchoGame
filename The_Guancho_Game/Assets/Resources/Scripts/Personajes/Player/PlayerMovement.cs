@@ -125,6 +125,8 @@ public class PlayerMovement : MonoBehaviour
             movement = new Vector2(horizontalInput, verticalInput) * Time.deltaTime;
             horizontalVelocity = movement.normalized.x * speed;
         }
+        
+        animator.SetBool("isGrounded", groundController.isGrounded);
     }
 
     public void saltar()
@@ -134,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        animator.SetBool("isGrounded", groundController.isGrounded);
+        //animator.SetBool("isGrounded", groundController.isGrounded);
     }
 
     private void FixedUpdate()

@@ -12,7 +12,7 @@ public class PuertaController : MonoBehaviour
         StartCoroutine("cerrarPuerta");
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerStay2D(Collider2D col)
     {
         StopCoroutine("cerrarPuerta");
     }

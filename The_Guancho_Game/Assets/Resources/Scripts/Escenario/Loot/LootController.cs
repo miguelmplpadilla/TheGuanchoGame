@@ -9,19 +9,33 @@ public class LootController : MonoBehaviour
     public string lootType;
     public int numLoot;
 
+    private bool puedeRecoger = false;
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player"))
+        if (col.CompareTag("Suelo"))
         {
-            if (lootType.Equals("kunai"))
+            puedeRecoger = true;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (puedeRecoger)
+        {
+            if (other.CompareTag("Player"))
             {
-                variablesPlayer.sumarKunais(numLoot);
-            } else if (lootType.Equals("vida"))
-            {
-                variablesPlayer.sumarVida(numLoot);
+                if (lootType.Equals("kunai"))
+                {
+                    variablesPlayer.sumarKunais(numLoot);
+                }
+                else if (lootType.Equals("vida"))
+                {
+                    variablesPlayer.sumarVida(numLoot);
+                }
+
+                Destroy(transform.parent.gameObject);
             }
-            
-            Destroy(transform.parent.gameObject);
         }
     }
 }

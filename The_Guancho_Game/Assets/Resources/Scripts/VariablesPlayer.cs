@@ -20,7 +20,13 @@ public class VariablesPlayer : ScriptableObject
 
     public void sumarVida(int vidaSumar)
     {
-        vida += vidaSumar;
+        if ((vida + vidaSumar) >= 3)
+        {
+            vida = 3;
+        } else
+        {
+            vida += vidaSumar;
+        }
     }
     
     public void restarVida(int vidaRestar)
@@ -30,7 +36,13 @@ public class VariablesPlayer : ScriptableObject
     
     public void sumarKunais(int kunaisSumar)
     {
-        kunais += kunaisSumar;
+        if ((kunais + kunaisSumar) >= 5)
+        {
+            kunais = 5;
+        } else
+        {
+            kunais += kunaisSumar;
+        }
     }
     
     public void restarKunais(int kunaisRestar)

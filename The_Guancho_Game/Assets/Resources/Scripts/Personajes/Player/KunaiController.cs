@@ -22,8 +22,6 @@ public class KunaiController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        Debug.Log("Colisionado: "+col.name);
-        
         if (col.CompareTag("HurtBoxEnemigo"))
         {
             player.GetComponent<PlayerGanchoController>().puntosAnclaje.Remove(col.transform.parent.gameObject);
