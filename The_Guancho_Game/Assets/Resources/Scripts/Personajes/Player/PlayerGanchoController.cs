@@ -45,6 +45,8 @@ public class PlayerGanchoController : MonoBehaviour
 
     [SerializeField] private GameObject posicionAgarreGancho;
 
+    [SerializeField] private GameObject puntoLanzarRayCastParedes;
+
     private void Awake()
     {
         ganchoSpeedInicio = ganchoSpeed;
@@ -96,6 +98,8 @@ public class PlayerGanchoController : MonoBehaviour
                     indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.red;
                     puedeDisparar = false;
                 }
+                
+                comprobarRayCast();
 
                 if (puedeDisparar)
                 {
@@ -158,7 +162,7 @@ public class PlayerGanchoController : MonoBehaviour
         gancho.GetComponent<LineRenderer>().SetPosition(1, posicionAgarreGancho.transform.position);
     }
 
-    private void FixedUpdate()
+    private void comprobarRayCast()
     {
         if (!ganchoDisparado)
         {
@@ -166,21 +170,24 @@ public class PlayerGanchoController : MonoBehaviour
             {
                 if (puedeDisparar)
                 {
-                    direccionDisparargancho = new Vector2(puntoAnclaje.transform.position.x - transform.position.x,
-                        puntoAnclaje.transform.position.y - transform.position.y);
+                    Vector2 direccionDispararRayCastParedes = new Vector2(
+                        puntoAnclaje.transform.position.x - puntoLanzarRayCastParedes.transform.position.x,
+                        puntoAnclaje.transform.position.y - puntoLanzarRayCastParedes.transform.position.y);
 
-                    RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direccionDisparargancho, 100, 1 << 9);
+                    RaycastHit2D hitInfoParedes = Physics2D.Raycast(puntoLanzarRayCastParedes.transform.position,
+                        direccionDispararRayCastParedes, Vector3.Distance(puntoAnclaje.transform.position, puntoLanzarRayCastParedes.transform.position), 1 << 6);
 
-                    Debug.DrawRay(transform.position, direccionDisparargancho, Color.red);
+                    Debug.DrawRay(puntoLanzarRayCastParedes.transform.position, direccionDispararRayCastParedes,
+                        Color.red);
 
-                    if (hitInfo.collider != null && hitInfo.collider.tag.Equals("PuntoAnclaje"))
-                    {
-                        puedeDisparar = true;
-                    }
-                    else
+                    if (hitInfoParedes.collider != null && hitInfoParedes.collider.CompareTag("Suelo"))
                     {
                         puedeDisparar = false;
                         indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.red;
+                    }
+                    else
+                    {
+                        puedeDisparar = true;
                     }
                 }
             }
