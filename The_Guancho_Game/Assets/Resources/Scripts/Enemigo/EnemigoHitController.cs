@@ -43,7 +43,7 @@ public class EnemigoHitController : MonoBehaviour
                 muerto = true;
                 animator.SetBool("muerto", true);
                 animator.SetTrigger("morir");
-                audioSource.Play();
+                //audioSource.Play();
                 navMeshAgent.speed = 0;
             }
         }
