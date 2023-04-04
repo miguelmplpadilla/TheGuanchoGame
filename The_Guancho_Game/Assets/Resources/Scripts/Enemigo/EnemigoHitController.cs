@@ -38,6 +38,7 @@ public class EnemigoHitController : MonoBehaviour
             {
                 GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 GetComponentInParent<CapsuleCollider2D>().enabled = false;
+                GetComponent<BoxCollider2D>().enabled = false;
                 Instantiate(objetosCrear[Random.Range(0, objetosCrear.Length)], puntoCrearObjeto.transform.position, Quaternion.identity);
                 muerto = true;
                 animator.SetBool("muerto", true);

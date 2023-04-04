@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/EscenasPrincipales/EscenaMuerte.unity
     guid: 6b43f640abe69ec4b954f8c504b2e997
+  - enabled: 1
+    path: Assets/Resources/Scenes/EscenasDario/NivelExpo.unity
+    guid: 311af2b554eab1c45b15d026d4d3ebe7
+  - enabled: 1
+    path: Assets/Resources/Scenes/EscenasDario/NivelExpo2.unity
+    guid: 6f23613590b57c34b9f6ec3e7393f3b8
   m_configObjects: {}

@@ -34,7 +34,15 @@ public class EnemigoMovimientoController : MonoBehaviour
     {
         player = GameObject.Find("Player");
 
-        puntoPatrullaActual = puntosPatrulla[contadorPatrulla];
+        if (puntosPatrulla.Length > 0)
+        {
+            puntoPatrullaActual = puntosPatrulla[contadorPatrulla];
+        }
+        else
+        {
+            objetoSeguir = gameObject;
+            puntoPatrullaActual = gameObject;
+        }
     }
 
     void Update()
@@ -89,11 +97,20 @@ public class EnemigoMovimientoController : MonoBehaviour
         Vector3 seguimientoObeto = new Vector3(objetoSeguir.transform.position.x, objetoSeguir.transform.position.y,
             transform.position.z);
         navMeshAgent.SetDestination(seguimientoObeto);
+
+        if (objetoSeguir.Equals(gameObject) && !atacando)
+        {
+            animator.SetBool("run", false);
+        }
+        else
+        {
+            animator.SetBool("run", true);
+        }
     }
 
     private void LateUpdate()
     {
-        if (!objetoSeguir.Equals(player))
+        if (!objetoSeguir.Equals(player) && puntosPatrulla.Length > 0)
         {
             float distanciaPuntoPatrulla = Vector2.Distance(transform.position, puntoPatrullaActual.transform.position);
 
