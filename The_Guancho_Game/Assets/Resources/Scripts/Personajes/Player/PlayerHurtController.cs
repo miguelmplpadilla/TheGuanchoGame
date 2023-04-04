@@ -52,8 +52,8 @@ public class PlayerHurtController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         
-        variablesPlayer.reiniciarVariables();
+        PlayerPrefs.SetString("EscenaAnterior", SceneManager.GetActiveScene().name);
         
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("EscenaMuerte");
     }
 }

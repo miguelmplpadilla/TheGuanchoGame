@@ -12,7 +12,7 @@ public class EnemigoHitController : MonoBehaviour
 
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
     [SerializeField] private GameObject[] objetosCrear;
     [SerializeField] private GameObject puntoCrearObjeto;
@@ -23,25 +23,28 @@ public class EnemigoHitController : MonoBehaviour
     {
         navMeshAgent = GetComponentInParent<NavMeshAgent>();
         audioSource = GetComponentInParent<AudioSource>();
-        animator = transform.parent.GetComponentInChildren<Animator>();
     }
 
     public void hit(float dano)
     {
-        if (vida > 0)
+        if (!muerto)
         {
-            vida -= dano;
-        }
+            if (vida > 0)
+            {
+                vida -= dano;
+            }
 
-        if (vida <= 0)
-        {
-            GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX;
-            Instantiate(objetosCrear[Random.Range(0, objetosCrear.Length)], puntoCrearObjeto.transform.position, Quaternion.identity);
-            muerto = true;
-            animator.SetBool("muerto", true);
-            animator.SetTrigger("morir");
-            audioSource.Play();
-            navMeshAgent.speed = 0;
+            if (vida <= 0)
+            {
+                GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                GetComponentInParent<CapsuleCollider2D>().enabled = false;
+                Instantiate(objetosCrear[Random.Range(0, objetosCrear.Length)], puntoCrearObjeto.transform.position, Quaternion.identity);
+                muerto = true;
+                animator.SetBool("muerto", true);
+                animator.SetTrigger("morir");
+                audioSource.Play();
+                navMeshAgent.speed = 0;
+            }
         }
     }
 }

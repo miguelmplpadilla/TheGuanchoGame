@@ -12,6 +12,7 @@ TagManager:
   - Inter
   - HitBoxEnemigo
   - HurtBoxEnemigo
+  - CameraConfiner
   layers:
   - Default
   - TransparentFX

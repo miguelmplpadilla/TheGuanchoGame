@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class EnemigoMovimientoController : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
-    private Animator animator;
+    [SerializeField] private Animator animator;
     private EnemigoHitController enemigoHitController;
 
     public GameObject objetoSeguir;
@@ -20,11 +20,14 @@ public class EnemigoMovimientoController : MonoBehaviour
 
     public bool atacando = false;
 
+    private float speedOriginal;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        animator = GetComponentInChildren<Animator>();
         enemigoHitController = GetComponentInChildren<EnemigoHitController>();
+
+        speedOriginal = navMeshAgent.speed;
     }
 
     private void Start()
@@ -38,6 +41,15 @@ public class EnemigoMovimientoController : MonoBehaviour
     {
         if (!enemigoHitController.muerto && !player.GetComponentInChildren<PlayerHurtController>().muerto)
         {
+            if (objetoSeguir.transform.position.x > transform.position.x)
+            {
+                modelo.transform.rotation = Quaternion.Euler(0,90,0);
+            }
+            else
+            {
+                modelo.transform.rotation = Quaternion.Euler(0,-90,0);
+            }
+            
             float distanciaPlayer = Vector2.Distance(player.transform.position, transform.position);
             float distanciaVerticalPlayer = Vector2.Distance(new Vector2(transform.position.x, player.transform.position.y),
                 transform.position);
@@ -46,6 +58,7 @@ public class EnemigoMovimientoController : MonoBehaviour
             {
                 if (!atacando)
                 {
+                    navMeshAgent.speed = speedOriginal;
                     objetoSeguir = player;
 
                     if (distanciaPlayer < 2)
@@ -58,32 +71,24 @@ public class EnemigoMovimientoController : MonoBehaviour
                 }
                 else
                 {
-                    objetoSeguir = gameObject;
+                    navMeshAgent.speed = 0;
                 }
             }
             else
             {
+                navMeshAgent.speed = speedOriginal;
                 objetoSeguir = puntoPatrullaActual;
             }
         }
         else
         {
             StopCoroutine("pararAtacar");
-            objetoSeguir = gameObject;
+            navMeshAgent.speed = 0;
         }
         
         Vector3 seguimientoObeto = new Vector3(objetoSeguir.transform.position.x, objetoSeguir.transform.position.y,
             transform.position.z);
         navMeshAgent.SetDestination(seguimientoObeto);
-
-        if (objetoSeguir.transform.position.x > transform.position.x)
-        {
-            modelo.transform.rotation = Quaternion.Euler(0,90,0);
-        }
-        else
-        {
-            modelo.transform.rotation = Quaternion.Euler(0,-90,0);
-        }
     }
 
     private void LateUpdate()

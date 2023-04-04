@@ -7,6 +7,8 @@ public class PuertaController : MonoBehaviour
 {
     public GameObject puerta;
 
+    [SerializeField] private BoxCollider2D boxCollider;
+
     private void OnTriggerExit2D(Collider2D other)
     {
         StartCoroutine("cerrarPuerta");
@@ -14,7 +16,11 @@ public class PuertaController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        StopCoroutine("cerrarPuerta");
+        if (!col.CompareTag("Kunai"))
+        {
+            boxCollider.enabled = false;
+            StopCoroutine("cerrarPuerta");
+        }
     }
 
     IEnumerator cerrarPuerta()
@@ -45,5 +51,7 @@ public class PuertaController : MonoBehaviour
 
             yield return null;
         }
+        
+        boxCollider.enabled = true;
     }
 }
