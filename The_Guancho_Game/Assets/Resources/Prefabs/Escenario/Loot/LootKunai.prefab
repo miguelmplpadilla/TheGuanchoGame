@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5387345137981337734, guid: 4529069428e808145b74f1d90eee1f0a, type: 3}
+      propertyPath: m_TagString
+      value: Loot
+      objectReference: {fileID: 0}
     - target: {fileID: 5387345137981337757, guid: 4529069428e808145b74f1d90eee1f0a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -106,6 +110,10 @@ PrefabInstance:
     - target: {fileID: 5387345137981337757, guid: 4529069428e808145b74f1d90eee1f0a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387345138972601997, guid: 4529069428e808145b74f1d90eee1f0a, type: 3}
+      propertyPath: m_TagString
+      value: Loot
       objectReference: {fileID: 0}
     - target: {fileID: 5387345138972601999, guid: 4529069428e808145b74f1d90eee1f0a, type: 3}
       propertyPath: m_Size.x

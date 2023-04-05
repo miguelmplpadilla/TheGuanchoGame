@@ -15,6 +15,7 @@ public class PlayerGanchoController : MonoBehaviour
     private GameObject puntoAnclaje;
     private GameObject indicadorLanzarGancho;
     private PlayerMovement playerMovement;
+    private PlayerCombateController playerCombateController;
     
     public bool ganchoDisparado = false;
     public bool puedeDisparar = true;
@@ -53,6 +54,7 @@ public class PlayerGanchoController : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         playerMovement = GetComponent<PlayerMovement>();
+        playerCombateController = GetComponent<PlayerCombateController>();
     }
 
     private void Start()
@@ -66,7 +68,7 @@ public class PlayerGanchoController : MonoBehaviour
 
     void Update()
     {
-        if (!ganchoDisparado)
+        if (!ganchoDisparado && !playerCombateController.isKunaiLanzado)
         {
             float anclajeCercano = 100000;
             foreach (var anclaje in puntosAnclaje)
@@ -105,6 +107,7 @@ public class PlayerGanchoController : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Fire2"))
                     {
+                        playerCombateController.isKunaiLanzado = false;
                         playerMovement.animator.SetBool("swinging", true);
                         playerMovement.animator.SetTrigger("swing");
                         

@@ -14,6 +14,8 @@ public class PlayerCombateController : MonoBehaviour
     private PlayerMovement playerMovement;
     private GroundController groundController;
     private Rigidbody2D rigidbody;
+    private PlayerGanchoController playerGanchoController;
+    private PlayerHurtController playerHurtController;
 
     private Vector2 direccionLanzarKunai;
 
@@ -27,11 +29,14 @@ public class PlayerCombateController : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         groundController = GetComponentInChildren<GroundController>();
         rigidbody = GetComponent<Rigidbody2D>();
+        playerGanchoController = GetComponent<PlayerGanchoController>();
+        
+        playerHurtController = GetComponentInChildren<PlayerHurtController>();
     }
 
     void Update()
     {
-        if (!isKunaiLanzado && variablesPlayer.kunais > 0 && groundController.isGrounded)
+        if (!isKunaiLanzado && variablesPlayer.kunais > 0 && groundController.isGrounded && !playerGanchoController.ganchoDisparado && !playerHurtController.muerto)
         {
             if (Input.GetButtonDown("Fire1"))
             {

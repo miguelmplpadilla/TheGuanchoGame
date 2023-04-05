@@ -13,6 +13,7 @@ TagManager:
   - HitBoxEnemigo
   - HurtBoxEnemigo
   - CameraConfiner
+  - Loot
   layers:
   - Default
   - TransparentFX
