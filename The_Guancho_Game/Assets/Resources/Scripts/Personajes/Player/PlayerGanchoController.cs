@@ -9,12 +9,10 @@ using UnityEngine;
 public class PlayerGanchoController : MonoBehaviour
 {
     public float ganchoSpeed = 1;
-    private float ganchoSpeedInicio = 1;
-    public float ganchoFuerza = 2;
 
     private GameObject puntoAnclaje;
     private GameObject indicadorLanzarGancho;
-    private PlayerMovement playerMovement;
+    private PlayerController playerController;
     private PlayerCombateController playerCombateController;
     
     public bool ganchoDisparado = false;
@@ -32,8 +30,6 @@ public class PlayerGanchoController : MonoBehaviour
     public float distanciaGanchoInicio = 0;
     public float velocidadGancho = 0;
 
-    public float fuerzaSalidaGancho = 0;
-
     private CameraController cameraController;
 
     public GameObject gancho;
@@ -50,10 +46,9 @@ public class PlayerGanchoController : MonoBehaviour
 
     private void Awake()
     {
-        ganchoSpeedInicio = ganchoSpeed;
         rigidbody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        playerMovement = GetComponent<PlayerMovement>();
+        playerController = GetComponent<PlayerController>();
         playerCombateController = GetComponent<PlayerCombateController>();
     }
 
@@ -108,13 +103,13 @@ public class PlayerGanchoController : MonoBehaviour
                     if (Input.GetButtonDown("Fire2"))
                     {
                         playerCombateController.isKunaiLanzado = false;
-                        playerMovement.animator.SetBool("swinging", true);
-                        playerMovement.animator.SetTrigger("swing");
+                        playerController.animator.SetBool("swinging", true);
+                        playerController.animator.SetTrigger("swing");
                         
                         distanciaGanchoInicio = Vector2.Distance(transform.position, puntoAnclaje.transform.position);
                         if (!puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("balanceo"))
                         {
-                            playerMovement.mov = false;
+                            playerController.mov = false;
                         }
 
                         StartCoroutine(moverGanchoAEnganche());
@@ -149,10 +144,10 @@ public class PlayerGanchoController : MonoBehaviour
                     cameraController.shakeCamera(0.2f,3);
                 }
                 
-                playerMovement.animator.SetBool("swinging", false);
+                playerController.animator.SetBool("swinging", false);
 
                 rigidbody.gravityScale = grvityScaleInicio;
-                playerMovement.mov = true;
+                playerController.mov = true;
                 ganchoDisparado = false;
                 ganchoEnganchado = false;
                 gancho.transform.parent = posicionAgarreGancho.transform;
@@ -178,7 +173,7 @@ public class PlayerGanchoController : MonoBehaviour
                         puntoAnclaje.transform.position.y - puntoLanzarRayCastParedes.transform.position.y);
 
                     RaycastHit2D hitInfoParedes = Physics2D.Raycast(puntoLanzarRayCastParedes.transform.position,
-                        direccionDispararRayCastParedes, Vector3.Distance(puntoAnclaje.transform.position, puntoLanzarRayCastParedes.transform.position), 1 << 6);
+                        direccionDispararRayCastParedes, Vector3.Distance(puntoAnclaje.transform.position, puntoLanzarRayCastParedes.transform.position), 1 << 8);
 
                     Debug.DrawRay(puntoLanzarRayCastParedes.transform.position, direccionDispararRayCastParedes,
                         Color.red);
@@ -220,7 +215,7 @@ public class PlayerGanchoController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         rigidbody.gravityScale = grvityScaleInicio;
-        playerMovement.mov = true;
+        playerController.mov = true;
         ganchoDisparado = false;
     }
 
@@ -259,20 +254,20 @@ public class PlayerGanchoController : MonoBehaviour
             distanceJoint.enabled = true;
             distanceJoint.connectedBody = puntoAnclaje.GetComponent<Rigidbody2D>();
             
-            playerMovement.animator.SetFloat("swingHorizontalSpeed", rigidbody.velocity.x);
+            playerController.animator.SetFloat("swingHorizontalSpeed", rigidbody.velocity.x);
 
             if (Input.GetButtonDown("Jump"))
             {
                 transform.rotation = Quaternion.Euler(0,0,0);
                     
-                playerMovement.animator.SetBool("swinging", false);
+                playerController.animator.SetBool("swinging", false);
                 distanceJoint.enabled = false;
                 rigidbody.velocity = rigidbody.velocity / 3;
                 
-                playerMovement.saltar();
+                playerController.jump();
                 
                 rigidbody.gravityScale = grvityScaleInicio;
-                playerMovement.mov = true;
+                playerController.mov = true;
                 ganchoDisparado = false;
                 ganchoEnganchado = false;
                 gancho.transform.parent = posicionAgarreGancho.transform;

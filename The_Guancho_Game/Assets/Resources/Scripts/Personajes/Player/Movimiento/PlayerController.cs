@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,10 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private float movementSpeed;
+    [SerializeField] private float speedMin;
+    [SerializeField] private float speedMax;
+    [SerializeField] private float speedAir;
+
     [SerializeField]
     private float groundCheckRadius;
     [SerializeField]
@@ -28,14 +33,18 @@ public class PlayerController : MonoBehaviour
     private float slopeDownAngle;
     private float slopeSideAngle;
     private float lastSlopeAngle;
+    
+    [SerializeField] private float maxVerticalSpeed = 100;
+    [SerializeField] private float minVerticalSpeed = -10;
 
     private int facingDirection = 1;
 
-    private bool isGrounded;
+    public bool isGrounded;
     private bool isOnSlope;
     private bool isJumping;
     private bool canWalkOnSlope;
     private bool canJump;
+    public bool mov = true;
 
     private Vector2 newVelocity;
     private Vector2 newForce;
@@ -45,24 +54,34 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private CapsuleCollider2D cc;
+    public Animator animator;
+    private PlayerGanchoController playerGanchoController;
 
     public GameObject posicionLanzarRayCast;
 
-    private void Start()
+    private void Awake()
     {
+        animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         cc = GetComponent<CapsuleCollider2D>();
+        playerGanchoController = GetComponent<PlayerGanchoController>();
+    }
 
+    private void Start()
+    {
         capsuleColliderSize = cc.size;
     }
 
     private void Update()
     {
+        animator.SetBool("isGrounded", isGrounded);
         CheckInput();     
     }
 
     private void FixedUpdate()
     {
+        animator.SetFloat("horizontalVelocity", movementSpeed);
+        
         CheckGround();
         SlopeCheck();
         ApplyMovement();
@@ -76,7 +95,10 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            Jump();
+            if (canJump)
+            {
+                jump();
+            }
         }
 
     }
@@ -130,7 +152,6 @@ public class PlayerController : MonoBehaviour
             slopeSideAngle = 0.0f;
             isOnSlope = false;
         }
-
     }
 
     private void SlopeCheckVertical(Vector2 checkPos)
@@ -180,41 +201,77 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Jump()
+    public void jump()
     {
-        if (canJump)
-        {
-            canJump = false;
-            isJumping = true;
-            newVelocity.Set(0.0f, 0.0f);
-            rb.velocity = newVelocity;
-            newForce.Set(0.0f, jumpForce);
-            rb.AddForce(newForce, ForceMode2D.Impulse);
-        }
-    }   
+        animator.SetTrigger("jump");
+        canJump = false;
+        isJumping = true;
+        newVelocity.Set(0.0f, 0.0f);
+        rb.velocity = newVelocity;
+        newForce.Set(0.0f, jumpForce);
+        rb.AddForce(newForce, ForceMode2D.Impulse);
+    }
 
     private void ApplyMovement()
     {
-        Debug.Log("IsOnSlope: "+isOnSlope+" IsGrounded: "+isGrounded+" IsJumping: "+isJumping+" CanWalkOnSlope: "+canWalkOnSlope);
-        if (isGrounded && !isOnSlope && !isJumping) //if not on slope
+        if (mov)
         {
-            Debug.Log("No rampa");
-            newVelocity.Set(movementSpeed * xInput, 0.0f);
-            rb.velocity = newVelocity;
-        }
-        else if (isGrounded && isOnSlope && canWalkOnSlope && !isJumping) //If on slope
-        {
-            Debug.Log("Rampa");
-            newVelocity.Set(movementSpeed * slopeNormalPerp.x * -xInput, movementSpeed * slopeNormalPerp.y * -xInput);
-            rb.velocity = newVelocity;
-        }
-        else if (!isGrounded) //If in air
-        {
-            Debug.Log("Aire");
-            newVelocity.Set(movementSpeed * xInput, rb.velocity.y);
-            rb.velocity = newVelocity;
-        }
+            float y = Mathf.Clamp(rb.velocity.y, minVerticalSpeed, maxVerticalSpeed);
+            
+            if (!playerGanchoController.ganchoEnganchado)
+            {
+                if (isGrounded && !isOnSlope && !isJumping) //if not on slope
+                {
+                    Debug.Log("No rampa");
+                    newVelocity.Set(movementSpeed * xInput, 0.0f);
+                    rb.velocity = newVelocity;
+                }
+                else if (isGrounded && isOnSlope && canWalkOnSlope && !isJumping) //If on slope
+                {
+                    Debug.Log("Rampa");
+                    newVelocity.Set(movementSpeed * slopeNormalPerp.x * -xInput, movementSpeed * slopeNormalPerp.y * -xInput);
+                    rb.velocity = newVelocity;
+                }
+                else if (!isGrounded) //If in air
+                {
+                    Debug.Log("Aire");
+                    newVelocity.Set(movementSpeed * xInput, y);
+                    rb.velocity = newVelocity;
+                }
+            }
+            else
+            {
+                newVelocity.Set(movementSpeed * xInput, 0.0f);
+                transform.Translate(newVelocity.normalized * Time.deltaTime);
+            }
 
+            if (xInput != 0)
+            {
+                if (isGrounded)
+                {
+                    if (Input.GetButton("Sprint"))
+                    {
+                        movementSpeed = speedMax;
+                    }
+                    else
+                    {
+                        movementSpeed = speedMin;
+                    }
+                }
+                else
+                {
+                    movementSpeed = speedAir;
+                }
+
+                animator.SetBool("run", true);
+            }
+            else
+            {
+                movementSpeed = 0;
+
+                animator.SetBool("run", false);
+            } 
+        }
     }
 
     private void Flip()

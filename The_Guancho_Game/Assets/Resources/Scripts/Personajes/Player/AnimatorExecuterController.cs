@@ -6,12 +6,12 @@ using UnityEngine;
 public class AnimatorExecuterController : MonoBehaviour
 {
     private PlayerCombateController playerCombateController;
-    private PlayerMovement playerMovement;
+    private PlayerController playerController;
     private Animator animator;
 
     private void Awake()
     {
-        playerMovement = GetComponentInParent<PlayerMovement>();
+        playerController = GetComponentInParent<PlayerController>();
         playerCombateController = GetComponentInParent<PlayerCombateController>();
 
         animator = GetComponent<Animator>();
@@ -29,7 +29,7 @@ public class AnimatorExecuterController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         playerCombateController.isKunaiLanzado = false;
-        playerMovement.mov = true;
+        playerController.mov = true;
         animator.SetBool("throwing", false);
     }
 }

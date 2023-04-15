@@ -8,7 +8,7 @@ public class PlayerHurtController : MonoBehaviour
 {
     [SerializeField] private VariablesPlayer variablesPlayer;
     private Animator animator;
-    private PlayerMovement playerMovement;
+    private PlayerController playerController;
 
     private Animator animatorPanelRojo;
 
@@ -17,7 +17,7 @@ public class PlayerHurtController : MonoBehaviour
     private void Awake()
     {
         animator = transform.parent.GetComponentInChildren<Animator>();
-        playerMovement = transform.parent.GetComponentInChildren<PlayerMovement>();
+        playerController = GetComponentInParent<PlayerController>();
     }
 
     private void Start()
@@ -40,7 +40,8 @@ public class PlayerHurtController : MonoBehaviour
                 if (variablesPlayer.vida <= 0)
                 {
                     StartCoroutine("reiniciarEscena");
-                    playerMovement.mov = false;
+                    playerController.mov = false;
+                    playerController.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                     animator.SetTrigger("morir");
                     muerto = true;
                 }
