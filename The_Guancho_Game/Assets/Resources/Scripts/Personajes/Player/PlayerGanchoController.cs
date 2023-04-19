@@ -14,6 +14,8 @@ public class PlayerGanchoController : MonoBehaviour
     private GameObject indicadorLanzarGancho;
     private PlayerController playerController;
     private PlayerCombateController playerCombateController;
+
+    private PuntoAnclajeScript puntoAnclajeScript;
     
     public bool ganchoDisparado = false;
     public bool puedeDisparar = true;
@@ -68,12 +70,49 @@ public class PlayerGanchoController : MonoBehaviour
             float anclajeCercano = 100000;
             foreach (var anclaje in puntosAnclaje)
             {
-                float distancia = Vector2.Distance(transform.position, anclaje.transform.position);
+                bool seguirComprobando = true;
                 
-                if (distancia < anclajeCercano)
+                if (transform.localScale.x > 0)
                 {
-                    puntoAnclaje = anclaje;
-                    anclajeCercano = distancia;
+                    if (transform.position.x > anclaje.transform.position.x)
+                    {
+                        seguirComprobando = false;
+                    }
+                } else if (transform.localScale.x < 0)
+                {
+                    if (transform.position.x < anclaje.transform.position.x)
+                    {
+                        seguirComprobando = false;
+                    }
+                }
+
+                if (seguirComprobando)
+                {
+                    float distancia = Vector2.Distance(transform.position, anclaje.transform.position);
+                
+                    if (distancia < anclajeCercano)
+                    {
+                        puntoAnclaje = anclaje;
+                        anclajeCercano = distancia;
+                    }
+                }
+            }
+
+            if (puntoAnclaje != null)
+            {
+                if (transform.localScale.x > 0)
+                {
+                    if (transform.position.x > puntoAnclaje.transform.position.x)
+                    {
+                        puntoAnclaje = null;
+                    }
+                }
+                else if (transform.localScale.x < 0)
+                {
+                    if (transform.position.x < puntoAnclaje.transform.position.x)
+                    {
+                        puntoAnclaje = null;
+                    }
                 }
             }
 
@@ -81,9 +120,11 @@ public class PlayerGanchoController : MonoBehaviour
             
             if (puntoAnclaje != null)
             {
+                puntoAnclajeScript = puntoAnclaje.GetComponent<PuntoAnclajeScript>();
+                
                 distanciaPuntoAnclaje = Vector2.Distance(transform.position, puntoAnclaje.transform.position);
                 
-                if (distanciaPuntoAnclaje <= 15)
+                if (distanciaPuntoAnclaje <= puntoAnclajeScript.distanciaEnganchar)
                 {
                     indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.white;
                     indicadorLanzarGancho.transform.position = new Vector3(puntoAnclaje.transform.position.x, puntoAnclaje.transform.position.y, 
@@ -107,7 +148,7 @@ public class PlayerGanchoController : MonoBehaviour
                         playerController.animator.SetTrigger("swing");
                         
                         distanciaGanchoInicio = Vector2.Distance(transform.position, puntoAnclaje.transform.position);
-                        if (!puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("balanceo"))
+                        if (!puntoAnclajeScript.tipoEnganche.Equals("balanceo"))
                         {
                             playerController.mov = false;
                         }
@@ -126,18 +167,23 @@ public class PlayerGanchoController : MonoBehaviour
                     indicadorLanzarGancho.GetComponent<SpriteRenderer>().enabled = true;
                 }
             }
+            else
+            {
+                indicadorLanzarGancho.GetComponent<SpriteRenderer>().enabled = false;
+            }
         }
 
         if (ganchoEnganchado)
         {
             float distancia = Vector3.Distance(transform.position, puntoAnclaje.transform.position);
+            
             if (distancia > 2f)
             {
                 lanzarGanchoAnclaje();
             }
             else
             {
-                if (puntoAnclaje.GetComponent<PuntoAnclajeScript>().tipoEnganche.Equals("enemigo"))
+                if (puntoAnclajeScript.tipoEnganche.Equals("enemigo"))
                 {
                     puntosAnclaje.Remove(puntoAnclaje);
                     puntoAnclaje.BroadcastMessage("hit", 1);
@@ -221,8 +267,6 @@ public class PlayerGanchoController : MonoBehaviour
 
     public void lanzarGanchoAnclaje()
     {
-        PuntoAnclajeScript puntoAnclajeScript = puntoAnclaje.GetComponent<PuntoAnclajeScript>();
-        
         if (puntoAnclajeScript.tipoEnganche.Equals("enganche") || puntoAnclajeScript.tipoEnganche.Equals("enemigo"))
         {
             rigidbody.gravityScale = 0;

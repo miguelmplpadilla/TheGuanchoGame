@@ -133,7 +133,6 @@ public class PlayerController : MonoBehaviour
 
         if (slopeHitFront)
         {
-            Debug.Log("SlopeHitFront");
             isOnSlope = true;
 
             slopeSideAngle = Vector2.Angle(slopeHitFront.normal, Vector2.up);
@@ -141,14 +140,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (slopeHitBack)
         {
-            Debug.Log("SlopeHitBack");
             isOnSlope = true;
 
             slopeSideAngle = Vector2.Angle(slopeHitBack.normal, Vector2.up);
         }
         else
         {
-            Debug.Log("SlopeNoHit");
             slopeSideAngle = 0.0f;
             isOnSlope = false;
         }
@@ -160,7 +157,6 @@ public class PlayerController : MonoBehaviour
         
         if (hit)
         {
-            Debug.Log("Hit: "+hit.collider.name);
             
             slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;            
 
@@ -189,8 +185,6 @@ public class PlayerController : MonoBehaviour
 
         canWalkOnSlope = true;
 
-        Debug.Log("XInput: "+xInput);
-        
         if (isOnSlope && canWalkOnSlope && xInput == 0.0f)
         {
             rb.sharedMaterial = fullFriction;
@@ -222,19 +216,16 @@ public class PlayerController : MonoBehaviour
             {
                 if (isGrounded && !isOnSlope && !isJumping) //if not on slope
                 {
-                    Debug.Log("No rampa");
                     newVelocity.Set(movementSpeed * xInput, 0.0f);
                     rb.velocity = newVelocity;
                 }
                 else if (isGrounded && isOnSlope && canWalkOnSlope && !isJumping) //If on slope
                 {
-                    Debug.Log("Rampa");
                     newVelocity.Set(movementSpeed * slopeNormalPerp.x * -xInput, movementSpeed * slopeNormalPerp.y * -xInput);
                     rb.velocity = newVelocity;
                 }
                 else if (!isGrounded) //If in air
                 {
-                    Debug.Log("Aire");
                     newVelocity.Set(movementSpeed * xInput, y);
                     rb.velocity = newVelocity;
                 }

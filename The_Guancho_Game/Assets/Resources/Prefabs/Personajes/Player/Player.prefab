@@ -2861,7 +2861,6 @@ GameObject:
   - component: {fileID: 7329706158928698527}
   - component: {fileID: 7329706158928698526}
   - component: {fileID: 5172619262980572997}
-  - component: {fileID: 7329706158928698513}
   - component: {fileID: 7329706158928698512}
   - component: {fileID: 7329706158928698515}
   - component: {fileID: 7329706158928698517}
@@ -2950,34 +2949,6 @@ MonoBehaviour:
   mov: 1
   animator: {fileID: 0}
   posicionLanzarRayCast: {fileID: 476564557}
---- !u!114 &7329706158928698513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7329706158928698519}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfb70f4e4521b6441875cdbf6a81cfc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  speedMin: 3
-  speedMax: 8
-  speedAir: 10
-  sumSpeed: 20
-  restSpeed: 25
-  jumpForce: 30
-  movement: {x: 0, y: 0}
-  mov: 1
-  textoPlayer: {fileID: 7329706158501743634}
-  maxVerticalSpeed: 100
-  minVerticalSpeed: -15
-  horizontalVelocity: 0
-  animator: {fileID: 6377798104461971161}
-  dustParticle: {fileID: 270898971534770582, guid: 3929423ffca91fd4189f861f8f87b751, type: 3}
-  puntoInstanciaDust: {fileID: 1245005443}
 --- !u!114 &7329706158928698512
 MonoBehaviour:
   m_ObjectHideFlags: 0
