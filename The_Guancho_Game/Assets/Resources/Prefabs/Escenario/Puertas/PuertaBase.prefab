@@ -235,7 +235,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puerta: {fileID: 1088577638824642853}
+  variablesPlayer: {fileID: 0}
   boxCollider: {fileID: 1332954834}
+  cerrada: 1
+  cerradaLlave: 1
 --- !u!61 &1088577638034861711
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -293,6 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1088577638276221309}
   - component: {fileID: 462510733}
+  - component: {fileID: 587307516983045968}
   - component: {fileID: 1332954834}
   m_Layer: 0
   m_Name: PuertaBase
@@ -334,6 +338,20 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &587307516983045968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088577638276221311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8755d96486081d64c82c0c85129336f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cerrada: 1
+  boxCollider: {fileID: 0}
 --- !u!61 &1332954834
 BoxCollider2D:
   m_ObjectHideFlags: 0

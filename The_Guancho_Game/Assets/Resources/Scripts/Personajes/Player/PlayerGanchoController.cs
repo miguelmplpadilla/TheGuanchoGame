@@ -199,6 +199,11 @@ public class PlayerGanchoController : MonoBehaviour
                 gancho.transform.parent = posicionAgarreGancho.transform;
                 gancho.transform.localPosition = new Vector3(0, 0, 0);
                 transform.rotation = quaternion.Euler(0,0,0);
+                
+                if (puntoAnclajeScript.tipoEnganche.Equals("ventilacion"))
+                {
+                    puntoAnclajeScript.GetComponent<VentilacionController>().moverVentilacion(puntoAnclaje);
+                }
             }
         }
         
@@ -267,7 +272,7 @@ public class PlayerGanchoController : MonoBehaviour
 
     public void lanzarGanchoAnclaje()
     {
-        if (puntoAnclajeScript.tipoEnganche.Equals("enganche") || puntoAnclajeScript.tipoEnganche.Equals("enemigo"))
+        if (!puntoAnclajeScript.tipoEnganche.Equals("balanceo"))
         {
             rigidbody.gravityScale = 0;
             rigidbody.velocity = Vector2.zero;

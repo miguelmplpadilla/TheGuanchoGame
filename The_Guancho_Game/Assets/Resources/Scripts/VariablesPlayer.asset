@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: VariablesPlayer
   m_EditorClassIdentifier: 
   vida: 3
-  kunais: 5
+  kunais: 3
+  llaves: 2

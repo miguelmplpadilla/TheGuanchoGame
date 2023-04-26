@@ -6,20 +6,49 @@ using UnityEngine;
 public class PuertaController : MonoBehaviour
 {
     public GameObject puerta;
+    [SerializeField] private VariablesPlayer variablesPlayer;
 
     [SerializeField] private BoxCollider2D boxCollider;
+    private PuertaCerradaController puertaCerradaController;
+
+    private bool abierta = false;
+    [SerializeField] private bool cerradaLlave = true;
+
+    private void Awake()
+    {
+        puertaCerradaController = GetComponentInParent<PuertaCerradaController>();
+    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        StartCoroutine("cerrarPuerta");
+        if (!puertaCerradaController.cerrada)
+        {
+            StartCoroutine("cerrarPuerta");
+        }
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (!col.CompareTag("Kunai"))
+        if (!puertaCerradaController.cerrada)
         {
-            boxCollider.enabled = false;
-            StopCoroutine("cerrarPuerta");
+            if (!col.CompareTag("Kunai"))
+            {
+                boxCollider.enabled = false;
+                StopCoroutine("cerrarPuerta");
+            }
+        }
+        else
+        {
+            if (!abierta)
+            {
+                if (variablesPlayer.llaves > 0 && cerradaLlave)
+                {
+                    puertaCerradaController.cerrada = false;
+                    puertaCerradaController.abrirCerrarPuerta(true);
+                    variablesPlayer.restarLlaves(1);
+                    abierta = true;
+                }
+            }
         }
     }
 

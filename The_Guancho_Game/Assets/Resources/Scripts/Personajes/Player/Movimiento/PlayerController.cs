@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     private int facingDirection = 1;
 
     public bool isGrounded;
-    private bool isOnSlope;
+    [SerializeField] private bool isOnSlope;
     private bool isJumping;
     private bool canWalkOnSlope;
     private bool canJump;
@@ -185,7 +185,7 @@ public class PlayerController : MonoBehaviour
 
         canWalkOnSlope = true;
 
-        if (isOnSlope && canWalkOnSlope && xInput == 0.0f)
+        if (xInput == 0.0f)
         {
             rb.sharedMaterial = fullFriction;
         }

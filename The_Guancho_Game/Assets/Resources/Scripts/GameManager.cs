@@ -26,8 +26,7 @@ public class GameManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        variablesPlayer.actualizarKunais();
-        variablesPlayer.actualizarVida();
+        variablesPlayer.actualizarVariables();
     }
 
     public void reiniciarVariables()
