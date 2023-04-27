@@ -32,6 +32,9 @@ public class LootController : MonoBehaviour
                 else if (lootType.Equals("vida"))
                 {
                     variablesPlayer.sumarVida(numLoot);
+                } else if (lootType.Equals("llave"))
+                {
+                    variablesPlayer.sumarLlaves(numLoot);
                 }
 
                 Destroy(transform.parent.gameObject);
