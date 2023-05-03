@@ -11,11 +11,16 @@ public class BotonInteractuarController : MonoBehaviour {
 
     private Vector3 originalLocalScale;
 
+    [SerializeField] private bool mostrar;
+
     private void Awake() {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         originalLocalScale = transform.localScale;
 
-        transform.localScale = new Vector3(0, 0, 0);
+        if (!mostrar)
+        {
+            transform.localScale = new Vector3(0, 0, 0);
+        }
     }
 
     void Update()

@@ -240,7 +240,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (isGrounded)
                 {
-                    if (Input.GetButton("Sprint"))
+                    if (Input.GetAxisRaw("Sprint") > 0)
                     {
                         movementSpeed = speedMax;
                     }

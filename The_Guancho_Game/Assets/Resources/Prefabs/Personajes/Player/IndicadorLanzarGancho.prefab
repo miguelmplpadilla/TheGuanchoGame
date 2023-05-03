@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8228515280700693605}
   - component: {fileID: 1342389203}
+  - component: {fileID: 8622599890189033251}
+  - component: {fileID: 105261888}
   m_Layer: 0
   m_Name: IndicadorLanzarGancho
   m_TagString: Untagged
@@ -84,3 +86,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8622599890189033251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228515280700693601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad43f6d66845e824fa4ac1bb074b0c52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &105261888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228515280700693601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d567e5195d174b47ab562b7a2002fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teclado: {fileID: 21300000, guid: 566f4c7a35fdd7342a622c7e504fe29a, type: 3}
+  mando: {fileID: -514098975, guid: 41ea674ae6b5dab4598b0ff426603ae1, type: 3}
+  mostrar: 1

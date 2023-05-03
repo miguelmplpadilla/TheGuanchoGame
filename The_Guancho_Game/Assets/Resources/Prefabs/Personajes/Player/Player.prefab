@@ -2741,7 +2741,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.10290909
+        value: 0.24576187
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2800,7 +2800,7 @@ GameObject:
   - component: {fileID: 7329706158884841204}
   - component: {fileID: 7329706158884841207}
   m_Layer: 3
-  m_Name: Colosion3D (1)
+  m_Name: Colosion3D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

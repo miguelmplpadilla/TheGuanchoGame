@@ -2377,7 +2377,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Miguel Padilla Lillo   Dario San jose burgos   Laura rodriguez lopez
+  m_text: "Miguel Padilla Lillo   Dar\xEDo San Jos\xE9 Burgos   Laura Rodr\xEDguez
+    L\xF3pez"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 71d8aee8a2a327c4e890bd05c5eb7a18, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: ce19f7c62fdce714bb384a98b9e34e7d, type: 2}
