@@ -743,9 +743,10 @@ GameObject:
   - component: {fileID: 2826580818817040957}
   - component: {fileID: 2826580818817040956}
   - component: {fileID: 2826580818817040959}
+  - component: {fileID: 1482591537}
   m_Layer: 7
   m_Name: EnemigoRobot1
-  m_TagString: Untagged
+  m_TagString: PuntoAnclaje
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -759,7 +760,7 @@ Transform:
   m_GameObject: {fileID: 2826580818817040958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.48, y: 9.1, z: -0.52}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2826580819144695869}
@@ -958,6 +959,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1482591537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2826580818817040958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e922b69502953ec4a93a75ea043d23a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipoEnganche: enemigo
+  distanciaEnganchar: 5
 --- !u!1 &2826580819144695868
 GameObject:
   m_ObjectHideFlags: 0

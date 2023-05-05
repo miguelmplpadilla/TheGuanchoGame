@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 566f4c7a35fdd7342a622c7e504fe29a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.6, y: 0.6}
@@ -111,5 +111,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teclado: {fileID: 21300000, guid: 566f4c7a35fdd7342a622c7e504fe29a, type: 3}
-  mando: {fileID: -514098975, guid: 41ea674ae6b5dab4598b0ff426603ae1, type: 3}
+  mando: {fileID: 1506820807, guid: 5365901988a248944b301f82dfdb63d5, type: 3}
   mostrar: 1

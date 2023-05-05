@@ -1869,7 +1869,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (23)
@@ -2497,7 +2497,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (15)
@@ -2586,7 +2586,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (22)
@@ -3881,7 +3881,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (13)
@@ -5236,7 +5236,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (17)
@@ -6100,7 +6100,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (19)
@@ -7184,7 +7184,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Offset.y
       value: -3.5935237
@@ -7705,7 +7705,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (25)
@@ -8255,7 +8255,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (26)
@@ -9061,7 +9061,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (14)
@@ -10655,7 +10655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8228515280700693605, guid: f9b459be6bcb74e46bfd0a468f674198, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.4216337
+      value: -8.1
       objectReference: {fileID: 0}
     - target: {fileID: 8228515280700693605, guid: f9b459be6bcb74e46bfd0a468f674198, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11989,7 +11989,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (20)
@@ -14064,7 +14064,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (16)
@@ -14882,6 +14882,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e89d6d44bf9b6894a9429ff0689a132f, type: 3}
+--- !u!1001 &1520744434
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4048590833258724171, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_Name
+      value: PuntoAnclajeGancho (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048590833258724175, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048590833258724175, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048590833258724175, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 93.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048590833258724175, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048590833258724175, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048590833258724175, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048590833258724175, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048590833258724175, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048590833258724175, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048590833258724175, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048590833258724175, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048590833258724175, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 87e1d0d9034ad114fbd2bb2db8fcd31b, type: 3}
 --- !u!1001 &1522668431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15291,7 +15352,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (18)
@@ -17146,7 +17207,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (21)
@@ -18546,7 +18607,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (24)
@@ -19166,7 +19227,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (11)
@@ -21152,7 +21213,7 @@ PrefabInstance:
     - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo (10)

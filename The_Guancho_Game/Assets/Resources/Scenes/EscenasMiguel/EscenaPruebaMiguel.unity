@@ -276,11 +276,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!1 &113878300 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6549582489042100065, guid: 1a395eb95fff26246bd9e08f0f0b58cf, type: 3}
-  m_PrefabInstance: {fileID: 6549582488945080957}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &169396813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1198,25 +1193,6 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!1 &1482591536 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2826580818817040958, guid: e89d6d44bf9b6894a9429ff0689a132f, type: 3}
-  m_PrefabInstance: {fileID: 2826580818553795038}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1482591537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482591536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e922b69502953ec4a93a75ea043d23a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tipoEnganche: enemigo
-  distanciaEnganchar: 5
 --- !u!1001 &1561502906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1770,11 +1746,6 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 1.87, z: -20.1}
   m_ApplyAfter: 1
   m_PreserveComposition: 0
---- !u!1 &2139320879 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6549582490530728018, guid: 1a395eb95fff26246bd9e08f0f0b58cf, type: 3}
-  m_PrefabInstance: {fileID: 6549582488945080957}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &216529738962546640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2225,18 +2196,6 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2826580818817040951, guid: e89d6d44bf9b6894a9429ff0689a132f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826580818817040951, guid: e89d6d44bf9b6894a9429ff0689a132f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826580818817040951, guid: e89d6d44bf9b6894a9429ff0689a132f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826580818817040951, guid: e89d6d44bf9b6894a9429ff0689a132f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.48
       objectReference: {fileID: 0}
@@ -2280,25 +2239,9 @@ PrefabInstance:
       propertyPath: objetoSeguir
       value: 
       objectReference: {fileID: 1053520737}
-    - target: {fileID: 2826580818817040952, guid: e89d6d44bf9b6894a9429ff0689a132f, type: 3}
-      propertyPath: puntosPatrulla.Array.data[0]
-      value: 
-      objectReference: {fileID: 2139320879}
-    - target: {fileID: 2826580818817040952, guid: e89d6d44bf9b6894a9429ff0689a132f, type: 3}
-      propertyPath: puntosPatrulla.Array.data[1]
-      value: 
-      objectReference: {fileID: 113878300}
     - target: {fileID: 2826580818817040958, guid: e89d6d44bf9b6894a9429ff0689a132f, type: 3}
       propertyPath: m_Name
       value: EnemigoRobot1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826580818817040958, guid: e89d6d44bf9b6894a9429ff0689a132f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2826580818817040958, guid: e89d6d44bf9b6894a9429ff0689a132f, type: 3}
-      propertyPath: m_TagString
-      value: PuntoAnclaje
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e89d6d44bf9b6894a9429ff0689a132f, type: 3}
@@ -2800,14 +2743,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1342389203, guid: f9b459be6bcb74e46bfd0a468f674198, type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1342389203, guid: f9b459be6bcb74e46bfd0a468f674198, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8228515280700693601, guid: f9b459be6bcb74e46bfd0a468f674198, type: 3}
       propertyPath: m_Name
       value: IndicadorLanzarGancho

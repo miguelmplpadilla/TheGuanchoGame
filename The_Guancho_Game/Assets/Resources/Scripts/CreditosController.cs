@@ -9,7 +9,7 @@ public class CreditosController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            SceneManager.LoadScene("NivelExpo");
+            SceneManager.LoadScene("EscenaInicio");
         }
     }
 }
