@@ -32,7 +32,7 @@ public class InteractuarController : MonoBehaviour
         if (col.CompareTag("Inter"))
         {
             botonInteractuar = col.GetComponent<ObjetoInteractuableController>().botonInteractuar;
-            col.SendMessage("interEnter");
+            col.SendMessage("interEnter", gameObject);
             objetoInteractuable = col.gameObject;
             puedeInteractuar = true;
         }
@@ -50,7 +50,7 @@ public class InteractuarController : MonoBehaviour
     {
         if (other.CompareTag("Inter"))
         {
-            other.SendMessage("interExit");
+            other.SendMessage("interExit", gameObject);
             objetoInteractuable = null;
             puedeInteractuar = false;
             interactuando = false;

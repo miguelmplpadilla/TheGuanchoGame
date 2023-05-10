@@ -1756,7 +1756,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6037547237321331810}
   - component: {fileID: 6377798104461971161}
-  - component: {fileID: 6377798104461971142}
   - component: {fileID: 7866013587716523498}
   m_Layer: 3
   m_Name: PlayerR
@@ -1815,27 +1814,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6377798104461971142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6377798104461971160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ffc1b94bc4980d4589470f1d6a490e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  speedAnimacion: 0.1
-  numFrameAnimacion: 0
-  sumFotogramas: 0.1
-  nombreAnimacion: 
-  funcionEjecutarFinal: 
-  animacionEjecutarFuncion: 
-  animacionesExcluidas: []
-  animacionEsExcluida: 0
 --- !u!114 &7866013587716523498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2932,7 +2910,7 @@ MonoBehaviour:
   movementSpeed: 3
   speedMin: 5
   speedMax: 10
-  speedAir: 13
+  speedAir: 10
   groundCheckRadius: 0.23
   jumpForce: 30
   slopeCheckDistance: 0.6
