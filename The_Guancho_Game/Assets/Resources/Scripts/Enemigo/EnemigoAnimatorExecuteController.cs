@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class EnemigoAnimatorExecuteController : MonoBehaviour
 {
-    private EnemigoMovimientoController enemigoMovimientoController;
+    private EnemigoIA enemigoIa;
 
     private void Awake()
     {
-        enemigoMovimientoController = GetComponentInParent<EnemigoMovimientoController>();
+        enemigoIa = transform.parent.GetComponentInParent<EnemigoIA>();
     }
 
     public void setAtacandoFalse()
     {
-        enemigoMovimientoController.atacando = false;
+        enemigoIa.atacando = false;
     }
 }
