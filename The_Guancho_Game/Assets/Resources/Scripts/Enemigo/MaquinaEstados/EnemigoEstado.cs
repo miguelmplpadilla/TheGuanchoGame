@@ -15,7 +15,7 @@ public class EnemigoEstado
     
     public enum ESTADO
     {
-        VIJILAR, ATACAR
+        VIJILAR, ATACARESPADA, MUERTO, ATACARPISTOLA
     };
 
     // 'EVENTOS' - En que parte nos encontramos del estado

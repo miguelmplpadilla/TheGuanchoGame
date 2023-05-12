@@ -49,8 +49,7 @@ public class EnemigoHitController : MonoBehaviour
                 //audioSource.Play();
                 navMeshAgent.speed = 0;
 
-                enemigoIa.FSM.siguienteEstado = new EnemigoEstado();
-                enemigoIa.FSM.faseActual = EnemigoEstado.EVENTO.SALIR;
+                enemigoIa.morir();
             }
         }
     }

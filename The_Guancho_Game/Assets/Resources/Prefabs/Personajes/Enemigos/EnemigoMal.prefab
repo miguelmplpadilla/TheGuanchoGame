@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 2826580818817040959}
   - component: {fileID: 1482591537}
   m_Layer: 7
-  m_Name: EnemigoRobot1
+  m_Name: EnemigoMal
   m_TagString: PuntoAnclaje
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

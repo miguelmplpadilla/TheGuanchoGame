@@ -7,11 +7,11 @@ using UnityEngine.AI;
 public class EnemigoVigilar : EnemigoEstado
 {
     private GameObject puntoMover;
-    
+
     public EnemigoVigilar() : base()
     {
         Debug.Log("Vijilando");
-        
+
         nombre = ESTADO.VIJILAR;
     }
 
@@ -28,7 +28,7 @@ public class EnemigoVigilar : EnemigoEstado
         enemigoIa.navMeshAgent.SetDestination(puntoMover.transform.position);
 
         float distancia = Vector3.Distance(enemigoIa.transform.position, puntoMover.transform.position);
-        
+
         if (distancia < 1)
         {
             if (puntoMover.Equals(enemigoIa.punto1))
@@ -40,14 +40,18 @@ public class EnemigoVigilar : EnemigoEstado
                 puntoMover = enemigoIa.punto1;
             }
         }
-        
+
         if (enemigoIa.puedeVerJugador() && enemigoIa.playerCerca())
         {
             if (enemigoIa.arma.Equals("Espada"))
             {
                 siguienteEstado = new EnemigoAtacarEspada();
             }
-            
+            else if (enemigoIa.arma.Equals("Pistola"))
+            {
+                siguienteEstado = new EnemigoAtacarPistola();
+            }
+
             siguienteEstado.inicializarVariables(enemigoIa);
             faseActual = EVENTO.SALIR;
         }
@@ -60,4 +64,3 @@ public class EnemigoVigilar : EnemigoEstado
         base.Salir();
     }
 }
-

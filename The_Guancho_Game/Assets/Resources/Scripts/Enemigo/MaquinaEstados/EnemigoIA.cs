@@ -18,6 +18,7 @@ public class EnemigoIA: MonoBehaviour
     
     [NonSerialized] public NavMeshAgent navMeshAgent;
     [NonSerialized] public Animator animator;
+    [NonSerialized] public EnemigoAnimatorExecuteController enemigoAnimatorExecuteController;
 
     public float velocidad = 2;
     public float velocidadAtaque = 3;
@@ -30,6 +31,9 @@ public class EnemigoIA: MonoBehaviour
     {
         player = GameObject.Find("Player");
         puntoMultiUsos = transform.Find("PuntoMultiUsos").gameObject;
+
+        enemigoAnimatorExecuteController =
+            transform.GetChild(0).GetComponentInChildren<EnemigoAnimatorExecuteController>();
         
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = transform.GetChild(0).GetComponentInChildren<Animator>();
@@ -46,6 +50,19 @@ public class EnemigoIA: MonoBehaviour
     public void destruirObjeto(GameObject objetoDestruir)
     {
         Destroy(objetoDestruir);
+    }
+
+    public void morir()
+    {
+        direccionMirar(player);
+        
+        navMeshAgent.speed = 0;
+        animator.SetBool("run", false);
+        
+        FSM.siguienteEstado = new EnemigoMuerto();
+        FSM.inicializarVariables(this);
+                
+        FSM.faseActual = EnemigoEstado.EVENTO.SALIR;
     }
     
     public bool playerCerca()
