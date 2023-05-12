@@ -12,7 +12,7 @@ public class EnemigoVigilar : EnemigoEstado
     {
         Debug.Log("Vijilando");
         
-        nombre = ESTADO.VIJILAR; // Guardamos el nombre del estado en el que nos encontramos.
+        nombre = ESTADO.VIJILAR;
     }
 
     public override void Entrar()
@@ -25,25 +25,23 @@ public class EnemigoVigilar : EnemigoEstado
 
     public override void Actualizar()
     {
-        if (!enemigoIa.puedeVerJugador() && !enemigoIa.playerCerca())
-        {
-            enemigoIa.navMeshAgent.SetDestination(puntoMover.transform.position);
+        enemigoIa.navMeshAgent.SetDestination(puntoMover.transform.position);
 
-            float distancia = Vector3.Distance(enemigoIa.transform.position, puntoMover.transform.position);
-            
-            if (distancia < 1)
+        float distancia = Vector3.Distance(enemigoIa.transform.position, puntoMover.transform.position);
+        
+        if (distancia < 1)
+        {
+            if (puntoMover.Equals(enemigoIa.punto1))
             {
-                if (puntoMover.Equals(enemigoIa.punto1))
-                {
-                    puntoMover = enemigoIa.punto2;
-                }
-                else
-                {
-                    puntoMover = enemigoIa.punto1;
-                }
+                puntoMover = enemigoIa.punto2;
+            }
+            else
+            {
+                puntoMover = enemigoIa.punto1;
             }
         }
-        else
+        
+        if (enemigoIa.puedeVerJugador() && enemigoIa.playerCerca())
         {
             if (enemigoIa.arma.Equals("Espada"))
             {
@@ -53,11 +51,12 @@ public class EnemigoVigilar : EnemigoEstado
             siguienteEstado.inicializarVariables(enemigoIa);
             faseActual = EVENTO.SALIR;
         }
+
+        enemigoIa.direccionMirar(puntoMover);
     }
 
     public override void Salir()
     {
-        enemigoIa.animator.SetBool("run", false);
         base.Salir();
     }
 }

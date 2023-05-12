@@ -26,9 +26,11 @@ public class EnemigoAtacarEspada : EnemigoEstado
         {
             float distanciaJugador = Vector2.Distance(enemigoIa.transform.position, enemigoIa.player.transform.position);
 
-            if (distanciaJugador < 1)
+            if (distanciaJugador < 2)
             {
                 enemigoIa.navMeshAgent.speed = 0;
+                
+                enemigoIa.animator.SetBool("run", false);
             
                 enemigoIa.animator.SetTrigger("atacar");
 
@@ -38,6 +40,9 @@ public class EnemigoAtacarEspada : EnemigoEstado
             {
                 if (enemigoIa.puedeVerJugador() && enemigoIa.playerCerca())
                 {
+                    enemigoIa.navMeshAgent.speed = enemigoIa.velocidadAtaque;
+                    enemigoIa.animator.SetBool("run", true);
+                    enemigoIa.navMeshAgent.speed = enemigoIa.velocidad;
                     enemigoIa.navMeshAgent.SetDestination(enemigoIa.player.transform.position);
                 }
                 else
@@ -48,6 +53,8 @@ public class EnemigoAtacarEspada : EnemigoEstado
                     faseActual = EVENTO.SALIR;
                 }
             }
+            
+            enemigoIa.direccionMirar(enemigoIa.player);
         }
     }
 

@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using OpenCover.Framework.Model;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,7 +9,7 @@ public class EnemigoIA: MonoBehaviour
     public bool atacando = false;
     public bool muerto = false;
     
-    private EnemigoEstado FSM;
+    public EnemigoEstado FSM;
 
     [SerializeField] private LayerMask layerInteract;
 
@@ -24,6 +20,8 @@ public class EnemigoIA: MonoBehaviour
     [NonSerialized] public Animator animator;
 
     public float velocidad = 2;
+    public float velocidadAtaque = 3;
+    [SerializeField] private float distanciaDeteccion = 10;
 
     public GameObject punto1;
     public GameObject punto2;
@@ -56,7 +54,7 @@ public class EnemigoIA: MonoBehaviour
 
         float distancia = Vector3.Distance(transform.position, player.transform.position);
         
-        if (distancia < 5 && transform.position.y < player.transform.position.y)
+        if (distancia < distanciaDeteccion)
         {
             cerca = true;
         }
@@ -83,5 +81,17 @@ public class EnemigoIA: MonoBehaviour
         }
         
         return puedeVer;
+    }
+
+    public void direccionMirar(GameObject objetoMirar)
+    {
+        if (transform.position.x > objetoMirar.transform.position.x)
+        {
+            transform.GetChild(0).rotation = Quaternion.Euler(0, -90, 0);
+        }
+        else
+        {
+            transform.GetChild(0).rotation = Quaternion.Euler(0, 90, 0);
+        }
     }
 }

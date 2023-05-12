@@ -25,8 +25,8 @@ public class EnemigoEstado
     };
 
     public ESTADO nombre; // Para guardar el nombre del estado
-    protected EVENTO faseActual; // Para guardar la fase en la que nos encontramos
-    protected EnemigoEstado siguienteEstado; // El estado que se EJECUTAR? A CONTINUACI?N del estado actual
+    public EVENTO faseActual; // Para guardar la fase en la que nos encontramos
+    public EnemigoEstado siguienteEstado; // El estado que se EJECUTAR? A CONTINUACI?N del estado actual
 
     // Constructor
     public EnemigoEstado()

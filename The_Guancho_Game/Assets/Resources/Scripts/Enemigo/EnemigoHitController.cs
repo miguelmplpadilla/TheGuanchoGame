@@ -13,6 +13,7 @@ public class EnemigoHitController : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
     [SerializeField] private Animator animator;
+    private EnemigoIA enemigoIa;
 
     [SerializeField] private GameObject[] objetosCrear;
     [SerializeField] private GameObject puntoCrearObjeto;
@@ -23,6 +24,8 @@ public class EnemigoHitController : MonoBehaviour
     {
         navMeshAgent = GetComponentInParent<NavMeshAgent>();
         audioSource = GetComponentInParent<AudioSource>();
+
+        enemigoIa = GetComponentInParent<EnemigoIA>();
     }
 
     public void hit(float dano)
@@ -45,6 +48,9 @@ public class EnemigoHitController : MonoBehaviour
                 animator.SetTrigger("morir");
                 //audioSource.Play();
                 navMeshAgent.speed = 0;
+
+                enemigoIa.FSM.siguienteEstado = new EnemigoEstado();
+                enemigoIa.FSM.faseActual = EnemigoEstado.EVENTO.SALIR;
             }
         }
     }
