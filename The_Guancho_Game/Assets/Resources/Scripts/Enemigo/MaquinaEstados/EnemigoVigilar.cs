@@ -51,7 +51,11 @@ public class EnemigoVigilar : EnemigoEstado
             {
                 siguienteEstado = new EnemigoAtacarPistola();
             }
-
+            else if (enemigoIa.arma.Equals("Escopeta"))
+            {
+                siguienteEstado = new EnemigoAtacarEscopeta();
+            }
+            
             siguienteEstado.inicializarVariables(enemigoIa);
             faseActual = EVENTO.SALIR;
         }

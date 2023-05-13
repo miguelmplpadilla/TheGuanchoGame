@@ -15,7 +15,7 @@ public class EnemigoEstado
     
     public enum ESTADO
     {
-        VIJILAR, ATACARESPADA, MUERTO, ATACARPISTOLA
+        VIJILAR, ATACARESPADA, MUERTO, ATACARPISTOLA, ATACARESCOPETA
     };
 
     // 'EVENTOS' - En que parte nos encontramos del estado

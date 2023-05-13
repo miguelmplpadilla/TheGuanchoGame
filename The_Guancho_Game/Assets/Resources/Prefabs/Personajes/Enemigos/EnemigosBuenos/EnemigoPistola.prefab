@@ -574,7 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bala: {fileID: 1535486099445269730, guid: 951bd70c8f7188d4aa800dce702f091a, type: 3}
   puntoInstanciarBala: {fileID: 7716569631411723234}
-  velocidadBala: 5
+  velocidadBala: 7
   direccionDisparar: {x: 0, y: 0, z: 0}
 --- !u!1 &2689801313485878563
 GameObject:
@@ -1568,7 +1568,7 @@ MonoBehaviour:
     m_Bits: 2312
   velocidad: 2
   velocidadAtaque: 3
-  distanciaDeteccion: 15
+  distanciaDeteccion: 20
   punto1: {fileID: 0}
   punto2: {fileID: 0}
 --- !u!50 &7716569632777134758

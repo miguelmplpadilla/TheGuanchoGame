@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 176278475}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PuntoLanzarRayCast
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 476564558}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PuntoLanzamientoRayCast
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 951533250}
   - component: {fileID: 951533252}
   - component: {fileID: 951533251}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: HurtBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1245005444}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PuntoDust
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -1757,7 +1757,7 @@ GameObject:
   - component: {fileID: 6037547237321331810}
   - component: {fileID: 6377798104461971161}
   - component: {fileID: 7866013587716523498}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: PlayerR
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2205,7 +2205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7329706157755517894}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: GroundController
   m_TagString: Player
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -2322,7 +2322,7 @@ GameObject:
   - component: {fileID: 7329706158293000125}
   - component: {fileID: 7329706158293000123}
   - component: {fileID: 7329706158293000122}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PanelPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2397,7 +2397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7329706158436423826}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: DialogoPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2437,7 +2437,7 @@ GameObject:
   - component: {fileID: 7329706158501743635}
   - component: {fileID: 7329706158501743633}
   - component: {fileID: 7329706158501743632}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TextoPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2574,7 +2574,7 @@ GameObject:
   - component: {fileID: 7329706158534577035}
   - component: {fileID: 7329706158534577034}
   - component: {fileID: 7329706158534577037}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Gancho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2777,7 +2777,7 @@ GameObject:
   - component: {fileID: 7329706158884841206}
   - component: {fileID: 7329706158884841204}
   - component: {fileID: 7329706158884841207}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Colosion3D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3063,7 +3063,7 @@ GameObject:
   - component: {fileID: 7329706159032879170}
   - component: {fileID: 7329706159032879173}
   - component: {fileID: 7329706159032879172}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CanvasPlayer (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3161,7 +3161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7329706159069477561}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -3194,7 +3194,7 @@ GameObject:
   - component: {fileID: 7329706159102904850}
   - component: {fileID: 7329706159102904848}
   - component: {fileID: 7329706159102904851}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3270,7 +3270,7 @@ GameObject:
   - component: {fileID: 7329706159376910911}
   - component: {fileID: 7329706159376910909}
   - component: {fileID: 7329706159376910908}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: InterBox
   m_TagString: Player
   m_Icon: {fileID: 0}

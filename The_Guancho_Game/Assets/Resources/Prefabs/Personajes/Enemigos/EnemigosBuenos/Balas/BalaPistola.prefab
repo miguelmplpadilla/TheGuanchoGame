@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 3814369717256636136}
   - component: {fileID: 6679546518698065460}
   - component: {fileID: 970750515544095410}
+  - component: {fileID: 8038100030658183745}
+  - component: {fileID: 3598649680962374428}
   m_Layer: 0
   m_Name: BalaPistola
-  m_TagString: Untagged
+  m_TagString: HitBoxEnemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,3 +124,29 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &8038100030658183745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535486099445269730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 187d23ecb79b73d418b91036031b0dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particulasDestruir: {fileID: 6762079628107299872, guid: df701d44099014a47b29d75b7f0335cc, type: 3}
+--- !u!114 &3598649680962374428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535486099445269730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49856989dc8e6994887ecb61a3b77895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

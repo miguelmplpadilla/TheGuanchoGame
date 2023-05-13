@@ -69,9 +69,10 @@ public class EnemigoIA: MonoBehaviour
     {
         bool cerca = false;
 
-        float distancia = Vector3.Distance(transform.position, player.transform.position);
-        
-        if (distancia < distanciaDeteccion)
+        float distancia = Vector2.Distance(transform.position, player.transform.position);
+        float distanciaVertical = Vector2.Distance(new Vector2(0, transform.position.y), new Vector2(0, player.transform.position.y));
+
+        if (distancia < distanciaDeteccion && distanciaVertical < 4)
         {
             cerca = true;
         }
