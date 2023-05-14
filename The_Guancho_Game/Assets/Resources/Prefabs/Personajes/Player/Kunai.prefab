@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5995514b0ac10c64e9aa02855283da67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particulaRayo: {fileID: 290120081437633822, guid: 97125c77163325048bd23848dfe049d4, type: 3}
 --- !u!50 &7011902203123846562
 Rigidbody2D:
   serializedVersion: 4

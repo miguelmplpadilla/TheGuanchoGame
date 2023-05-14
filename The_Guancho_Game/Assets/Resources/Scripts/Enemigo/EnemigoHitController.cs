@@ -18,6 +18,7 @@ public class EnemigoHitController : MonoBehaviour
 
     [SerializeField] private GameObject[] objetosCrear;
     [SerializeField] private GameObject puntoCrearObjeto;
+    [SerializeField] private GameObject particulasSangre;
 
     public bool muerto = false;
 
@@ -49,6 +50,8 @@ public class EnemigoHitController : MonoBehaviour
                 GetComponentInParent<CapsuleCollider2D>().enabled = false;
                 GetComponent<BoxCollider2D>().enabled = false;
                 Instantiate(objetosCrear[Random.Range(0, objetosCrear.Length)], puntoCrearObjeto.transform.position, Quaternion.identity);
+
+                Instantiate(particulasSangre, transform.position, Quaternion.identity);
                 
                 animator.SetBool("muerto", true);
                 animator.SetTrigger("morir");
@@ -57,7 +60,7 @@ public class EnemigoHitController : MonoBehaviour
                 playerGanchoController.puntosAnclaje.Remove(transform.parent.gameObject);
 
                 enemigoIa.morir();
-                
+
                 muerto = true;
             }
         }

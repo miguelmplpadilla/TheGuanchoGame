@@ -1,13 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class KunaiController : MonoBehaviour
 {
-    
     private GameObject player;
-    
+
+    [SerializeField] private GameObject particulaRayo;
+
     void Start()
     {
         player = GameObject.Find("Player");
@@ -28,8 +30,20 @@ public class KunaiController : MonoBehaviour
             col.SendMessage("hit", 1);
         }
 
-        if (!col.CompareTag("Player") && (col.CompareTag("Untagged") || col.CompareTag("Suelo") || col.CompareTag("HurtBoxEnemigo")))
+        if (!col.CompareTag("Player") &&
+            (col.CompareTag("Untagged") || col.CompareTag("Suelo") || col.CompareTag("HurtBoxEnemigo")))
         {
+            if (col.CompareTag("Suelo"))
+            {
+                GameObject rayo = Instantiate(particulaRayo, transform.position, Quaternion.identity);
+
+                if (transform.rotation.y == -180)
+                {
+                    rayo.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1,0,0);
+                    rayo.transform.rotation = quaternion.Euler(0, 180, 0);
+                }
+            }
+
             Destroy(gameObject);
         }
     }

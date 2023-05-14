@@ -655,6 +655,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc461f97e26537c48a163ba79f441087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bala: {fileID: 0}
+  puntoInstanciarBala: {fileID: 0}
+  velocidadBala: 2
+  direccionDisparar: {x: 0, y: 0, z: 0}
 --- !u!1 &2736781324660396468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,7 +1618,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7762476381031974453}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.48, y: 9.1, z: -0.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1947,6 +1951,7 @@ MonoBehaviour:
   objetosCrear:
   - {fileID: 1885743646638415855, guid: 8b72f06c5e05cca4e92e02117a01ac8e, type: 3}
   puntoCrearObjeto: {fileID: 7762476380793873976}
+  particulasSangre: {fileID: 348219162528833208, guid: bf1551b7516773547a1a45ab1bb017c2, type: 3}
   muerto: 0
 --- !u!1 &7762476381624858778
 GameObject:
