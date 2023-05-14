@@ -87,17 +87,20 @@ public class EnemigoIA: MonoBehaviour
         Vector3 direccion = (player.transform.position - puntoMultiUsos.transform.position);
 
         RaycastHit2D hit = Physics2D.Raycast(puntoMultiUsos.transform.position, direccion, Mathf.Infinity, layerInteract);
-        
-        if (hit.transform.CompareTag("Player"))
+
+        if (hit.collider != null)
         {
-            puedeVer = true;
-            Debug.DrawRay(puntoMultiUsos.transform.position, direccion, Color.green);
+            if (hit.transform.CompareTag("Player"))
+            {
+                puedeVer = true;
+                Debug.DrawRay(puntoMultiUsos.transform.position, direccion, Color.green);
+            }
+            else
+            {
+                Debug.DrawRay(puntoMultiUsos.transform.position, direccion, Color.red);
+            }
         }
-        else
-        {
-            Debug.DrawRay(puntoMultiUsos.transform.position, direccion, Color.red);
-        }
-        
+
         return puedeVer;
     }
 

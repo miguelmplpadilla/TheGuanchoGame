@@ -6,40 +6,34 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField]
-    private float movementSpeed;
+    [SerializeField] private float movementSpeed;
     [SerializeField] private float speedMin;
     [SerializeField] private float speedMax;
     [SerializeField] private float speedAir;
 
-    [SerializeField]
-    private float groundCheckRadius;
-    [SerializeField]
-    private float jumpForce;
-    [SerializeField]
-    private float slopeCheckDistance;
-    [SerializeField]
-    private float maxSlopeAngle;
-    [SerializeField]
-    private Transform groundCheck;
-    [SerializeField]
-    private LayerMask whatIsGround;
-    [SerializeField]
-    private PhysicsMaterial2D noFriction;
-    [SerializeField]
-    private PhysicsMaterial2D fullFriction;
-
+    [SerializeField] private float groundCheckRadius;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float slopeCheckDistance;
+    [SerializeField] private float maxSlopeAngle;
+    
+    [SerializeField] private float maxVerticalSpeed = 100;
+    [SerializeField] private float minVerticalSpeed = -10;
+    
     private float xInput;
     private float slopeDownAngle;
     private float slopeSideAngle;
     private float lastSlopeAngle;
     
-    [SerializeField] private float maxVerticalSpeed = 100;
-    [SerializeField] private float minVerticalSpeed = -10;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private PhysicsMaterial2D noFriction;
+    [SerializeField] private PhysicsMaterial2D fullFriction;
 
     private int facingDirection = 1;
 
     public bool isGrounded;
+    private bool inicioIsGrounded = true;
+    
     [SerializeField] private bool isOnSlope;
     private bool isJumping;
     private bool canWalkOnSlope;
@@ -49,8 +43,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 newVelocity;
     private Vector2 newForce;
     private Vector2 capsuleColliderSize;
-
     private Vector2 slopeNormalPerp;
+    
+    private Vector2 posicionParticularCorrerInstanciada;
 
     private Rigidbody2D rb;
     private CapsuleCollider2D cc;
@@ -58,6 +53,8 @@ public class PlayerController : MonoBehaviour
     private PlayerGanchoController playerGanchoController;
 
     public GameObject posicionLanzarRayCast;
+    [SerializeField] private GameObject puntoCreacionparticulasSuelo;
+    [SerializeField] private GameObject particulasAterrizar;
 
     private void Awake()
     {
@@ -102,9 +99,21 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    
     private void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+
+        if (isGrounded && inicioIsGrounded)
+        {
+            crearParticulaAterrizar();
+            inicioIsGrounded = false;
+        }
+
+        if (!isGrounded)
+        {
+            inicioIsGrounded = true;
+        }
 
         if(rb.velocity.y <= 0.0f)
         {
@@ -116,6 +125,11 @@ public class PlayerController : MonoBehaviour
             canJump = true;
         }
 
+    }
+
+    public void crearParticulaAterrizar()
+    {
+        Instantiate(particulasAterrizar, puntoCreacionparticulasSuelo.transform.position, Quaternion.identity);
     }
 
     private void SlopeCheck()
@@ -168,9 +182,6 @@ public class PlayerController : MonoBehaviour
             }                       
 
             lastSlopeAngle = slopeDownAngle;
-           
-            Debug.DrawRay(hit.point, slopeNormalPerp, Color.blue);
-            Debug.DrawRay(hit.point, hit.normal, Color.green);
 
         }
 
@@ -261,7 +272,7 @@ public class PlayerController : MonoBehaviour
                 movementSpeed = 0;
 
                 animator.SetBool("run", false);
-            } 
+            }
         }
     }
 
@@ -281,6 +292,5 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
-
 }
 

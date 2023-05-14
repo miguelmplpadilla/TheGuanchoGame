@@ -3,16 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="ec41ed5e-6894-4cdc-8127-e636cba0ab03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/EnemigoRobotGodot/RobotGodotAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/EnemigoRobotGodot/RobotGodotAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/EnemigoRobotGodot/RobotGodot_Disparando.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/EnemigoRobotGodot/RobotGodot_Disparando.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Enemigos/EnemigosBuenos/BalaPistola.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Enemigos/EnemigosBuenos/BalaPistola.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Enemigos/EnemigosBuenos/EnemigoPistola.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Enemigos/EnemigosBuenos/EnemigoPistola.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/PlayerRobot/Robot_Run.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/PlayerRobot/Robot_Run.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasMiguel/EscenaPruebaMiguel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasMiguel/EscenaPruebaMiguel.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/MaquinaEstados/EnemigoEstado.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/MaquinaEstados/EnemigoEstado.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/MaquinaEstados/EnemigoIA.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/MaquinaEstados/EnemigoIA.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/MaquinaEstados/EnemigoVigilar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/MaquinaEstados/EnemigoVigilar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/AnimatorExecuterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/AnimatorExecuterController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/InteractuarController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/InteractuarController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/Movimiento.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/Movimiento/PlayerController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/Movimiento/PlayerController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerCombateController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerCombateController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerGanchoController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerGanchoController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerHurtController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/PlayerHurtController.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +37,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/MaquinaEstados/EnemigoIA.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/EscenaMuerte/EscenaMuerteController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/ControllersPrincipales/PlayerJumpOverEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/KunaiController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -42,13 +49,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Downloads/TheGuanchoGameEnemigoGancho\The_Guancho_Game.exe" />
@@ -163,6 +170,7 @@
       <workItem from="1683880193971" duration="3754000" />
       <workItem from="1683902484337" duration="3865000" />
       <workItem from="1683973334354" duration="4168000" />
+      <workItem from="1684016600270" duration="4985000" />
     </task>
     <servers />
   </component>

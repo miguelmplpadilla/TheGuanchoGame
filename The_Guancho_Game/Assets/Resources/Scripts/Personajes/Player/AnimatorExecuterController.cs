@@ -9,6 +9,9 @@ public class AnimatorExecuterController : MonoBehaviour
     private PlayerController playerController;
     private Animator animator;
 
+    [SerializeField] private GameObject particulasCorrer;
+    [SerializeField] private GameObject puntoCreacionparticulasSuelo;
+
     private void Awake()
     {
         playerController = GetComponentInParent<PlayerController>();
@@ -31,5 +34,16 @@ public class AnimatorExecuterController : MonoBehaviour
         playerCombateController.isKunaiLanzado = false;
         playerController.mov = true;
         animator.SetBool("throwing", false);
+    }
+    
+    private void crearParticulasCorrer()
+    {
+        GameObject particulaInstanciada = Instantiate(particulasCorrer, puntoCreacionparticulasSuelo.transform.position, Quaternion.identity);
+        
+        if (transform.parent.localScale.x == -1)
+        {
+            particulaInstanciada.transform.rotation = Quaternion.Euler(0,180,0);
+            particulaInstanciada.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
+        }
     }
 }

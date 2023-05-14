@@ -7,11 +7,12 @@ using Random = UnityEngine.Random;
 
 public class EnemigoHitController : MonoBehaviour
 {
-    [SerializeField]
-    private float vida = 1;
+    public float vida = 1;
 
     private NavMeshAgent navMeshAgent;
     private AudioSource audioSource;
+    private PlayerGanchoController playerGanchoController;
+    
     [SerializeField] private Animator animator;
     private EnemigoIA enemigoIa;
 
@@ -26,6 +27,11 @@ public class EnemigoHitController : MonoBehaviour
         audioSource = GetComponentInParent<AudioSource>();
 
         enemigoIa = GetComponentInParent<EnemigoIA>();
+    }
+
+    private void Start()
+    {
+        playerGanchoController = GameObject.Find("Player").GetComponent<PlayerGanchoController>();
     }
 
     public void hit(float dano)
@@ -43,13 +49,16 @@ public class EnemigoHitController : MonoBehaviour
                 GetComponentInParent<CapsuleCollider2D>().enabled = false;
                 GetComponent<BoxCollider2D>().enabled = false;
                 Instantiate(objetosCrear[Random.Range(0, objetosCrear.Length)], puntoCrearObjeto.transform.position, Quaternion.identity);
-                muerto = true;
+                
                 animator.SetBool("muerto", true);
                 animator.SetTrigger("morir");
-                //audioSource.Play();
                 navMeshAgent.speed = 0;
 
+                playerGanchoController.puntosAnclaje.Remove(transform.parent.gameObject);
+
                 enemigoIa.morir();
+                
+                muerto = true;
             }
         }
     }
