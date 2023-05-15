@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class EnemigoVigilar : EnemigoEstado
 {
     private GameObject puntoMover;
+    private int numPunto = 0;
 
     public EnemigoVigilar() : base()
     {
@@ -17,7 +18,7 @@ public class EnemigoVigilar : EnemigoEstado
 
     public override void Entrar()
     {
-        puntoMover = enemigoIa.punto1;
+        puntoMover = enemigoIa.puntos[numPunto];
         enemigoIa.navMeshAgent.speed = enemigoIa.velocidad;
         enemigoIa.animator.SetBool("run", true);
         base.Entrar();
@@ -31,14 +32,14 @@ public class EnemigoVigilar : EnemigoEstado
 
         if (distancia < 1)
         {
-            if (puntoMover.Equals(enemigoIa.punto1))
+            numPunto++;
+
+            if (numPunto == enemigoIa.puntos.Length)
             {
-                puntoMover = enemigoIa.punto2;
+                numPunto = 0;
             }
-            else
-            {
-                puntoMover = enemigoIa.punto1;
-            }
+            
+            puntoMover = enemigoIa.puntos[numPunto];
         }
 
         if (enemigoIa.puedeVerJugador() && enemigoIa.playerCerca())

@@ -616,8 +616,9 @@ MonoBehaviour:
   velocidad: 2
   velocidadAtaque: 3
   distanciaDeteccion: 15
-  punto1: {fileID: 0}
-  punto2: {fileID: 0}
+  puntos:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!50 &3822062365390048966
 Rigidbody2D:
   serializedVersion: 4

@@ -24,8 +24,7 @@ public class EnemigoIA: MonoBehaviour
     public float velocidadAtaque = 3;
     [SerializeField] private float distanciaDeteccion = 10;
 
-    public GameObject punto1;
-    public GameObject punto2;
+    public GameObject[] puntos;
 
     void Start()
     {

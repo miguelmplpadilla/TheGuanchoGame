@@ -37,7 +37,7 @@ public class KunaiController : MonoBehaviour
             {
                 GameObject rayo = Instantiate(particulaRayo, transform.position, Quaternion.identity);
 
-                if (transform.rotation.y == -180)
+                if (transform.rotation.y == 0)
                 {
                     rayo.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1,0,0);
                     rayo.transform.rotation = quaternion.Euler(0, 180, 0);

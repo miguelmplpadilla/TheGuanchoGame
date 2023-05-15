@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider2D cc;
     public Animator animator;
     private PlayerGanchoController playerGanchoController;
+    private PausaController pausaController;
+    private PlayerHurtController playerHurtController;
 
     public GameObject posicionLanzarRayCast;
     [SerializeField] private GameObject puntoCreacionparticulasSuelo;
@@ -62,26 +64,34 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         cc = GetComponent<CapsuleCollider2D>();
         playerGanchoController = GetComponent<PlayerGanchoController>();
+        playerHurtController = GetComponentInChildren<PlayerHurtController>();
     }
 
     private void Start()
     {
         capsuleColliderSize = cc.size;
+        pausaController = GameObject.Find("PausaManager").GetComponent<PausaController>();
     }
 
     private void Update()
     {
-        animator.SetBool("isGrounded", isGrounded);
-        CheckInput();     
+        if (!pausaController.pausado && !playerHurtController.muerto)
+        {
+            animator.SetBool("isGrounded", isGrounded);
+            CheckInput();  
+        }
     }
 
     private void FixedUpdate()
     {
-        animator.SetFloat("horizontalVelocity", movementSpeed);
-        
-        CheckGround();
-        SlopeCheck();
-        ApplyMovement();
+        if (!pausaController.pausado && !playerHurtController.muerto)
+        {
+            animator.SetFloat("horizontalVelocity", movementSpeed);
+
+            CheckGround();
+            SlopeCheck();
+            ApplyMovement();
+        }
     }
 
     private void CheckInput()

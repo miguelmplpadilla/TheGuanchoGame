@@ -15,6 +15,7 @@ public class PlayerCombateController : MonoBehaviour
     private Rigidbody2D rigidbody;
     private PlayerGanchoController playerGanchoController;
     private PlayerHurtController playerHurtController;
+    private PausaController pausaController;
 
     private Vector2 direccionLanzarKunai;
 
@@ -32,9 +33,14 @@ public class PlayerCombateController : MonoBehaviour
         playerHurtController = GetComponentInChildren<PlayerHurtController>();
     }
 
+    private void Start()
+    {
+        pausaController = GameObject.Find("PausaManager").GetComponent<PausaController>();
+    }
+
     void Update()
     {
-        if (!isKunaiLanzado && variablesPlayer.kunais > 0 && playerController.isGrounded && !playerGanchoController.ganchoDisparado && !playerHurtController.muerto)
+        if (!isKunaiLanzado && variablesPlayer.kunais > 0 && playerController.isGrounded && !playerGanchoController.ganchoDisparado && !playerHurtController.muerto && !pausaController.pausado)
         {
             if (Input.GetButtonDown("Fire1"))
             {

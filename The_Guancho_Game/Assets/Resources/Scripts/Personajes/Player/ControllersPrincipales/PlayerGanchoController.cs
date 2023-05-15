@@ -14,6 +14,8 @@ public class PlayerGanchoController : MonoBehaviour
     private GameObject indicadorLanzarGancho;
     private PlayerController playerController;
     private PlayerCombateController playerCombateController;
+    private PausaController pausaController;
+    private PlayerHurtController playerHurtController;
 
     private PuntoAnclajeScript puntoAnclajeScript;
     
@@ -52,10 +54,12 @@ public class PlayerGanchoController : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         playerController = GetComponent<PlayerController>();
         playerCombateController = GetComponent<PlayerCombateController>();
+        playerHurtController = GetComponentInChildren<PlayerHurtController>();
     }
 
     private void Start()
     {
+        pausaController = GameObject.Find("PausaManager").GetComponent<PausaController>();
         indicadorLanzarGancho = GameObject.Find("IndicadorLanzarGancho");
         puntosAnclaje = GameObject.FindGameObjectsWithTag("PuntoAnclaje").ToList();
         cameraController = GameObject.Find("CM").GetComponent<CameraController>();
@@ -65,7 +69,7 @@ public class PlayerGanchoController : MonoBehaviour
 
     void Update()
     {
-        if (!ganchoDisparado && !playerCombateController.isKunaiLanzado)
+        if (!ganchoDisparado && !playerCombateController.isKunaiLanzado && !pausaController.pausado && !playerHurtController.muerto)
         {
             float anclajeCercano = 100000;
             foreach (var anclaje in puntosAnclaje)
@@ -173,7 +177,7 @@ public class PlayerGanchoController : MonoBehaviour
             }
         }
 
-        if (ganchoEnganchado)
+        if (ganchoEnganchado && !playerHurtController.muerto)
         {
             float distancia = Vector3.Distance(transform.position, puntoAnclaje.transform.position);
             

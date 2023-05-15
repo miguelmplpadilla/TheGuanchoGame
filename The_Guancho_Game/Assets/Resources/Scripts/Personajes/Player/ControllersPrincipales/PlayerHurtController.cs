@@ -9,6 +9,7 @@ public class PlayerHurtController : MonoBehaviour
     [SerializeField] private VariablesPlayer variablesPlayer;
     private Animator animator;
     private PlayerController playerController;
+    private PausaController pausaController;
 
     private Animator animatorPanelRojo;
 
@@ -22,12 +23,13 @@ public class PlayerHurtController : MonoBehaviour
 
     private void Start()
     {
+        pausaController = GameObject.Find("PausaManager").GetComponent<PausaController>();
         animatorPanelRojo = GameObject.Find("PanelRojo").GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (!muerto)
+        if (!muerto && !pausaController.pausado)
         {
             if (col.CompareTag("HitBoxEnemigo"))
             {
