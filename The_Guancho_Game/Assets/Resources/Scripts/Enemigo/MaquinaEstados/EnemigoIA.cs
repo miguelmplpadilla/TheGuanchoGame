@@ -7,7 +7,6 @@ public class EnemigoIA: MonoBehaviour
     public string arma;
 
     public bool atacando = false;
-    public bool muerto = false;
     
     public EnemigoEstado FSM;
 
@@ -15,6 +14,7 @@ public class EnemigoIA: MonoBehaviour
 
     [NonSerialized] public GameObject player;
     private GameObject puntoMultiUsos;
+    public GameObject hitBox;
     
     [NonSerialized] public NavMeshAgent navMeshAgent;
     [NonSerialized] public Animator animator;

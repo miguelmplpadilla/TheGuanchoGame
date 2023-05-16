@@ -15,8 +15,9 @@ public class EnemigoAtacarEspada : EnemigoEstado
 
     public override void Entrar()
     {
+        enemigoIa.hitBox.SetActive(true);
         enemigoIa.navMeshAgent.speed = enemigoIa.velocidad;
-        
+
         base.Entrar();
     }
 
@@ -26,8 +27,10 @@ public class EnemigoAtacarEspada : EnemigoEstado
         {
             float distanciaJugador = Vector2.Distance(enemigoIa.transform.position, enemigoIa.player.transform.position);
 
-            if (distanciaJugador < 2)
+            if (distanciaJugador < 3)
             {
+                enemigoIa.hitBox.SetActive(true);
+                
                 enemigoIa.navMeshAgent.speed = 0;
                 
                 enemigoIa.animator.SetBool("run", false);
@@ -60,6 +63,7 @@ public class EnemigoAtacarEspada : EnemigoEstado
 
     public override void Salir()
     {
+        enemigoIa.hitBox.SetActive(false);
         base.Salir();
     }
 }

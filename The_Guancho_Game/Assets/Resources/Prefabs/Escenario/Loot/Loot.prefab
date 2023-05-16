@@ -13,10 +13,11 @@ GameObject:
   - component: {fileID: 5387345137981337731}
   - component: {fileID: 5387345137981337728}
   - component: {fileID: 5387345137981337729}
+  - component: {fileID: 6017951762131561703}
   m_Layer: 7
   m_Name: Loot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Loot
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -99,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.13183895}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -110,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.8586466}
   m_EdgeRadius: 0
 --- !u!50 &5387345137981337729
 Rigidbody2D:
@@ -133,6 +134,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &6017951762131561703
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5387345137981337734}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe6831f096b0f5543b15df8abf43e74a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5387345138972601997
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +167,7 @@ GameObject:
   - component: {fileID: 5387345138972601999}
   m_Layer: 0
   m_Name: TriggerLoot
-  m_TagString: Untagged
+  m_TagString: Loot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,8 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   variablesPlayer: {fileID: 11400000, guid: ede6c1856fa8e674f8456512816bcc20, type: 2}
-  lootType: kunai
-  numLoot: 5
+  lootType: llave
+  numLoot: 1
 --- !u!61 &5387345138972601999
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -194,7 +215,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.12845892}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -205,5 +226,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.557802, y: 1.557802}
+  m_Size: {x: 1.557802, y: 1.9364163}
   m_EdgeRadius: 0

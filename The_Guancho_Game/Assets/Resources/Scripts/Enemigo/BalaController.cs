@@ -30,6 +30,7 @@ public class BalaController : MonoBehaviour
         {
             if ((other.CompareTag("Player") && other.name.Equals("Player")) || other.CompareTag("Suelo"))
             {
+                
                 meshRenderer.enabled = false;
                 Instantiate(particulasDestruir, transform.position, Quaternion.identity);
             }

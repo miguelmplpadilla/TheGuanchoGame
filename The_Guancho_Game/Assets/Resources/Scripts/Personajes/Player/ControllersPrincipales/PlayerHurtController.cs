@@ -33,6 +33,17 @@ public class PlayerHurtController : MonoBehaviour
         {
             if (col.CompareTag("HitBoxEnemigo"))
             {
+                BoxCollider2D boxCollider = col.GetComponent<BoxCollider2D>();
+                
+                if (boxCollider != null)
+                {
+                    col.gameObject.SetActive(false);
+                }
+                else
+                {
+                    col.GetComponent<CircleCollider2D>().enabled = false;
+                }
+                
                 if (variablesPlayer.vida > 0)
                 {
                     animatorPanelRojo.SetTrigger("rojo");
