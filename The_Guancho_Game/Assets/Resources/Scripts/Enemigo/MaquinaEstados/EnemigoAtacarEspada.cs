@@ -27,8 +27,10 @@ public class EnemigoAtacarEspada : EnemigoEstado
         {
             float distanciaJugador = Vector2.Distance(enemigoIa.transform.position, enemigoIa.player.transform.position);
 
-            if (distanciaJugador < 3)
+            if (distanciaJugador < enemigoIa.distanciaAtacarPlayer)
             {
+                enemigoIa.rigidbody.sharedMaterial = enemigoIa.fullFriction;
+                
                 enemigoIa.hitBox.SetActive(true);
                 
                 enemigoIa.navMeshAgent.speed = 0;
@@ -43,13 +45,19 @@ public class EnemigoAtacarEspada : EnemigoEstado
             {
                 if (enemigoIa.puedeVerJugador() && enemigoIa.playerCerca())
                 {
+                    enemigoIa.rigidbody.sharedMaterial = null;
+
+                    Debug.Log(enemigoIa.velocidadAtaque);
+                    
                     enemigoIa.navMeshAgent.speed = enemigoIa.velocidadAtaque;
                     enemigoIa.animator.SetBool("run", true);
-                    enemigoIa.navMeshAgent.speed = enemigoIa.velocidad;
+                    
                     enemigoIa.navMeshAgent.SetDestination(enemigoIa.player.transform.position);
                 }
                 else
                 {
+                    enemigoIa.rigidbody.sharedMaterial = null;
+                    
                     siguienteEstado = new EnemigoVigilar();
                     siguienteEstado.inicializarVariables(enemigoIa);
 

@@ -28,12 +28,13 @@ public class EnemigoAtacarEscopeta : EnemigoEstado
             
             enemigoIa.direccionMirar(enemigoIa.player);
 
-            if (distanciaJugador < 10)
+            if (distanciaJugador < enemigoIa.distanciaAtacarPlayer)
             {
+                enemigoIa.rigidbody.sharedMaterial = enemigoIa.fullFriction;
+                
                 enemigoIa.navMeshAgent.speed = 0;
                 
                 enemigoIa.animator.SetBool("run", false);
-            
                 enemigoIa.animator.SetTrigger("atacarEscopeta");
 
                 enemigoIa.enemigoAnimatorExecuteController.direccionDisparar = enemigoIa.player.transform.position;
@@ -45,12 +46,15 @@ public class EnemigoAtacarEscopeta : EnemigoEstado
                 if (enemigoIa.puedeVerJugador() && enemigoIa.playerCerca())
                 {
                     enemigoIa.navMeshAgent.speed = enemigoIa.velocidadAtaque;
-                    enemigoIa.animator.SetBool("run", true);
-                    enemigoIa.navMeshAgent.speed = enemigoIa.velocidad;
                     enemigoIa.navMeshAgent.SetDestination(enemigoIa.player.transform.position);
+                    
+                    enemigoIa.rigidbody.sharedMaterial = null;
+                    enemigoIa.animator.SetBool("run", true);
                 }
                 else
                 {
+                    enemigoIa.rigidbody.sharedMaterial = null;
+                    
                     siguienteEstado = new EnemigoVigilar();
                     siguienteEstado.inicializarVariables(enemigoIa);
 

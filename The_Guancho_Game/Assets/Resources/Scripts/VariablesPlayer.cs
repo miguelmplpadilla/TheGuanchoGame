@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "NuevoJugador", menuName = "Jugador")]
 public class VariablesPlayer : ScriptableObject
 {
-    public float vida = 3;
+    public float vida = 4;
     public float kunais = 5;
     public int llaves = 0;
 
@@ -23,9 +23,9 @@ public class VariablesPlayer : ScriptableObject
 
     public void sumarVida(int vidaSumar)
     {
-        if ((vida + vidaSumar) >= 3)
+        if ((vida + vidaSumar) >= 4)
         {
-            vida = 3;
+            vida = 4;
         } else
         {
             vida += vidaSumar;
@@ -80,7 +80,7 @@ public class VariablesPlayer : ScriptableObject
 
     public void reiniciarVariables()
     {
-        vida = 3;
+        vida = 4;
         kunais = 5;
         llaves = 0;
     }

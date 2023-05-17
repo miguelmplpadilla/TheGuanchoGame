@@ -28,8 +28,10 @@ public class EnemigoAtacarPistola : EnemigoEstado
             
             enemigoIa.direccionMirar(enemigoIa.player);
 
-            if (distanciaJugador < 10)
+            if (distanciaJugador < enemigoIa.distanciaAtacarPlayer)
             {
+                enemigoIa.rigidbody.sharedMaterial = enemigoIa.fullFriction;
+                
                 enemigoIa.navMeshAgent.speed = 0;
                 
                 enemigoIa.animator.SetBool("run", false);
@@ -53,13 +55,17 @@ public class EnemigoAtacarPistola : EnemigoEstado
             {
                 if (enemigoIa.puedeVerJugador() && enemigoIa.playerCerca())
                 {
+                    enemigoIa.rigidbody.sharedMaterial = null;
+                    
                     enemigoIa.navMeshAgent.speed = enemigoIa.velocidadAtaque;
                     enemigoIa.animator.SetBool("run", true);
-                    enemigoIa.navMeshAgent.speed = enemigoIa.velocidad;
+                    
                     enemigoIa.navMeshAgent.SetDestination(enemigoIa.player.transform.position);
                 }
                 else
                 {
+                    enemigoIa.rigidbody.sharedMaterial = null;
+                    
                     siguienteEstado = new EnemigoVigilar();
                     siguienteEstado.inicializarVariables(enemigoIa);
 

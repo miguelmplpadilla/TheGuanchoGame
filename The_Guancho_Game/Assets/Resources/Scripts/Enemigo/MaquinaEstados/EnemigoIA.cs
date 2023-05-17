@@ -19,23 +19,32 @@ public class EnemigoIA: MonoBehaviour
     [NonSerialized] public NavMeshAgent navMeshAgent;
     [NonSerialized] public Animator animator;
     [NonSerialized] public EnemigoAnimatorExecuteController enemigoAnimatorExecuteController;
+    [NonSerialized] public Rigidbody2D rigidbody;
 
     public float velocidad = 2;
     public float velocidadAtaque = 3;
     [SerializeField] private float distanciaDeteccion = 10;
+    public float distanciaAtacarPlayer = 3;
 
     public GameObject[] puntos;
+
+    public PhysicsMaterial2D fullFriction;
+
+    private void Awake()
+    {
+        rigidbody = GetComponent<Rigidbody2D>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        
+        enemigoAnimatorExecuteController =
+            transform.GetChild(0).GetComponentInChildren<EnemigoAnimatorExecuteController>();
+        animator = transform.GetChild(0).GetComponentInChildren<Animator>();
+
+        puntoMultiUsos = transform.Find("PuntoMultiUsos").gameObject;
+    }
 
     void Start()
     {
         player = GameObject.Find("Player");
-        puntoMultiUsos = transform.Find("PuntoMultiUsos").gameObject;
-
-        enemigoAnimatorExecuteController =
-            transform.GetChild(0).GetComponentInChildren<EnemigoAnimatorExecuteController>();
-        
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        animator = transform.GetChild(0).GetComponentInChildren<Animator>();
 
         FSM = new EnemigoVigilar();
         FSM.inicializarVariables(this);
@@ -43,12 +52,7 @@ public class EnemigoIA: MonoBehaviour
 
     void Update()
     {
-        FSM = FSM.Procesar(); // INICIAMOS LA FSM
-    }
-
-    public void destruirObjeto(GameObject objetoDestruir)
-    {
-        Destroy(objetoDestruir);
+        FSM = FSM.Procesar();
     }
 
     public void morir()

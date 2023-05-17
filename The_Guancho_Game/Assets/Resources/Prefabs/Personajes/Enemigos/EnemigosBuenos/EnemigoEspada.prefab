@@ -1672,9 +1672,11 @@ MonoBehaviour:
   velocidad: 2
   velocidadAtaque: 3
   distanciaDeteccion: 15
+  distanciaAtacarPlayer: 3
   puntos:
   - {fileID: 0}
   - {fileID: 0}
+  fullFriction: {fileID: 6200000, guid: 0d8f77241d5f38244a33648754807ed2, type: 2}
 --- !u!50 &7762476381031974449
 Rigidbody2D:
   serializedVersion: 4
@@ -1950,7 +1952,7 @@ MonoBehaviour:
   vida: 1
   animator: {fileID: 2557860309222877236}
   objetosCrear:
-  - {fileID: 1885743646638415855, guid: 8b72f06c5e05cca4e92e02117a01ac8e, type: 3}
+  - {fileID: 3199916968527693123, guid: bceb1b36ca480e04a8bb8d322f9d563e, type: 3}
   puntoCrearObjeto: {fileID: 7762476380793873976}
   particulasSangre: {fileID: 348219162528833208, guid: bf1551b7516773547a1a45ab1bb017c2, type: 3}
   muerto: 0
