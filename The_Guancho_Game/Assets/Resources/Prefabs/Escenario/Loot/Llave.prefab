@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3199916968527693144}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3199916967506680651
 MonoBehaviour:
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 3199916968527693125}
   - component: {fileID: 3199916968527693124}
   - component: {fileID: 3832525234403088674}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Llave
   m_TagString: Loot
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -107,8 +107,8 @@ Transform:
   m_LocalScale: {x: 0.6818, y: 0.6818, z: 0.6818}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3199916967506680649}
   - {fileID: 8514859801524862602}
+  - {fileID: 3199916967506680649}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -208,7 +208,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &3832525234403088674
 Animator:
   serializedVersion: 4
@@ -342,5 +342,5 @@ Transform:
   m_Children:
   - {fileID: 777844399666813618}
   m_Father: {fileID: 3199916968527693144}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

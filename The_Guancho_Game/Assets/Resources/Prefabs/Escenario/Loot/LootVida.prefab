@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 9018727538976955365}
   - component: {fileID: 9018727538976955362}
   - component: {fileID: 9018727538976955363}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: LootVida
   m_TagString: Loot
   m_Icon: {fileID: 0}

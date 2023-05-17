@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5387345137981337728}
   - component: {fileID: 5387345137981337729}
   - component: {fileID: 6017951762131561703}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Loot
   m_TagString: Loot
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
