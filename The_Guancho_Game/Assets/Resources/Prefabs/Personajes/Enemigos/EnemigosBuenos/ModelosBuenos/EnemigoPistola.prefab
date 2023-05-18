@@ -1866,6 +1866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bala: {fileID: 1535486099445269730, guid: 951bd70c8f7188d4aa800dce702f091a, type: 3}
   puntoInstanciarBala: {fileID: 3053423447271964595}
+  particulaFogonazo: {fileID: 2027611625343135595, guid: 0ff2e323e3a3c8c4dad6581bbcb6ac7d, type: 3}
   velocidadBala: 7
   direccionDisparar: {x: 0, y: 0, z: 0}
 --- !u!1 &5454088422667075956

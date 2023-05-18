@@ -9,6 +9,7 @@ public class EnemigoAnimatorExecuteController : MonoBehaviour
 
     [SerializeField] private GameObject bala;
     [SerializeField] private GameObject puntoInstanciarBala;
+    [SerializeField] private GameObject particulaFogonazo;
 
     [SerializeField] private float velocidadBala = 2;
 
@@ -23,12 +24,16 @@ public class EnemigoAnimatorExecuteController : MonoBehaviour
     public void disparar()
     {
         GameObject balaInstanciada = Instantiate(bala, puntoInstanciarBala.transform.position, Quaternion.identity);
+        GameObject particulaFogonazoInstancia = Instantiate(particulaFogonazo, puntoInstanciarBala.transform.position, Quaternion.identity);
 
         Vector2 direccionDispararBala;
 
         if (direccionDisparar.x > transform.position.x)
         {
             direccionDispararBala = Vector2.right;
+
+            particulaFogonazoInstancia.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
+            particulaFogonazoInstancia.transform.rotation = Quaternion.Euler(-180,-180,0);
         }
         else
         {
