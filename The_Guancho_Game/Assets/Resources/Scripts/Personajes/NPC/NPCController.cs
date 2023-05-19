@@ -73,7 +73,6 @@ public class NPCController : MonoBehaviour
         {
             botonInteractuarController.visible();
             hablando = true;
-            player.GetComponent<PlayerMovement>().mov = false;
             StartCoroutine("mostrarFrase");
         }
     }
@@ -157,7 +156,6 @@ public class NPCController : MonoBehaviour
     {
         hablar = false;
         hablando = false;
-        player.GetComponent<PlayerMovement>().mov = true;
         player.GetComponentInChildren<InteractuarController>().interactuando = false;
         cinemachineVirtualCamera.Follow = player.transform;
         cinemachineVirtualCamera.enabled = false;
