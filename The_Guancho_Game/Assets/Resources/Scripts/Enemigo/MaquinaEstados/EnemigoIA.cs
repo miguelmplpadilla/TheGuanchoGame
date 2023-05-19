@@ -13,9 +13,10 @@ public class EnemigoIA: MonoBehaviour
     [SerializeField] private LayerMask layerInteract;
 
     [NonSerialized] public GameObject player;
+    private GameObject puntoDetectarPlayer;
     private GameObject puntoMultiUsos;
     public GameObject hitBox;
-    
+
     [NonSerialized] public NavMeshAgent navMeshAgent;
     [NonSerialized] public Animator animator;
     [NonSerialized] public EnemigoAnimatorExecuteController enemigoAnimatorExecuteController;
@@ -45,6 +46,8 @@ public class EnemigoIA: MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+
+        puntoDetectarPlayer = player.transform.Find("PuntoLanzamientoRayCast").gameObject;
 
         FSM = new EnemigoVigilar();
         FSM.inicializarVariables(this);
@@ -87,7 +90,7 @@ public class EnemigoIA: MonoBehaviour
     {
         bool puedeVer = false;
         
-        Vector3 direccion = (player.transform.position - puntoMultiUsos.transform.position);
+        Vector3 direccion = (puntoDetectarPlayer.transform.position - puntoMultiUsos.transform.position);
 
         RaycastHit2D hit = Physics2D.Raycast(puntoMultiUsos.transform.position, direccion, Mathf.Infinity, layerInteract);
 

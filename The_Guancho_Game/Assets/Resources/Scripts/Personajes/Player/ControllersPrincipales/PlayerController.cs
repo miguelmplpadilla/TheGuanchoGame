@@ -55,7 +55,8 @@ public class PlayerController : MonoBehaviour
     private PlayerHurtController playerHurtController;
 
     public GameObject posicionLanzarRayCast;
-    [SerializeField] private GameObject puntoCreacionparticulasSuelo;
+    [SerializeField] private GameObject puntoCreacionparticulasCorrer;
+    
     [SerializeField] private GameObject particulasAterrizar;
 
     private void Awake()
@@ -139,7 +140,7 @@ public class PlayerController : MonoBehaviour
 
     public void crearParticulaAterrizar()
     {
-        Instantiate(particulasAterrizar, puntoCreacionparticulasSuelo.transform.position, Quaternion.identity);
+        Instantiate(particulasAterrizar, puntoCreacionparticulasCorrer.transform.position, Quaternion.identity);
     }
 
     private void SlopeCheck()
