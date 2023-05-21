@@ -7,6 +7,8 @@ public class PlayerJumpOverEnemy : MonoBehaviour
 {
     private PlayerController playerController;
 
+    [SerializeField] private float distanciaMatar = 0.15f;
+
     private void Awake()
     {
         playerController = GetComponentInParent<PlayerController>();
@@ -18,7 +20,7 @@ public class PlayerJumpOverEnemy : MonoBehaviour
         {
             float distancia = Vector2.Distance(transform.position, other.transform.position);
             
-            if (distancia > 0.15f && transform.position.y > other.transform.position.y)
+            if (distancia > distanciaMatar && transform.position.y > other.transform.position.y)
             {
                 EnemigoHitController enemigoHitController = other.GetComponent<EnemigoHitController>();
                 enemigoHitController.hit(enemigoHitController.vida);
