@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec41ed5e-6894-4cdc-8127-e636cba0ab03" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Recursos/Guancho.blend" beforeDir="false" afterPath="$PROJECT_DIR$/../Recursos/Guancho.blend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/CinematicaEspacio.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/CinematicaEspacio.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/InicioCinematica.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/InicioCinematica.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/EscenaInicio.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/EscenaInicio.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Timelines/Inicio/TimeLine2.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Timelines/Inicio/TimeLine2.playable" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,6 +169,7 @@
       <workItem from="1684583033091" duration="829000" />
       <workItem from="1684606350648" duration="3885000" />
       <workItem from="1684921209416" duration="1066000" />
+      <workItem from="1685006102271" duration="2018000" />
     </task>
     <servers />
   </component>
