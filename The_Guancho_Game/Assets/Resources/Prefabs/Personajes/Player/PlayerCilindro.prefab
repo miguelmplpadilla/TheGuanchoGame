@@ -1000,6 +1000,9 @@ MonoBehaviour:
   speed: 10
   speedMin: 10
   speedMax: 15
+  speedAir: 0
+  sumSpeed: 1
+  restSpeed: 1
   jumpForce: 30
   movement: {x: 0, y: 0}
   mov: 1
@@ -1008,6 +1011,8 @@ MonoBehaviour:
   minVerticalSpeed: -15
   horizontalVelocity: 0
   animator: {fileID: 0}
+  dustParticle: {fileID: 0}
+  puntoInstanciaDust: {fileID: 0}
 --- !u!114 &6105667509878236674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,8 +1037,9 @@ MonoBehaviour:
   gancho: {fileID: 1660259411}
   ganchoEnganchado: 0
   speedDisparoGancho: 50
-  posicionInicialGancho: {x: 0, y: 0, z: 0}
   tipoEnganche: 
+  posicionAgarreGancho: {fileID: 0}
+  puntoLanzarRayCastParedes: {fileID: 0}
 --- !u!50 &6105667509878236920
 Rigidbody2D:
   serializedVersion: 4

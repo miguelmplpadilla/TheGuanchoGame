@@ -612,6 +612,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 391709888, guid: 42a238630aebfcb4f8769bd5d693b7ac, type: 3}
+    - target: {fileID: 687867917757067708, guid: 16ad512d02cd2bb42b0f470860e3cbe9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 812244907549712685, guid: 16ad512d02cd2bb42b0f470860e3cbe9, type: 3}
       propertyPath: m_Name
       value: BotonInteractuable

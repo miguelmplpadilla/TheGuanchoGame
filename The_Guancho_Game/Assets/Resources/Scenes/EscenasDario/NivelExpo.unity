@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731715, g: 0.13414735, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10559,6 +10559,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 228212033}
     m_Modifications:
+    - target: {fileID: 1342389203, guid: f9b459be6bcb74e46bfd0a468f674198, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 8228515280700693601, guid: f9b459be6bcb74e46bfd0a468f674198, type: 3}
       propertyPath: m_Name
       value: IndicadorLanzarGancho
