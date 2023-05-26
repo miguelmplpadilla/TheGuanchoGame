@@ -2457,27 +2457,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6644085833076850831, guid: 16ad512d02cd2bb42b0f470860e3cbe9, type: 3}
   m_PrefabInstance: {fileID: 1400618550}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2126767822 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
-  m_PrefabInstance: {fileID: 2973041300717762666}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2126767828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126767822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 0
-  m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
 --- !u!1 &2129814802
 GameObject:
   m_ObjectHideFlags: 0
@@ -2622,10 +2601,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavMesh
       objectReference: {fileID: 0}
-    - target: {fileID: 51469940803906643, guid: 3421c7d31e6a21b448cc21952cc342de, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: df5edb4d79f153047bd5a6d251ad2fb4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3421c7d31e6a21b448cc21952cc342de, type: 3}
 --- !u!1001 &216529738962546640
@@ -3134,25 +3109,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2973041300815896585, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_Name
       value: Suelo
       objectReference: {fileID: 0}
-    - target: {fileID: 2973041300815896587, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896588, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2973041300815896588, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 25.451685
       objectReference: {fileID: 0}
     - target: {fileID: 2973041300815896588, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3194,10 +3157,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2973041300815896590, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2ec611a91080c2540ae98378b4ff53f5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20f58984d16cf0942b0e3f863125b79b, type: 3}
 --- !u!114 &2978476019411912715
@@ -3308,10 +3267,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6549582489042100065, guid: 1a395eb95fff26246bd9e08f0f0b58cf, type: 3}
-      propertyPath: m_Name
-      value: PuntoPatrulla2
-      objectReference: {fileID: 0}
     - target: {fileID: 6549582489528863916, guid: 1a395eb95fff26246bd9e08f0f0b58cf, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3360,10 +3315,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuntosPatrullaEnemigo
       objectReference: {fileID: 0}
-    - target: {fileID: 6549582490530728018, guid: 1a395eb95fff26246bd9e08f0f0b58cf, type: 3}
-      propertyPath: m_Name
-      value: PuntoPatrulla1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a395eb95fff26246bd9e08f0f0b58cf, type: 3}
 --- !u!1001 &7329706159755718646
@@ -3373,30 +3324,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 951533252, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: m_Size.y
-      value: 2.8401937
-      objectReference: {fileID: 0}
-    - target: {fileID: 951533252, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: m_Offset.y
-      value: 1.489141
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053520754, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: m_Size.y
-      value: 2.742076
-      objectReference: {fileID: 0}
-    - target: {fileID: 1053520754, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: m_Offset.y
-      value: 1.5346627
-      objectReference: {fileID: 0}
-    - target: {fileID: 1781766462, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: distanciaMatar
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7329706157755517894, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.225
-      objectReference: {fileID: 0}
     - target: {fileID: 7329706158928698519, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
       propertyPath: m_Name
       value: Player

@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2973041300815896590}
   - component: {fileID: 2973041300815896585}
   - component: {fileID: 2973041300815896584}
-  m_Layer: 6
+  - component: {fileID: 2126767828}
+  m_Layer: 8
   m_Name: Suelo
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 2973041300815896587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.20817, y: -0.6887793, z: 0.000000070780516}
-  m_LocalScale: {x: 23.912764, y: 3.9396539, z: 3.9046342}
+  m_LocalScale: {x: 25.451685, y: 3.9396539, z: 3.9046342}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 2ec611a91080c2540ae98378b4ff53f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,7 +95,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2973041300815896587}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 5fed504255071df4bb128fb968fc1031, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -132,3 +133,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2126767828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2973041300815896587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff

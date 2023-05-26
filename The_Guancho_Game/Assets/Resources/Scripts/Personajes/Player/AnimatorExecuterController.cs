@@ -40,7 +40,7 @@ public class AnimatorExecuterController : MonoBehaviour
     {
         GameObject particulaInstanciada = Instantiate(particulasCorrer, puntoCreacionparticulasSuelo.transform.position, Quaternion.identity);
         
-        if (transform.parent.localScale.x == -1)
+        if (transform.parent.localScale.x == -0.5f)
         {
             particulaInstanciada.transform.rotation = Quaternion.Euler(0,180,0);
             particulaInstanciada.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);

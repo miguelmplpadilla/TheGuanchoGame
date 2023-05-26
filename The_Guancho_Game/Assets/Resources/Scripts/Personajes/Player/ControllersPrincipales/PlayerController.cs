@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
-        if (isGrounded && inicioIsGrounded)
+        if (isGrounded && inicioIsGrounded && rb.velocity.y < -10)
         {
             crearParticulaAterrizar();
             inicioIsGrounded = false;
@@ -291,11 +291,11 @@ public class PlayerController : MonoBehaviour
     {
         if (xInput > 0f)
         {
-            transform.localScale = new Vector3(1,1,1);
+            transform.localScale = new Vector3(0.5f,0.5f,0.5f);
         }
         else if (xInput < 0f)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
         }
     }
 
