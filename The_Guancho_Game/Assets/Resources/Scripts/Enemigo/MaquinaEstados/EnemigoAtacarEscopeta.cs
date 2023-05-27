@@ -30,16 +30,28 @@ public class EnemigoAtacarEscopeta : EnemigoEstado
 
             if (distanciaJugador < enemigoIa.distanciaAtacarPlayer)
             {
-                enemigoIa.rigidbody.sharedMaterial = enemigoIa.fullFriction;
+                if (enemigoIa.puedeVerJugador() && enemigoIa.playerCerca())
+                {
+                    enemigoIa.rigidbody.sharedMaterial = enemigoIa.fullFriction;
                 
-                enemigoIa.navMeshAgent.speed = 0;
+                    enemigoIa.navMeshAgent.speed = 0;
                 
-                enemigoIa.animator.SetBool("run", false);
-                enemigoIa.animator.SetTrigger("atacarEscopeta");
+                    enemigoIa.animator.SetBool("run", false);
+                    enemigoIa.animator.SetTrigger("atacarEscopeta");
 
-                enemigoIa.enemigoAnimatorExecuteController.direccionDisparar = enemigoIa.player.transform.position;
+                    enemigoIa.enemigoAnimatorExecuteController.direccionDisparar = enemigoIa.player.transform.position;
 
-                enemigoIa.atacando = true;
+                    enemigoIa.atacando = true;
+                }
+                else
+                {
+                    enemigoIa.rigidbody.sharedMaterial = null;
+                    
+                    siguienteEstado = new EnemigoVigilar();
+                    siguienteEstado.inicializarVariables(enemigoIa);
+
+                    faseActual = EVENTO.SALIR;
+                }
             }
             else
             {

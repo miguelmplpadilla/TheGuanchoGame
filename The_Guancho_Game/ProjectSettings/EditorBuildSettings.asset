@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/EscenasPrincipales/EscenaCreditos.unity
     guid: ffc57a08234957547b40ad19aab0f224
+  - enabled: 1
+    path: Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2.unity
+    guid: 9a7ed9d9993400140857fbda35cb8663
+  - enabled: 1
+    path: Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/InicioCinematica.unity
+    guid: 0e7f963cf57b40b4abdf01d46ef313ab
+  - enabled: 1
+    path: Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/CinematicaEspacio.unity
+    guid: 100f38f1e7129ea40be12aa9a53af634
   m_configObjects: {}

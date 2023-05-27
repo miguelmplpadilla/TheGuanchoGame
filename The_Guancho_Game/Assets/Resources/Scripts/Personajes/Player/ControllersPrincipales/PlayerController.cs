@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speedMax;
     [SerializeField] private float speedAir;
 
+    [SerializeField] private float distanciaComprobarSuelo = 0.2f;
+    [SerializeField] private float maxDistanciaComprobarSuelo = 0.2f;
+    [SerializeField] private float minDistanciaComprobarSuelo = 0.2f;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private float jumpForce;
     [SerializeField] private float slopeCheckDistance;
@@ -88,9 +91,9 @@ public class PlayerController : MonoBehaviour
         if (!pausaController.pausado && !playerHurtController.muerto)
         {
             animator.SetFloat("horizontalVelocity", movementSpeed);
-
-            CheckGround();
+            
             SlopeCheck();
+            CheckGround();
             ApplyMovement();
         }
     }
@@ -110,7 +113,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    
+
     private void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
@@ -121,9 +124,41 @@ public class PlayerController : MonoBehaviour
             inicioIsGrounded = false;
         }
 
+        if (isOnSlope)
+        {
+            distanciaComprobarSuelo = maxDistanciaComprobarSuelo;
+        }
+        else
+        {
+            distanciaComprobarSuelo = minDistanciaComprobarSuelo;
+        }
+
         if (!isGrounded)
         {
-            inicioIsGrounded = true;
+            RaycastHit2D hitGround = Physics2D.Raycast(groundCheck.position, Vector2.down, Mathf.Infinity, whatIsGround);
+            
+            if (hitGround.collider != null)
+            {
+                float distancia = Vector2.Distance(hitGround.point, groundCheck.position);
+
+                Debug.Log(distancia);
+                
+                if (distancia < distanciaComprobarSuelo)
+                {
+                    isGrounded = true;
+                }
+                
+                Debug.DrawRay(groundCheck.position, Vector2.down, Color.green);
+            }
+            else
+            {
+                Debug.DrawRay(groundCheck.position, Vector2.down, Color.red);
+            }
+
+            if (!isGrounded)
+            {
+                inicioIsGrounded = true;
+            }
         }
 
         if(rb.velocity.y <= 0.0f)
@@ -182,30 +217,19 @@ public class PlayerController : MonoBehaviour
         
         if (hit)
         {
-            
-            slopeNormalPerp = Vector2.Perpendicular(hit.normal).normalized;            
-
-            slopeDownAngle = Vector2.Angle(hit.normal, Vector2.up);
-
-            if(slopeDownAngle != lastSlopeAngle)
+            if (hit.collider.CompareTag("Rampa"))
             {
                 isOnSlope = true;
-            }                       
-
-            lastSlopeAngle = slopeDownAngle;
-
-        }
-
-        if (slopeDownAngle > maxSlopeAngle || slopeSideAngle > maxSlopeAngle)
-        {
-            canWalkOnSlope = false;
+            }
+            else
+            {
+                isOnSlope = false;
+            }
         }
         else
         {
-            canWalkOnSlope = true;
+            isOnSlope = false;
         }
-
-        canWalkOnSlope = true;
 
         if (xInput == 0.0f)
         {
@@ -236,12 +260,12 @@ public class PlayerController : MonoBehaviour
             
             if (!playerGanchoController.ganchoEnganchado)
             {
-                if (isGrounded && !isOnSlope && !isJumping) //if not on slope
+                if (isGrounded && !isJumping) //if not on slope
                 {
                     newVelocity.Set(movementSpeed * xInput, 0.0f);
                     rb.velocity = newVelocity;
                 }
-                else if (isGrounded && isOnSlope && canWalkOnSlope && !isJumping) //If on slope
+                else if (isGrounded && canWalkOnSlope && !isJumping) //If on slope
                 {
                     newVelocity.Set(movementSpeed * slopeNormalPerp.x * -xInput, movementSpeed * slopeNormalPerp.y * -xInput);
                     rb.velocity = newVelocity;

@@ -10842,7 +10842,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321177145}
-  m_LocalRotation: {x: -0, y: 0.00000004371139, z: -0, w: 1}
+  m_LocalRotation: {x: 0.06691746, y: 0.70642644, z: -0.067398414, w: 0.70138526}
   m_LocalPosition: {x: -0.000006119594, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -22165,7 +22165,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645134666}
-  m_LocalRotation: {x: -0, y: 0.00000004371139, z: -0, w: 1}
+  m_LocalRotation: {x: 0.06691746, y: 0.70642644, z: -0.067398414, w: 0.70138526}
   m_LocalPosition: {x: -0.000006119594, y: 0, z: -70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -42776,6 +42776,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8629363942554623729}
   - component: {fileID: 8974117585011868748}
+  - component: {fileID: 8974117585011868749}
   m_Layer: 0
   m_Name: Nave
   m_TagString: Untagged
@@ -42803,3 +42804,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8974117585011868749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8974117585011868747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1a19c3a2da1c946b580eaf949b02ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

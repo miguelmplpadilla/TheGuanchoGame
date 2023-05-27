@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CinematicaInicioController : MonoBehaviour
 {
@@ -33,5 +34,10 @@ public class CinematicaInicioController : MonoBehaviour
         }
         
         timeline3.SetActive(true);
+    }
+
+    public void moverEscena(string nombreEscena)
+    {
+        SceneManager.LoadScene(nombreEscena);
     }
 }
