@@ -3126,10 +3126,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1644135235807174495, guid: 6eb18476103926a43a18727f67e3ba15, type: 3}
-      propertyPath: puntos.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1644135235807174495, guid: 6eb18476103926a43a18727f67e3ba15, type: 3}
       propertyPath: puntos.Array.data[0]
       value: 
       objectReference: {fileID: 1976398840}
@@ -3140,18 +3136,6 @@ PrefabInstance:
     - target: {fileID: 3597017166264012870, guid: 6eb18476103926a43a18727f67e3ba15, type: 3}
       propertyPath: m_RootOrder
       value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 3597017166264012870, guid: 6eb18476103926a43a18727f67e3ba15, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3597017166264012870, guid: 6eb18476103926a43a18727f67e3ba15, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3597017166264012870, guid: 6eb18476103926a43a18727f67e3ba15, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3597017166264012870, guid: 6eb18476103926a43a18727f67e3ba15, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3196,14 +3180,6 @@ PrefabInstance:
     - target: {fileID: 3597017166264012879, guid: 6eb18476103926a43a18727f67e3ba15, type: 3}
       propertyPath: m_Name
       value: EnemigoEspada
-      objectReference: {fileID: 0}
-    - target: {fileID: 3597017167801910252, guid: 6eb18476103926a43a18727f67e3ba15, type: 3}
-      propertyPath: m_Size.y
-      value: 3.4547026
-      objectReference: {fileID: 0}
-    - target: {fileID: 3597017167801910252, guid: 6eb18476103926a43a18727f67e3ba15, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.75813496
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eb18476103926a43a18727f67e3ba15, type: 3}
@@ -18094,42 +18070,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1583463245954099523, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
-      value: 0.09090902
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172619262980572997, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: speedAir
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172619262980572997, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: speedMax
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172619262980572997, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: speedMin
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172619262980572997, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: jumpForce
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172619262980572997, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: groundCheckRadius
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172619262980572997, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: slopeCheckDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5172619262980572997, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: maxDistanciaComprobarSuelo
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7329706157755517894, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.015
-      objectReference: {fileID: 0}
     - target: {fileID: 7329706158928698519, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
       propertyPath: m_Name
       value: Player
@@ -18137,18 +18077,6 @@ PrefabInstance:
     - target: {fileID: 7329706158928698527, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
       propertyPath: m_RootOrder
       value: 29
-      objectReference: {fileID: 0}
-    - target: {fileID: 7329706158928698527, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7329706158928698527, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7329706158928698527, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7329706158928698527, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24463,29 +24391,9 @@ PrefabInstance:
       propertyPath: puntos.Array.data[1]
       value: 
       objectReference: {fileID: 2029339181}
-    - target: {fileID: 4125737547437671915, guid: b252833c51db08c4a953e6a889df0582, type: 3}
-      propertyPath: m_Size.y
-      value: 3.4547026
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125737547437671915, guid: b252833c51db08c4a953e6a889df0582, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.75813496
-      objectReference: {fileID: 0}
     - target: {fileID: 4125737547856156225, guid: b252833c51db08c4a953e6a889df0582, type: 3}
       propertyPath: m_RootOrder
       value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125737547856156225, guid: b252833c51db08c4a953e6a889df0582, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125737547856156225, guid: b252833c51db08c4a953e6a889df0582, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125737547856156225, guid: b252833c51db08c4a953e6a889df0582, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4125737547856156225, guid: b252833c51db08c4a953e6a889df0582, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24497,7 +24405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4125737547856156225, guid: b252833c51db08c4a953e6a889df0582, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.138588
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 4125737547856156225, guid: b252833c51db08c4a953e6a889df0582, type: 3}
       propertyPath: m_LocalRotation.w
@@ -37726,7 +37634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4125737547856156225, guid: b252833c51db08c4a953e6a889df0582, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.138588
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 4125737547856156225, guid: b252833c51db08c4a953e6a889df0582, type: 3}
       propertyPath: m_LocalRotation.w
@@ -44482,18 +44390,6 @@ PrefabInstance:
       value: 49
       objectReference: {fileID: 0}
     - target: {fileID: 2257782299479233632, guid: 1cc5f59131df8aa459a9c3bd2e3b46d9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2257782299479233632, guid: 1cc5f59131df8aa459a9c3bd2e3b46d9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2257782299479233632, guid: 1cc5f59131df8aa459a9c3bd2e3b46d9, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2257782299479233632, guid: 1cc5f59131df8aa459a9c3bd2e3b46d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 34.165363
       objectReference: {fileID: 0}
@@ -44536,14 +44432,6 @@ PrefabInstance:
     - target: {fileID: 2257782299479233641, guid: 1cc5f59131df8aa459a9c3bd2e3b46d9, type: 3}
       propertyPath: m_Name
       value: EnemigoPistola
-      objectReference: {fileID: 0}
-    - target: {fileID: 2257782301069494218, guid: 1cc5f59131df8aa459a9c3bd2e3b46d9, type: 3}
-      propertyPath: m_Size.y
-      value: 3.4547026
-      objectReference: {fileID: 0}
-    - target: {fileID: 2257782301069494218, guid: 1cc5f59131df8aa459a9c3bd2e3b46d9, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.75813496
       objectReference: {fileID: 0}
     - target: {fileID: 4066549584644840313, guid: 1cc5f59131df8aa459a9c3bd2e3b46d9, type: 3}
       propertyPath: puntos.Array.data[0]

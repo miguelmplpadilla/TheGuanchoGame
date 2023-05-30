@@ -856,7 +856,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.29220772
+        value: 0.09090902
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2332,7 +2332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7329706157755517913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.225, z: -0.12000027}
+  m_LocalPosition: {x: 0, y: 0.015, z: -0.12000027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2684,7 +2684,7 @@ Transform:
   m_GameObject: {fileID: 7329706158928698519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28.81, y: 5.61, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7329706157755517894}
@@ -2734,12 +2734,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  speedMin: 5
-  speedMax: 10
-  speedAir: 10
-  groundCheckRadius: 0.23
-  jumpForce: 30
-  slopeCheckDistance: 0.6
+  speedMin: 3
+  speedMax: 6
+  speedAir: 6
+  distanciaComprobarSuelo: 0.2
+  maxDistanciaComprobarSuelo: 0.4
+  minDistanciaComprobarSuelo: 0.2
+  groundCheckRadius: 0.1
+  jumpForce: 25
+  slopeCheckDistance: 1
   maxSlopeAngle: 50
   maxVerticalSpeed: 100
   minVerticalSpeed: -15
