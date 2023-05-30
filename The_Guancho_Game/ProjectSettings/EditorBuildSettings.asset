@@ -36,6 +36,6 @@ EditorBuildSettings:
     path: Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/InicioCinematica.unity
     guid: 0e7f963cf57b40b4abdf01d46ef313ab
   - enabled: 1
-    path: Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/CinematicaEspacio.unity
+    path: Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/EspacioCinematica.unity
     guid: 100f38f1e7129ea40be12aa9a53af634
   m_configObjects: {}
