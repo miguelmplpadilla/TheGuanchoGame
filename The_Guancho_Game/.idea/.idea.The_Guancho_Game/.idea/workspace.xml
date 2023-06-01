@@ -3,21 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ec41ed5e-6894-4cdc-8127-e636cba0ab03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Bridge_Pack/Prefabs/Bridge_Basic.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Bridge_Pack/Prefabs/Bridge_Basic.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Escenario/Escaleras.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Escenario/Escaleras.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/CinematicaEspacio.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/CinematicaEspacio.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModelosImportados/LowPolyWater_Pack/Plane Meshes/Ocean50x50W750H750.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModelosImportados/LowPolyWater_Pack/Plane Meshes/Ocean50x50W750H750.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/AvionCinematica.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/AvionCinematica.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/BarcoCinematica.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/BarcoCinematica.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/EspacioCinematica.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/EspacioCinematica.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/InicioCinematica.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/InicioCinematica.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/InicioEscena.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/InicioEscena.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Cinematicas/Inicio/CinematicaInicioController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Cinematicas/Inicio/CinematicaInicioController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/MaquinaEstados/EnemigoAtacarEscopeta.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/MaquinaEstados/EnemigoAtacarEscopeta.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/EscenaInicioController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/EscenaInicioController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/ControllersPrincipales/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/ControllersPrincipales/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Timelines/Inicio/TimeLine3.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Timelines/Inicio/TimeLine3.playable" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Timelines/TimelineSpace.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Timelines/TimelineSpace.playable" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Cinematicas/Espacio/NaveController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Cinematicas/Espacio/NaveController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Timelines/Barco/Timeline.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Timelines/Barco/Timeline.playable" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,6 +177,7 @@
       <workItem from="1684921209416" duration="1066000" />
       <workItem from="1685006102271" duration="2018000" />
       <workItem from="1685091794070" duration="2058000" />
+      <workItem from="1685607948560" duration="2726000" />
     </task>
     <servers />
   </component>
