@@ -39,6 +39,6 @@ public class PausaController : MonoBehaviour
     public void volverMenuInicio()
     {
         pausarDespausar();
-        SceneManager.LoadScene("EscenaInicio");
+        LoadSceneController.cargarEscena("EscenaInicio");
     }
 }

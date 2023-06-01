@@ -47,8 +47,6 @@ public class EnemigoAtacarEspada : EnemigoEstado
                 {
                     enemigoIa.rigidbody.sharedMaterial = null;
 
-                    Debug.Log(enemigoIa.velocidadAtaque);
-                    
                     enemigoIa.navMeshAgent.speed = enemigoIa.velocidadAtaque;
                     enemigoIa.animator.SetBool("run", true);
                     

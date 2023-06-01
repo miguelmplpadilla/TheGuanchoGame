@@ -7,6 +7,6 @@ public class EscenaMuerteController : MonoBehaviour
 {
     public void reintentar()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetString("EscenaAnterior"));
+        LoadSceneController.cargarEscena(PlayerPrefs.GetString("EscenaAnterior"));
     }
 }

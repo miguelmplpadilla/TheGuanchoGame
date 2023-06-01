@@ -554,8 +554,8 @@ Rigidbody2D:
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &2257782299479233642
 MonoBehaviour:
@@ -777,7 +777,7 @@ MonoBehaviour:
   animator: {fileID: 4758590188339122435}
   objetosCrear:
   - {fileID: 9018727538976955360, guid: 105ea2fa0a8f3bf4ca340ca263d602ad, type: 3}
-  - {fileID: 3199916968527693123, guid: bceb1b36ca480e04a8bb8d322f9d563e, type: 3}
+  - {fileID: 9219191737962401735, guid: 8b72f06c5e05cca4e92e02117a01ac8e, type: 3}
   puntoCrearObjeto: {fileID: 2257782300321166436}
   particulasSangre: {fileID: 6239177318491033732, guid: bae0ae149882f83498827999d2eb2cff, type: 3}
   muerto: 0

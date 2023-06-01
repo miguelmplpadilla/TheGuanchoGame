@@ -14,12 +14,4 @@ public class SkyboxController : MonoBehaviour
     {
         RenderSettings.skybox = materialesSkybox[Random.Range(0, materialesSkybox.Length)];
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-    }
 }

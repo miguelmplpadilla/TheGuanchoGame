@@ -14,7 +14,7 @@ public class NaveController : MonoBehaviour
 
     public void moverEscena()
     {
-        SceneManager.LoadScene(nombreEscena);
+        LoadSceneController.cargarEscena(nombreEscena);
     }
 
     public void iniciarCinematica()

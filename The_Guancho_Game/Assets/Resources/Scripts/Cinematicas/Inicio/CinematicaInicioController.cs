@@ -38,6 +38,6 @@ public class CinematicaInicioController : MonoBehaviour
 
     public void moverEscena(string nombreEscena)
     {
-        SceneManager.LoadScene(nombreEscena);
+        LoadSceneController.cargarEscena(nombreEscena);
     }
 }

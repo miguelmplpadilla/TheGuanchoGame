@@ -10,7 +10,7 @@ public class EscenaInicioController : MonoBehaviour
     public void moverEscena(string escenaMover)
     {
         Cursor.lockState = CursorLockMode.Locked;
-        SceneManager.LoadScene(escenaMover);
+        LoadSceneController.cargarEscena(escenaMover);
     }
 
     public void cerrarJuego()

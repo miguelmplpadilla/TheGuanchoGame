@@ -13,7 +13,7 @@ public class TpSceneController : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            SceneManager.LoadScene(escena);
+            LoadSceneController.cargarEscena(escena);
         }
     }
 }

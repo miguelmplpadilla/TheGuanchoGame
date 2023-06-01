@@ -68,6 +68,6 @@ public class PlayerHurtController : MonoBehaviour
         
         PlayerPrefs.SetString("EscenaAnterior", SceneManager.GetActiveScene().name);
         
-        SceneManager.LoadScene("EscenaMuerte");
+        LoadSceneController.cargarEscena("EscenaMuerte");
     }
 }

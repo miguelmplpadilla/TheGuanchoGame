@@ -141,8 +141,6 @@ public class PlayerController : MonoBehaviour
             {
                 float distancia = Vector2.Distance(hitGround.point, groundCheck.position);
 
-                Debug.Log(distancia);
-                
                 if (distancia < distanciaComprobarSuelo)
                 {
                     isGrounded = true;

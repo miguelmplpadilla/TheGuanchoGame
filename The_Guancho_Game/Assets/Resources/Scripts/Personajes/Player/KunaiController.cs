@@ -24,10 +24,12 @@ public class KunaiController : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D col)
     {
+        Debug.Log("Colision con: "+col.name);
+        
         if (col.CompareTag("HurtBoxEnemigo"))
         {
             player.GetComponent<PlayerGanchoController>().puntosAnclaje.Remove(col.transform.parent.gameObject);
-            col.SendMessage("hit", 1);
+            col.SendMessage("hit", 10);
         }
 
         if (!col.CompareTag("Player") &&
