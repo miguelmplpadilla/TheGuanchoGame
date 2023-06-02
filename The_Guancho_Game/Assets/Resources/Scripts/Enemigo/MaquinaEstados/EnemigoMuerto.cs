@@ -8,8 +8,6 @@ public class EnemigoMuerto : EnemigoEstado
 {
     public EnemigoMuerto() : base()
     {
-        Debug.Log("Muerto");
-        
         nombre = ESTADO.MUERTO;
     }
 

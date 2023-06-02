@@ -8,8 +8,6 @@ public class EnemigoAtacarEspada : EnemigoEstado
 {
     public EnemigoAtacarEspada() : base()
     {
-        Debug.Log("Atacar");
-        
         nombre = ESTADO.ATACARESPADA; // Guardamos el nombre del estado en el que nos encontramos.
     }
 

@@ -15,6 +15,7 @@ TagManager:
   - CameraConfiner
   - Loot
   - Rampa
+  - Pared
   layers:
   - Default
   - TransparentFX

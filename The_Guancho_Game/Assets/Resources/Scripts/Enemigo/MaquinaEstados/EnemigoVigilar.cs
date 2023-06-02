@@ -11,8 +11,6 @@ public class EnemigoVigilar : EnemigoEstado
 
     public EnemigoVigilar() : base()
     {
-        Debug.Log("Vijilando");
-
         nombre = ESTADO.VIJILAR;
     }
 

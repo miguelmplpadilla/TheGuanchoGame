@@ -1586,7 +1586,7 @@ MonoBehaviour:
   atacando: 0
   layerInteract:
     serializedVersion: 2
-    m_Bits: 2312
+    m_Bits: 2376
   hitBox: {fileID: 2764850962087332445}
   velocidad: 2
   velocidadAtaque: 3
