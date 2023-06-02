@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4658451310323941544}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.28, y: 7.61, z: -1.48}
-  m_LocalScale: {x: 0.6961163, y: 0.7122, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipoEnganche: balanceo
+  distanciaEnganchar: 15
 --- !u!50 &4658451310323941558
 Rigidbody2D:
   serializedVersion: 4

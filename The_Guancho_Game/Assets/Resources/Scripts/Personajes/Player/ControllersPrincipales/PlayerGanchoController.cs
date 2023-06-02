@@ -250,9 +250,14 @@ public class PlayerGanchoController : MonoBehaviour
     private IEnumerator moverGanchoAEnganche()
     {
         gancho.transform.parent = null;
+        
         while (true)
         {
-            gancho.transform.position = Vector2.MoveTowards(gancho.transform.position, puntoAnclaje.transform.position, speedDisparoGancho * Time.deltaTime);
+            Vector2 moveTowardsPosicion = Vector2.MoveTowards(gancho.transform.position, puntoAnclaje.transform.position, speedDisparoGancho * Time.deltaTime);
+            Vector3 posicionMover = new Vector3(moveTowardsPosicion.x, moveTowardsPosicion.y,
+                puntoAnclaje.transform.position.z);
+
+            gancho.transform.position = posicionMover;
             float distancia = Vector2.Distance(gancho.transform.position, puntoAnclaje.transform.position);
             if (distancia < 0.1f)
             {
