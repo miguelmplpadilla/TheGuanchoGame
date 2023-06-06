@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 338929373363784523}
   - component: {fileID: 4658451310323941558}
   - component: {fileID: 4658451310323941559}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PuntoAnclajeGanchoBalanceo
   m_TagString: PuntoAnclaje
   m_Icon: {fileID: 0}

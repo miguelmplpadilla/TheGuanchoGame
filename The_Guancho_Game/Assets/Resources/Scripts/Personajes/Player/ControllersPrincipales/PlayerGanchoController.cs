@@ -48,6 +48,8 @@ public class PlayerGanchoController : MonoBehaviour
 
     [SerializeField] private GameObject puntoLanzarRayCastParedes;
 
+    public LayerMask layerMaskComprobar;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -71,8 +73,21 @@ public class PlayerGanchoController : MonoBehaviour
     {
         if (!ganchoDisparado && !playerCombateController.isKunaiLanzado && !pausaController.pausado && !playerHurtController.muerto)
         {
-            float anclajeCercano = 100000;
+
+            List<GameObject> puntosAnclageVisibles = new List<GameObject>();
+
             foreach (var anclaje in puntosAnclaje)
+            {
+                if (comprobarColisionEnganches(anclaje))
+                {
+                    puntosAnclageVisibles.Add(anclaje);
+                }
+
+                puntoAnclaje = null;
+            }
+
+            float anclajeCercano = 100000;
+            foreach (var anclaje in puntosAnclageVisibles)
             {
                 bool seguirComprobando = true;
                 
@@ -140,8 +155,6 @@ public class PlayerGanchoController : MonoBehaviour
                     indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.red;
                     puedeDisparar = false;
                 }
-                
-                comprobarRayCast();
 
                 if (puedeDisparar)
                 {
@@ -215,8 +228,36 @@ public class PlayerGanchoController : MonoBehaviour
         gancho.GetComponent<LineRenderer>().SetPosition(1, posicionAgarreGancho.transform.position);
     }
 
-    private void comprobarRayCast()
+    private bool comprobarColisionEnganches(GameObject puntoComprobar)
     {
+        bool dispara = true;
+        
+        Vector2 direccionDispararRayCastParedes =
+            puntoComprobar.transform.position - puntoLanzarRayCastParedes.transform.position;
+        
+        RaycastHit2D hitInfoParedes = Physics2D.Raycast(puntoLanzarRayCastParedes.transform.position,
+            direccionDispararRayCastParedes, Mathf.Infinity, layerMaskComprobar);
+        
+        if (hitInfoParedes.collider != null && hitInfoParedes.collider.CompareTag("PuntoAnclaje"))
+        {
+            Debug.DrawRay(puntoLanzarRayCastParedes.transform.position, direccionDispararRayCastParedes,
+                Color.blue);
+        }
+        else
+        {
+            Debug.DrawRay(puntoLanzarRayCastParedes.transform.position, direccionDispararRayCastParedes,
+                Color.yellow);
+            
+            dispara = false;
+        }
+
+        return dispara;
+    }
+
+    private bool comprobarRayCast()
+    {
+        bool posibleDisparar = true;
+        
         if (!ganchoDisparado)
         {
             if (puntoAnclaje != null)
@@ -230,21 +271,26 @@ public class PlayerGanchoController : MonoBehaviour
                     RaycastHit2D hitInfoParedes = Physics2D.Raycast(puntoLanzarRayCastParedes.transform.position,
                         direccionDispararRayCastParedes, Vector3.Distance(puntoAnclaje.transform.position, puntoLanzarRayCastParedes.transform.position), 1 << 8);
 
-                    Debug.DrawRay(puntoLanzarRayCastParedes.transform.position, direccionDispararRayCastParedes,
-                        Color.red);
-
-                    if (hitInfoParedes.collider != null && hitInfoParedes.collider.CompareTag("Suelo"))
+                    if (hitInfoParedes.collider != null && (hitInfoParedes.collider.CompareTag("Suelo") || hitInfoParedes.collider.CompareTag("Rampa")))
                     {
+                        Debug.DrawRay(puntoLanzarRayCastParedes.transform.position, direccionDispararRayCastParedes,
+                            Color.red);
+                        posibleDisparar = false;
                         puedeDisparar = false;
                         indicadorLanzarGancho.GetComponent<Renderer>().material.color = Color.red;
                     }
                     else
                     {
+                        Debug.DrawRay(puntoLanzarRayCastParedes.transform.position, direccionDispararRayCastParedes,
+                            Color.green);
+                        posibleDisparar = true;
                         puedeDisparar = true;
                     }
                 }
             }
         }
+
+        return posibleDisparar;
     }
 
     private IEnumerator moverGanchoAEnganche()
