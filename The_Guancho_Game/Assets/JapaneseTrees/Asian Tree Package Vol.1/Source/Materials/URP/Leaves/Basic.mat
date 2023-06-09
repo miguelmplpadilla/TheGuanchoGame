@@ -79,7 +79,7 @@ Material:
     - Vector1_07f7bfc681604ba8a1041aa20f0da95d: 0
     - Vector1_0fb587ac4ebf4295848ede2e10a1ea76: 1
     - Vector1_1d80f3fcf5df43dfbe7f3577893a8a7a: 0.2
-    - Vector1_2366f028872548cca586a80231f9449e: 1
+    - Vector1_2366f028872548cca586a80231f9449e: 0
     - Vector1_7befe60a42be40dcaffc92d4b5e4e74e: 0.2
     - Vector1_97390a94d66b40a1a826d031b9c68e87: 1
     - Vector1_d69206dc4fba4596b4f269babfaf4cc1: 0.6
@@ -103,6 +103,8 @@ Material:
     - _EnableFogOnTransparent: 1
     - _Normal_Strength: 0.6
     - _OpaqueCullMode: 2
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _RayTracing: 0
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
