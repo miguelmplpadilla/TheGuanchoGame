@@ -713,7 +713,7 @@ GameObject:
   - component: {fileID: 2257782301069494216}
   - component: {fileID: 2257782301069494218}
   - component: {fileID: 2257782301069494219}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: HurtBox
   m_TagString: HurtBoxEnemigo
   m_Icon: {fileID: 0}

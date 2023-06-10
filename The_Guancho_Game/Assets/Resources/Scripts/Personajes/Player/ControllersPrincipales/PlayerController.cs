@@ -47,6 +47,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 newForce;
     private Vector2 capsuleColliderSize;
     private Vector2 slopeNormalPerp;
+
+    private Vector3 initialScale;
     
     private Vector2 posicionParticularCorrerInstanciada;
 
@@ -64,6 +66,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        initialScale = transform.localScale;
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         cc = GetComponent<CapsuleCollider2D>();
@@ -313,11 +316,11 @@ public class PlayerController : MonoBehaviour
     {
         if (xInput > 0f)
         {
-            transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+            transform.localScale = new Vector3(initialScale.x,initialScale.y,initialScale.z);
         }
         else if (xInput < 0f)
         {
-            transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+            transform.localScale = new Vector3(-initialScale.x,initialScale.y,initialScale.z);
         }
     }
 

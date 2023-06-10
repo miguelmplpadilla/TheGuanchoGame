@@ -18837,6 +18837,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7329706158928698512, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
+      propertyPath: layerMaskComprobar.m_Bits
+      value: 16768
+      objectReference: {fileID: 0}
     - target: {fileID: 7329706158928698517, guid: b1908c5a403e1d04dba664766d23e9ee, type: 3}
       propertyPath: m_Enabled
       value: 0

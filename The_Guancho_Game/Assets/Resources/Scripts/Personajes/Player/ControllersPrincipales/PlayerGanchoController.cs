@@ -245,6 +245,7 @@ public class PlayerGanchoController : MonoBehaviour
         }
         else
         {
+            //Debug.Log("Hit Punto Anclaje: "+hitInfoParedes.collider.name);
             Debug.DrawRay(puntoLanzarRayCastParedes.transform.position, direccionDispararRayCastParedes,
                 Color.yellow);
             

@@ -12,8 +12,12 @@ public class AnimatorExecuterController : MonoBehaviour
     [SerializeField] private GameObject particulasCorrer;
     [SerializeField] private GameObject puntoCreacionparticulasSuelo;
 
+    private Vector3 originalScale;
+
     private void Awake()
     {
+        originalScale = transform.parent.localScale;
+        
         playerController = GetComponentInParent<PlayerController>();
         playerCombateController = GetComponentInParent<PlayerCombateController>();
 
@@ -40,7 +44,7 @@ public class AnimatorExecuterController : MonoBehaviour
     {
         GameObject particulaInstanciada = Instantiate(particulasCorrer, puntoCreacionparticulasSuelo.transform.position, Quaternion.identity);
         
-        if (transform.parent.localScale.x == -0.5f)
+        if (transform.parent.localScale.x == -originalScale.x)
         {
             particulaInstanciada.transform.rotation = Quaternion.Euler(0,180,0);
             particulaInstanciada.GetComponent<ParticleSystemRenderer>().flip = new Vector3(1, 0, 0);
