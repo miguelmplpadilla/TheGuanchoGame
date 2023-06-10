@@ -20,6 +20,7 @@ public class PlayerCombateController : MonoBehaviour
     private Vector2 direccionLanzarKunai;
 
     public float speedKunai = 2;
+    [SerializeField] private float multSizeKunai = 1;
 
     public bool isKunaiLanzado = false;
 
@@ -58,6 +59,8 @@ public class PlayerCombateController : MonoBehaviour
     {
         GameObject kunaiLanzado = Instantiate(kunai);
         kunaiLanzado.transform.position = shootPoint.transform.position;
+
+        kunaiLanzado.transform.localScale = kunaiLanzado.transform.localScale * multSizeKunai;
 
         if (transform.localScale.x < 0)
         {

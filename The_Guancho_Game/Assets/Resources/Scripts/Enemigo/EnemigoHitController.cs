@@ -20,6 +20,8 @@ public class EnemigoHitController : MonoBehaviour
     [SerializeField] private GameObject puntoCrearObjeto;
     [SerializeField] private GameObject particulasSangre;
 
+    [SerializeField] private float multSizeDrop = 1;
+
     public bool muerto = false;
 
     private void Awake()
@@ -49,8 +51,10 @@ public class EnemigoHitController : MonoBehaviour
                 GetComponentInParent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
                 GetComponentInParent<CapsuleCollider2D>().enabled = false;
                 GetComponent<BoxCollider2D>().enabled = false;
-                Instantiate(objetosCrear[Random.Range(0, objetosCrear.Length)], puntoCrearObjeto.transform.position, Quaternion.identity);
+                GameObject dropInstanciado = Instantiate(objetosCrear[Random.Range(0, objetosCrear.Length)], puntoCrearObjeto.transform.position, Quaternion.identity);
 
+                dropInstanciado.transform.localScale = dropInstanciado.transform.localScale * multSizeDrop;
+                
                 Instantiate(particulasSangre, transform.position, Quaternion.identity);
                 
                 animator.SetBool("muerto", true);

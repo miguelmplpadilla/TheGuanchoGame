@@ -3,23 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="ec41ed5e-6894-4cdc-8127-e636cba0ab03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Escenario/PuntosEnganche/PuntoAnclajeGancho.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Escenario/PuntosEnganche/PuntoAnclajeGancho.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Escenario/PuntosEnganche/PuntoAnclajeGanchoBalanceo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Escenario/PuntosEnganche/PuntoAnclajeGanchoBalanceo.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Enemigos/EnemigosBuenos/EnemigoEscopeta.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Enemigos/EnemigosBuenos/EnemigoEscopeta.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Enemigos/EnemigosBuenos/EnemigoEspada.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Enemigos/EnemigosBuenos/EnemigoEspada.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Enemigos/EnemigosBuenos/EnemigoPistola.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Personajes/Enemigos/EnemigosBuenos/EnemigoPistola.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3/NavMesh-NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3/NavMesh-NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Espacio/Espacio1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Espacio/Espacio1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Canvas/CanvasPlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Canvas/CanvasPlayer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-1.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-1.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-1/NavMesh-NavMesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-1/NavMesh-NavMesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2/NavMesh-NavMesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2/NavMesh-NavMesh.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3/NavMesh-NavMesh.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3/NavMesh-NavMesh.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/JAPAN/JAPAN 1-1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/JAPAN/JAPAN 1-1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/ArrayModifier.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/ArrayModifier/Replicator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/ArrayModifier/Replicator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/AnimatorExecuterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/AnimatorExecuterController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/ControllersPrincipales/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/ControllersPrincipales/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/ControllersPrincipales/PlayerGanchoController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/ControllersPrincipales/PlayerGanchoController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/JAPAN/JAPAN 1-1/NavMesh-NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/JAPAN/JAPAN 1-1/NavMesh-NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/ControllersPrincipales/PlayerCombateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/ControllersPrincipales/PlayerCombateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,6 +204,7 @@
       <workItem from="1686049974020" duration="2580000" />
       <workItem from="1686242035104" duration="303000" />
       <workItem from="1686351872163" duration="2735000" />
+      <workItem from="1686405276450" duration="1431000" />
     </task>
     <servers />
   </component>
