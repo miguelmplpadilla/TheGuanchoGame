@@ -24,11 +24,13 @@ public class PausaController : MonoBehaviour
 
         if (Time.timeScale == 1)
         {
+            Cursor.lockState = CursorLockMode.None;
             canvasPausa.SetActive(true);
             Time.timeScale = 0;
         }
         else
         {
+            Cursor.lockState = CursorLockMode.Locked;
             canvasPausa.SetActive(false);
             Time.timeScale = 1;
         }
@@ -39,6 +41,6 @@ public class PausaController : MonoBehaviour
     public void volverMenuInicio()
     {
         pausarDespausar();
-        LoadSceneController.cargarEscena("EscenaInicio");
+        LoadSceneController.cargarEscena("InicioEscena");
     }
 }

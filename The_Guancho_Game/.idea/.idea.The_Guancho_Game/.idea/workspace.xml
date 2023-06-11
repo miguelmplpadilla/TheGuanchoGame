@@ -3,27 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="ec41ed5e-6894-4cdc-8127-e636cba0ab03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.The_Guancho_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Canvas/CanvasPlayer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Canvas/CanvasPlayer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-1.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-1/NavMesh-NavMesh.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-1/NavMesh-NavMesh.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2/NavMesh-NavMesh.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-2/NavMesh-NavMesh.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3/NavMesh-NavMesh.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/ESCENAS PRUEBA EEUU/EEUU 1-3/NavMesh-NavMesh.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/JAPAN/JAPAN 1-1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/JAPAN/JAPAN 1-1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/JAPAN/JAPAN 1-1/NavMesh-NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/JAPAN/JAPAN 1-1/NavMesh-NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/ControllersPrincipales/PlayerCombateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/ControllersPrincipales/PlayerCombateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ModelosImportados/LowPolyWater_Pack/Plane Meshes/Ocean50x50W750H750.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ModelosImportados/LowPolyWater_Pack/Plane Meshes/Ocean50x50W750H750.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Canvas/CanvasPantallaRoja.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Canvas/CanvasPantallaRoja.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasMiguel/EscenaPruebaMiguel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasMiguel/EscenaPruebaMiguel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/EEUU/EEUU 1-1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/EEUU/EEUU 1-1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/EEUU/EEUU 1-2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/EEUU/EEUU 1-2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/EEUU/EEUU 1-3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/EEUU/EEUU 1-3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/ESPACIO/Espacio2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/ESPACIO/Espacio2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/EscenaCreditos.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/EscenaCreditos.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/EscenaMuerte.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/EscenaMuerte.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Espacio/Espacio1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/Espacio/Espacio1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/InicioEscena.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/InicioEscena.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/JAPAN/JAPAN 1-1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/JAPAN/JAPAN 1-1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/JAPAN/JAPAN 1-2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/EscenasPrincipales/JAPAN/JAPAN 1-2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/PausaController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/PausaController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,26 +25,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/1Enemigo2D/Enemigo2DHurtController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/ManchaSangreController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Player2D/Player2DMovement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../Farming_Tales/FarmingTales/Assets/Scripts/Personajes/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../MedievalBattle/MedievalBattle/Assets/Resources/Scripts/Personajes/MovementController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../MiniCombatGame/MiniCombatGame/Assets/Resources/Scripts/Player/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../MouseGame/MouseProject/Assets/Resource/Scripts/Player/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/MaquinaEstados/EnemigoIA.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/EscenaMuerte/EscenaMuerteController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/KunaiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.9/Samples~/Cinemachine Example Scenes/Shared/Scripts/PlayerMovePhysics.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEngine.TestRunner/TestRunner/PlaymodeTestsController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/ManchaSangreController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Enemigos/1Enemigo2D/Enemigo2DHurtController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../MedievalBattle/MedievalBattle/Assets/Resources/Scripts/Personajes/MovementController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.testtools.codecoverage@1.2.2/Samples~/Tutorial/Asteroids/Scripts/Managers/GameManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/AssertionFailureOnOutputVertexCount.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/CanvasRenderer/ChangingHierarchyOfCanvasRenderer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasSizeCorrectInAwakeAndStart.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Farming_Tales/FarmingTales/Assets/Scripts/Personajes/Player/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Personajes/Player/KunaiController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CreateSceneUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../MouseGame/MouseProject/Assets/Resource/Scripts/Player/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasSizeCorrectInAwakeAndStart.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/RectTransformValidAfterEnable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../MiniCombatGame/MiniCombatGame/Assets/Resources/Scripts/Player/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/CanvasRenderer/ChangingHierarchyOfCanvasRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/RaycastSortingTests.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/EnemigoHitController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.31/UnityEngine.TestRunner/TestRunner/PlaymodeTestsController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../BowGame/Bow_Plataformas/Assets/Resources/Scripts/2D/Player2D/Player2DMovement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Resources/Scripts/Enemigo/MaquinaEstados/EnemigoIA.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.9/Samples~/Cinemachine Example Scenes/Shared/Scripts/PlayerMovePhysics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/AssertionFailureOnOutputVertexCount.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,13 +55,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$USER_HOME$/Downloads/TheGuanchoGameEnemigoGancho\The_Guancho_Game.exe" />
@@ -205,6 +197,7 @@
       <workItem from="1686242035104" duration="303000" />
       <workItem from="1686351872163" duration="2735000" />
       <workItem from="1686405276450" duration="1431000" />
+      <workItem from="1686519663470" duration="1270000" />
     </task>
     <servers />
   </component>
