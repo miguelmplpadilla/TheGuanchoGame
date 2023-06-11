@@ -8,16 +8,16 @@ La version que hay de instalar en Unity Hub es 2021.3.15f1.
 
 Cuando este instalada la versión y abierto el proyecto pulsaremos el botón "File" situado arriba a la izquierda de unity.
 
-![File](https://imgur.com/a/jfbPMW7)
+![File](Recursos/ImagenesReadmee/File.png)
 
 Pulsamos Build Settings ...:
 
-![BuildSettings](https://imgur.com/gallery/Gqy8rle)
+![BuildSettings](Recursos/ImagenesReadmee/Build.png)
 
 Después pulsamos el botón Build:
 
-![Build](https://imgur.com/gallery/gKCjf5a)
+![Build](Recursos/ImagenesReadmee/BuildSettings.png)
 
 Seleccionamos la carpeta donde queremos que se haga la build y ya estaría:
 
-![Folder](https://imgur.com/gallery/LGvmDBO)
+![Folder](Recursos/ImagenesReadmee/Folder.png)
