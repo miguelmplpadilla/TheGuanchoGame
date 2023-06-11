@@ -47,4 +47,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Resources/Scenes/EscenasPrincipales/EEUU/EEUU 1-1.unity
     guid: 34d0a1bb6f59b0349987b3520e29238b
+  - enabled: 1
+    path: Assets/Resources/Scenes/EscenasPrincipales/JAPAN/JAPAN 1-2.unity
+    guid: 4ba46a2113fad8241a1b425964639315
+  - enabled: 1
+    path: Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/BarcoCinematica.unity
+    guid: 657d8a1fbe750f8419104dd8eeba0f78
+  - enabled: 1
+    path: Assets/Resources/Scenes/EscenasPrincipales/Cinematicas/AvionCinematica.unity
+    guid: cf9dade09609581449202cb18ba239ca
+  - enabled: 1
+    path: Assets/Resources/Scenes/EscenasPrincipales/JAPAN/JAPAN 1-1.unity
+    guid: 5b095b489cf3ae14ebe1497b0ee452e4
+  - enabled: 1
+    path: Assets/Resources/Scenes/EscenasPrincipales/Espacio/Espacio1.unity
+    guid: 71b8035787a5aba4fbb61b0ab65fe0e4
   m_configObjects: {}

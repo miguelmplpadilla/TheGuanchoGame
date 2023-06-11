@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 1850079018}
-  nombreEscena: EEUU 1-2
+  nombreEscena: JAPAN 1-1
 --- !u!1 &460009357
 GameObject:
   m_ObjectHideFlags: 0
