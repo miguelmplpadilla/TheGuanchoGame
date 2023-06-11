@@ -356,7 +356,7 @@ AnimationClip:
   m_Events:
   - time: 6
     functionName: moverEscena
-    data: EEUU 1-2
+    data: EEUU 1-1
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
