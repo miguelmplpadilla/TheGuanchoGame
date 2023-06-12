@@ -18,9 +18,24 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            SceneManager.LoadScene("InicioCinematica");
+        }
+        
         if (Input.GetKeyDown(KeyCode.F2))
         {
-            SceneManager.LoadScene("ScenePruebaScriptableObject");
+            SceneManager.LoadScene("AvionCinematica");
+        }
+        
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            SceneManager.LoadScene("BarcoCinematica");
+        }
+        
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            SceneManager.LoadScene("EspacioCinematica");
         }
     }
 
