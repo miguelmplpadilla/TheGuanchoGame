@@ -12,11 +12,11 @@ Cuando este instalada la versión y abierto el proyecto pulsaremos el botón "Fi
 
 Pulsamos Build Settings ...:
 
-![BuildSettings](Recursos/ImagenesReadmee/Build.png)
+![BuildSettings](Recursos/ImagenesReadmee/BuildSettings.png)
 
 Después pulsamos el botón Build:
 
-![Build](Recursos/ImagenesReadmee/BuildSettings.png)
+![Build](Recursos/ImagenesReadmee/Build.png)
 
 Seleccionamos la carpeta donde queremos que se haga la build y ya estaría:
 
