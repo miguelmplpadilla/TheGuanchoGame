@@ -12794,6 +12794,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8915806302037103781, guid: 08e0cc9be2b47654099933da9a7d2487, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8005919
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915806302037103781, guid: 08e0cc9be2b47654099933da9a7d2487, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.09970406
+      objectReference: {fileID: 0}
     - target: {fileID: 8915806302037103783, guid: 08e0cc9be2b47654099933da9a7d2487, type: 3}
       propertyPath: m_Name
       value: TpNivel

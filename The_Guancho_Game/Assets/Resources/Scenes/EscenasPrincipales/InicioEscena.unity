@@ -296,7 +296,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Gunacho Game
+  m_text: The Guancho Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 71d8aee8a2a327c4e890bd05c5eb7a18, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 32e759e47f4bb4e41ad8abf35e3cfccb, type: 2}
